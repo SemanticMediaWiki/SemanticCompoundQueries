@@ -26,7 +26,7 @@ $scqIP = $IP . '/extensions/SemanticCompoundQueries';
 $wgAutoloadClasses['SCQQueryProcessor'] = $scqIP . '/SCQ_QueryProcessor.php';
 $wgAutoloadClasses['SCQQueryResult'] = $scqIP . '/SCQ_QueryResult.php';
 
-function scqgParserFunctions () {
+function scqgParserFunctions() {
 	global $wgHooks, $wgParser;
 	if( defined( 'MW_SUPPORTS_PARSERFIRSTCALLINIT' ) ) {
 		$wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';

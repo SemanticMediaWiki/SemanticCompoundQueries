@@ -26,7 +26,7 @@ class SCQQueryProcessor {
 		$sub_params = array();
 		$sub_param = "";
 		$uncompleted_square_brackets = 0;
-		for ($i = 0; $i <= strlen($param); $i++) {
+		for ($i = 0; $i < strlen($param); $i++) {
 			$c = $param[$i];
 			if (($c == ';') && ($uncompleted_square_brackets <= 0)) {
 				$sub_params[] = $sub_param;
