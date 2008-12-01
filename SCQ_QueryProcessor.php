@@ -132,8 +132,11 @@ class SCQQueryProcessor {
 			if ($key == 'icon') {
 				$icon_title = Title::newFromText($value);
 				$icon_image_page = new ImagePage($icon_title);
-				$icon_url = $icon_image_page->getDisplayedFile()->getURL();
-				$query_result->display_options['icon'] = $icon_url;
+				// method was only added in MW 1.13
+				if (method_exists('ImagePage', 'getDisplayedFile')) {
+					$icon_url = $icon_image_page->getDisplayedFile()->getURL();
+					$query_result->display_options['icon'] = $icon_url;
+				}
 			} else {
 				$query_result->display_options[$key] = $value;
 			}
