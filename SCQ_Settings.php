@@ -9,7 +9,7 @@
 
 if (!defined('MEDIAWIKI')) die();
 
-define('SCQ_VERSION', '0.2');
+define('SCQ_VERSION', '0.2.1');
 
 $wgExtensionCredits['parserhook'][]= array(
 	'name'	=> 'Semantic Compound Queries',
