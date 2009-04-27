@@ -12,6 +12,7 @@ if (!defined('MEDIAWIKI')) die();
 define('SCQ_VERSION', '0.2.1');
 
 $wgExtensionCredits['parserhook'][]= array(
+	'path'  => __FILE__,
 	'name'	=> 'Semantic Compound Queries',
 	'version'	=> SCQ_VERSION,
 	'author'	=> 'Yaron Koren',
