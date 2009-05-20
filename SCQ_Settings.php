@@ -7,18 +7,22 @@
  * @author Yaron Koren
  */
 
-if (!defined('MEDIAWIKI')) die();
+if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define('SCQ_VERSION', '0.2.1');
+define( 'SCQ_VERSION', '0.2.2' );
 
-$wgExtensionCredits['parserhook'][]= array(
+$wgExtensionCredits['parserhook'][] = array(
 	'path'  => __FILE__,
 	'name'	=> 'Semantic Compound Queries',
 	'version'	=> SCQ_VERSION,
 	'author'	=> 'Yaron Koren',
 	'url'	=> 'http://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries',
 	'description'	=>  'A parser function that displays multiple semantic queries at the same time',
+	'descriptionmsg' => 'semanticcompoundqueries-desc',
 );
+
+$wgExtensionMessagesFiles['SemanticCompoundQueries'] = dirname( __FILE__ ) . '/SemanticCompoundQueries.i18n.php';
+
 
 $wgExtensionFunctions[] = 'scqgParserFunctions';
 $wgHooks['LanguageGetMagic'][] = 'scqgLanguageGetMagic';
@@ -29,7 +33,7 @@ $wgAutoloadClasses['SCQQueryResult'] = $scqIP . '/SCQ_QueryResult.php';
 
 function scqgParserFunctions() {
 	global $wgHooks, $wgParser;
-	if( defined( 'MW_SUPPORTS_PARSERFIRSTCALLINIT' ) ) {
+	if ( defined( 'MW_SUPPORTS_PARSERFIRSTCALLINIT' ) ) {
 		$wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';
 	} else {
 		if ( class_exists( 'StubObject' ) && !StubObject::isRealObject( $wgParser ) ) {
@@ -39,8 +43,8 @@ function scqgParserFunctions() {
 	}
 }
 
-function scqgRegisterParser(&$parser) {
-	$parser->setFunctionHook( 'compound_query', array('SCQQueryProcessor','doCompoundQuery') );
+function scqgRegisterParser( &$parser ) {
+	$parser->setFunctionHook( 'compound_query', array( 'SCQQueryProcessor', 'doCompoundQuery' ) );
 	return true; // always return true, in order not to stop MW's hook processing!
 }
 
