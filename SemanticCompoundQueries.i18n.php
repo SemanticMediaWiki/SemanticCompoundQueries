@@ -13,3 +13,109 @@ $messages = array();
 $messages['en'] = array(
 	'semanticcompoundqueries-desc' => 'A parser function that displays multiple semantic queries at the same time',
 );
+
+/** Message documentation (Message documentation)
+ * @author Purodha
+ */
+$messages['qqq'] = array(
+	'semanticcompoundqueries-desc' => 'A short description of this extension. Shown in [[Special:Version]]. Do not translate link targets, or tag names.',
+);
+
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'semanticcompoundqueries-desc' => 'Parserska funkcija koja prikazuje više semantičkih upita u isto vrijeme',
+);
+
+/** German (Deutsch)
+ * @author Purodha
+ */
+$messages['de'] = array(
+	'semanticcompoundqueries-desc' => 'Eine Parserfunktion, die mehrere semantische Abfragen zugleich anzuzeigen erlaubt',
+);
+
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'semanticcompoundqueries-desc' => 'Parserowa funkcija, kótaraž rownocasnje zwobraznjujo někotare semantiske wótpšašanja',
+);
+
+/** Spanish (Español)
+ * @author Crazymadlover
+ */
+$messages['es'] = array(
+	'semanticcompoundqueries-desc' => 'Una función analizadora que muestra múltiples consultas semánticas al mismo tiempo',
+);
+
+/** French (Français)
+ * @author IAlex
+ */
+$messages['fr'] = array(
+	'semanticcompoundqueries-desc' => 'Une fonction du parseur qui affiche plusieurs requêtes sémantiques en même temps',
+);
+
+/** Galician (Galego)
+ * @author Toliño
+ */
+$messages['gl'] = array(
+	'semanticcompoundqueries-desc' => 'Unha función analítica que mostra varias pescudas semánticas ao mesmo tempo',
+);
+
+/** Swiss German (Alemannisch)
+ * @author Als-Holder
+ */
+$messages['gsw'] = array(
+	'semanticcompoundqueries-desc' => 'E Parserfunktion, wu erlaubt, mehreri semantischi Abfroge uf eimol aazzeige',
+);
+
+/** Upper Sorbian (Hornjoserbsce)
+ * @author Michawiki
+ */
+$messages['hsb'] = array(
+	'semanticcompoundqueries-desc' => 'Parserowa funkcija, kotraž wjacore semantiske wotprašowanja nadobo zwobrazuje',
+);
+
+/** Japanese (日本語)
+ * @author Fryed-peach
+ */
+$messages['ja'] = array(
+	'semanticcompoundqueries-desc' => '複数の意味的クエリーを一度に表示するパーサー関数',
+);
+
+/** Ripoarisch (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'semanticcompoundqueries-desc' => 'En Paaser_Funkßuhn öm ettlijje semantesche Froore op eijmohl aanzezeije.',
+);
+
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+$messages['lb'] = array(
+	'semanticcompoundqueries-desc' => 'Eng Parserfonctioun déi et erlaabt méi semantesch Ufroe mateneen ze weisen',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'semanticcompoundqueries-desc' => 'Een parserfunctie die meerdere semantische zoekopdrachten op hetzelfde moment kan weergeven',
+);
+
+/** Occitan (Occitan)
+ * @author Cedric31
+ */
+$messages['oc'] = array(
+	'semanticcompoundqueries-desc' => "Una foncion del parser qu'aficha mai d'una requèsta semanticas a l'encòp",
+);
+
+/** Slovak (Slovenčina)
+ * @author Helix84
+ */
+$messages['sk'] = array(
+	'semanticcompoundqueries-desc' => 'Funkcia syntaktického analyzátora, ktorá zobrazuje viaceré sémantické požiadavky naraz',
+);
+
