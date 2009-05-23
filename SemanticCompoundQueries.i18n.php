@@ -21,6 +21,13 @@ $messages['qqq'] = array(
 	'semanticcompoundqueries-desc' => 'A short description of this extension. Shown in [[Special:Version]]. Do not translate link targets, or tag names.',
 );
 
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author Jim-by
+ */
+$messages['be-tarask'] = array(
+	'semanticcompoundqueries-desc' => 'Функцыя парсэру, якая адлюстроўвае шматлікія сэмантычныя запыты ў адзін час',
+);
+
 /** Bosnian (Bosanski)
  * @author CERminator
  */
@@ -117,5 +124,12 @@ $messages['oc'] = array(
  */
 $messages['sk'] = array(
 	'semanticcompoundqueries-desc' => 'Funkcia syntaktického analyzátora, ktorá zobrazuje viaceré sémantické požiadavky naraz',
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'semanticcompoundqueries-desc' => 'Hàm cú pháp hiển thị nhiều truy vấn ngữ nghĩa cùng lúc',
 );
 
