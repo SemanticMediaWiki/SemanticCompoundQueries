@@ -22,10 +22,11 @@ $messages['qqq'] = array(
 );
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author EugeneZelenko
  * @author Jim-by
  */
 $messages['be-tarask'] = array(
-	'semanticcompoundqueries-desc' => 'Функцыя парсэру, якая адлюстроўвае шматлікія сэмантычныя запыты ў адзін час',
+	'semanticcompoundqueries-desc' => 'Функцыя парсэра, якая паказвае шматлікія сэмантычныя запыты ў адзін час',
 );
 
 /** Bosnian (Bosanski)
@@ -84,6 +85,13 @@ $messages['hsb'] = array(
 	'semanticcompoundqueries-desc' => 'Parserowa funkcija, kotraž wjacore semantiske wotprašowanja nadobo zwobrazuje',
 );
 
+/** Interlingua (Interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'semanticcompoundqueries-desc' => 'Un function syntactic que presenta plure consultas semantic al mesme tempore',
+);
+
 /** Japanese (日本語)
  * @author Fryed-peach
  */
@@ -110,6 +118,13 @@ $messages['lb'] = array(
  */
 $messages['nl'] = array(
 	'semanticcompoundqueries-desc' => 'Een parserfunctie die meerdere semantische zoekopdrachten op hetzelfde moment kan weergeven',
+);
+
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Nghtwlkr
+ */
+$messages['no'] = array(
+	'semanticcompoundqueries-desc' => 'En tolkefunksjon som viser flere semantiske spørringer samtidig',
 );
 
 /** Occitan (Occitan)
