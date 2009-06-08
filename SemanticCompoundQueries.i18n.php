@@ -134,6 +134,13 @@ $messages['oc'] = array(
 	'semanticcompoundqueries-desc' => "Una foncion del parser qu'aficha mai d'una requèsta semanticas a l'encòp",
 );
 
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'semanticcompoundqueries-desc' => "'Na funziona de analisi ca visualizze le inderrogazziune semandiche multiple jndr'à 'u stesse mumende",
+);
+
 /** Slovak (Slovenčina)
  * @author Helix84
  */
