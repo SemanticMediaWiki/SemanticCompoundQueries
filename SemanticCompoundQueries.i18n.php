@@ -21,6 +21,13 @@ $messages['qqq'] = array(
 	'semanticcompoundqueries-desc' => 'A short description of this extension. Shown in [[Special:Version]]. Do not translate link targets, or tag names.',
 );
 
+/** Arabic (العربية)
+ * @author Meno25
+ */
+$messages['ar'] = array(
+	'semanticcompoundqueries-desc' => 'دالة محلل تعرض استعلامات دلالية متعددة في نفس الوقت',
+);
+
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
  * @author Jim-by
