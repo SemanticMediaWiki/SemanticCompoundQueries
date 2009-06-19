@@ -148,6 +148,13 @@ $messages['roa-tara'] = array(
 	'semanticcompoundqueries-desc' => "'Na funziona de analisi ca visualizze le inderrogazziune semandiche multiple jndr'à 'u stesse mumende",
 );
 
+/** Russian (Русский)
+ * @author Александр Сигачёв
+ */
+$messages['ru'] = array(
+	'semanticcompoundqueries-desc' => 'Функция парсера, показывающая несколько семантических запросов за один раз',
+);
+
 /** Slovak (Slovenčina)
  * @author Helix84
  */
