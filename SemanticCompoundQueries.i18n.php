@@ -99,6 +99,13 @@ $messages['ia'] = array(
 	'semanticcompoundqueries-desc' => 'Un function syntactic que presenta plure consultas semantic al mesme tempore',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author Bennylin
+ */
+$messages['id'] = array(
+	'semanticcompoundqueries-desc' => 'Fungsi parser untuk menampilkan beberapa kueri semantik secara bersamaan',
+);
+
 /** Japanese (日本語)
  * @author Fryed-peach
  */
