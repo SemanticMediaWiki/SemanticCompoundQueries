@@ -85,6 +85,13 @@ $messages['gsw'] = array(
 	'semanticcompoundqueries-desc' => 'E Parserfunktion, wu erlaubt, mehreri semantischi Abfroge uf eimol aazzeige',
 );
 
+/** Hebrew (עברית)
+ * @author Rotemliss
+ */
+$messages['he'] = array(
+	'semanticcompoundqueries-desc' => 'הוראת מפענח המציגה מספר שאילתות סמנטיות בעת ובעונה אחת',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
