@@ -15,10 +15,11 @@ $messages['en'] = array(
 );
 
 /** Message documentation (Message documentation)
+ * @author Fryed-peach
  * @author Purodha
  */
 $messages['qqq'] = array(
-	'semanticcompoundqueries-desc' => 'A short description of this extension. Shown in [[Special:Version]]. Do not translate link targets, or tag names.',
+	'semanticcompoundqueries-desc' => '{{desc}}',
 );
 
 /** Arabic (العربية)
