@@ -93,6 +93,13 @@ $messages['he'] = array(
 	'semanticcompoundqueries-desc' => 'הוראת מפענח המציגה מספר שאילתות סמנטיות בעת ובעונה אחת',
 );
 
+/** Hiligaynon (Ilonggo)
+ * @author Tagimata
+ */
+$messages['hil'] = array(
+	'semanticcompoundqueries-desc' => 'Ang parser panksiyon nga nagapakita sang multiple semantik pamangkotanon sa parehas nga tiyempo',
+);
+
 /** Upper Sorbian (Hornjoserbsce)
  * @author Michawiki
  */
