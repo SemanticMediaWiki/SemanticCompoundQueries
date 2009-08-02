@@ -163,6 +163,13 @@ $messages['oc'] = array(
 	'semanticcompoundqueries-desc' => "Una foncion del parser qu'aficha mai d'una requèsta semanticas a l'encòp",
 );
 
+/** Polish (Polski)
+ * @author Sp5uhe
+ */
+$messages['pl'] = array(
+	'semanticcompoundqueries-desc' => 'Funkcja parsera wyświetlająca różnorodne znaczeniowo zapytania w tym samym czasie',
+);
+
 /** Tarandíne (Tarandíne)
  * @author Joetaras
  */
