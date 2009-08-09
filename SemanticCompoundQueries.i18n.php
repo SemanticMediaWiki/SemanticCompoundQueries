@@ -170,6 +170,13 @@ $messages['pl'] = array(
 	'semanticcompoundqueries-desc' => 'Funkcja parsera wyświetlająca różnorodne znaczeniowo zapytania w tym samym czasie',
 );
 
+/** Brazilian Portuguese (Português do Brasil)
+ * @author Eduardo.mps
+ */
+$messages['pt-br'] = array(
+	'semanticcompoundqueries-desc' => 'Uma função analisadora que exibe múltiplas consultas semânticas ao mesmo tempo',
+);
+
 /** Tarandíne (Tarandíne)
  * @author Joetaras
  */
