@@ -25,6 +25,7 @@ $wgExtensionMessagesFiles['SemanticCompoundQueries'] = dirname( __FILE__ ) . '/S
 
 
 $wgExtensionFunctions[] = 'scqgParserFunctions';
+// FIXME: Can be removed when new style magic words are used (introduced in r52503)
 $wgHooks['LanguageGetMagic'][] = 'scqgLanguageGetMagic';
 
 $scqIP = $IP . '/extensions/SemanticCompoundQueries';
@@ -48,6 +49,7 @@ function scqgRegisterParser( &$parser ) {
 	return true; // always return true, in order not to stop MW's hook processing!
 }
 
+// FIXME: Can be removed when new style magic words are used (introduced in r52503)
 function scqgLanguageGetMagic( &$magicWords, $langCode = "en" ) {
 	switch ( $langCode ) {
 	default:
