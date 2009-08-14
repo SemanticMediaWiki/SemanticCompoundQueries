@@ -145,6 +145,13 @@ $messages['lb'] = array(
 	'semanticcompoundqueries-desc' => 'Eng Parserfonctioun déi et erlaabt méi semantesch Ufroe mateneen ze weisen',
 );
 
+/** Macedonian (Македонски)
+ * @author Bjankuloski06
+ */
+$messages['mk'] = array(
+	'semanticcompoundqueries-desc' => 'Парсерска функција која прикажува повеќе семантички барања истовремено',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */
