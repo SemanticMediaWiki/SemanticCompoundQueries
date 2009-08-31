@@ -40,6 +40,13 @@ $messages['be-tarask'] = array(
 	'semanticcompoundqueries-desc' => 'Функцыя парсэра, якая паказвае шматлікія сэмантычныя запыты ў адзін час',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fulup
+ */
+$messages['br'] = array(
+	'semanticcompoundqueries-desc' => "Un arc'hwel eus ar parser a ziskwel meur a reked ereadurel war un dro",
+);
+
 /** Bosnian (Bosanski)
  * @author CERminator
  */
