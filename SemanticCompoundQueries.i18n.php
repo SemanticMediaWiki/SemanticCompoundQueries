@@ -194,6 +194,13 @@ $messages['pms'] = array(
 	'semanticcompoundqueries-desc' => 'Na fonsion dël parser che a visualisa vàire antërogassion semàntiche al midem temp',
 );
 
+/** Portuguese (Português)
+ * @author Waldir
+ */
+$messages['pt'] = array(
+	'semanticcompoundqueries-desc' => 'Uma função de processamento que exibe múltiplas consultas semânticas ao mesmo tempo',
+);
+
 /** Brazilian Portuguese (Português do Brasil)
  * @author Eduardo.mps
  */
