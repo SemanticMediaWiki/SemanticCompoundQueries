@@ -24,25 +24,13 @@ $wgExtensionCredits['parserhook'][] = array(
 $wgExtensionMessagesFiles['SemanticCompoundQueries'] = dirname( __FILE__ ) . '/SemanticCompoundQueries.i18n.php';
 
 
-$wgExtensionFunctions[] = 'scqgParserFunctions';
+$wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';
 // FIXME: Can be removed when new style magic words are used (introduced in r52503)
 $wgHooks['LanguageGetMagic'][] = 'scqgLanguageGetMagic';
 
 $scqIP = $IP . '/extensions/SemanticCompoundQueries';
 $wgAutoloadClasses['SCQQueryProcessor'] = $scqIP . '/SCQ_QueryProcessor.php';
 $wgAutoloadClasses['SCQQueryResult'] = $scqIP . '/SCQ_QueryResult.php';
-
-function scqgParserFunctions() {
-	global $wgHooks, $wgParser;
-	if ( defined( 'MW_SUPPORTS_PARSERFIRSTCALLINIT' ) ) {
-		$wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';
-	} else {
-		if ( class_exists( 'StubObject' ) && !StubObject::isRealObject( $wgParser ) ) {
-			$wgParser->_unstub();
-		}
-		SCQQueryProcessor::registerParserFunctions( $wgParser );
-	}
-}
 
 function scqgRegisterParser( &$parser ) {
 	$parser->setFunctionHook( 'compound_query', array( 'SCQQueryProcessor', 'doCompoundQuery' ) );
