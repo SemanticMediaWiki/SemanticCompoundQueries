@@ -117,6 +117,13 @@ $messages['hsb'] = array(
 	'semanticcompoundqueries-desc' => 'Parserowa funkcija, kotraž wjacore semantiske wotprašowanja nadobo zwobrazuje',
 );
 
+/** Hungarian (Magyar)
+ * @author Glanthor Reviol
+ */
+$messages['hu'] = array(
+	'semanticcompoundqueries-desc' => 'Egyszerre több szemantikus lekérdezést megjelenítő elemzőfüggvény',
+);
+
 /** Interlingua (Interlingua)
  * @author McDutchie
  */
