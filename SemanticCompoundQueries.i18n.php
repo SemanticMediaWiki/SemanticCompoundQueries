@@ -68,6 +68,13 @@ $messages['dsb'] = array(
 	'semanticcompoundqueries-desc' => 'Parserowa funkcija, kótaraž rownocasnje zwobraznjujo někotare semantiske wótpšašanja',
 );
 
+/** Greek (Ελληνικά)
+ * @author Omnipaedista
+ */
+$messages['el'] = array(
+	'semanticcompoundqueries-desc' => 'Μια λεξιαναλυτική συνάρτηση που προβάλλει πολλαπλά σημασιολογικά αιτήματα ταυτόχρονα',
+);
+
 /** Spanish (Español)
  * @author Crazymadlover
  */
