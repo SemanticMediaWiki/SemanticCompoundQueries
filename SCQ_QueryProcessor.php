@@ -12,11 +12,6 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
  */
 class SCQQueryProcessor {
 
-	public static function registerParserFunctions( &$parser ) {
-		$parser->setFunctionHook( 'compound_query', array( 'SCQQueryProcessor', 'doCompoundQuery' ) );
-		return true; // always return true, in order not to stop MW's hook processing!
-	}
-
 	/**
 	 * An alternative to explode() - that function won't work here,
 	 * because we don't want to split the string on all semicolons, just
@@ -60,9 +55,13 @@ class SCQQueryProcessor {
 				if ( strpos( $param, '[' ) !== false ) {
 					$sub_params = SCQQueryProcessor::getSubParams( $param );
 					$next_result = SCQQueryProcessor::getQueryResultFromFunctionParams( $sub_params, SMW_OUTPUT_WIKI );
-					if ( $query_result == null )
-						$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery() );
-					$query_result->addResult( $next_result );
+					if (method_exists($next_result, 'getResults')) { // SMW 1.5+
+						$results = array_merge($results, $next_result->getResults());
+					} else {
+						if ( $query_result == null )
+							$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery() );
+						$query_result->addResult( $next_result );
+					}
 				} else {
 					$parts = explode( '=', $param, 2 );
 					if ( count( $parts ) >= 2 ) {
@@ -70,6 +69,8 @@ class SCQQueryProcessor {
 					}
 				}
 			}
+			if ( is_null($query_result) ) // SMW 1.5+
+				$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
 			$result = SCQQueryProcessor::getResultFromQueryResult( $query_result, $other_params, null, SMW_OUTPUT_WIKI );
 		} else {
 			wfLoadExtensionMessages( 'SemanticMediaWiki' );
@@ -125,7 +126,7 @@ class SCQQueryProcessor {
 		wfProfileIn( 'SCQQueryProcessor::getQueryResultFromQueryString' );
 		$query  = SMWQueryProcessor::createQuery( $querystring, $params, $context, null, $extraprintouts );
 		$query_result = smwfGetStore()->getQueryResult( $query );
-		$query_result->display_options = array();
+		$display_options = array();
 		foreach ( $params as $key => $value ) {
 			// special handling for 'icon' field, since it requires
 			// conversion of a name to a URL
@@ -135,10 +136,17 @@ class SCQQueryProcessor {
 				// method was only added in MW 1.13
 				if ( method_exists( 'ImagePage', 'getDisplayedFile' ) ) {
 					$icon_url = $icon_image_page->getDisplayedFile()->getURL();
-					$query_result->display_options['icon'] = $icon_url;
+					$display_options['icon'] = $icon_url;
 				}
 			} else {
-				$query_result->display_options[$key] = $value;
+				$display_options[$key] = $value;
+			}
+			if ( method_exists($query_result, 'getResults') ) { // SMW 1.5+
+				foreach ($query_result->getResults() as $wiki_page) {
+					$wiki_page->display_options = $display_options;
+				}
+			} else {
+				$query_result->display_options = $display_options;
 			}
 		}
 
