@@ -48,6 +48,7 @@ class SCQQueryProcessor {
 			array_shift( $params ); // we already know the $parser ...
 			$other_params = array();
 			$query_result = null;
+			$results = array();
 			foreach ( $params as $param ) {
 				// very primitive heuristic - if the parameter
 				// includes a square bracket, then it's a
