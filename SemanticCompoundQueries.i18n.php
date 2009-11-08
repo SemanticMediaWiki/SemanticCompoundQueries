@@ -209,10 +209,11 @@ $messages['pms'] = array(
 );
 
 /** Portuguese (Português)
+ * @author Hamilton Abreu
  * @author Waldir
  */
 $messages['pt'] = array(
-	'semanticcompoundqueries-desc' => 'Uma função de processamento que exibe múltiplas consultas semânticas ao mesmo tempo',
+	'semanticcompoundqueries-desc' => 'Uma função de análise gramatical que mostra várias consultas semânticas em simultâneo',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
