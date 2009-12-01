@@ -145,6 +145,13 @@ $messages['id'] = array(
 	'semanticcompoundqueries-desc' => 'Fungsi parser untuk menampilkan beberapa kueri semantik secara bersamaan',
 );
 
+/** Italian (Italiano)
+ * @author Gianfranco
+ */
+$messages['it'] = array(
+	'semanticcompoundqueries-desc' => 'Una funzione di parsing che mostra più query semantiche contemporaneamente',
+);
+
 /** Japanese (日本語)
  * @author Fryed-peach
  */
