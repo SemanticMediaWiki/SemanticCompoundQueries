@@ -258,6 +258,13 @@ $messages['sr-ec'] = array(
 	'semanticcompoundqueries-desc' => 'Парсер-функција која приказује више семантичких захтева истовремено',
 );
 
+/** Serbian Latin ekavian (Srpski (latinica))
+ * @author Liangent
+ */
+$messages['sr-el'] = array(
+	'semanticcompoundqueries-desc' => 'Parser-funkcija koja prikazuje više semantičkih zahteva istovremeno',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */
