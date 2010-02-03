@@ -265,6 +265,13 @@ $messages['sr-el'] = array(
 	'semanticcompoundqueries-desc' => 'Parser-funkcija koja prikazuje više semantičkih zahteva istovremeno',
 );
 
+/** Swedish (Svenska)
+ * @author Boivie
+ */
+$messages['sv'] = array(
+	'semanticcompoundqueries-desc' => 'En parserfunktion som visar flera semantiska frågor på samma gång',
+);
+
 /** Turkish (Türkçe)
  * @author Vito Genovese
  */
