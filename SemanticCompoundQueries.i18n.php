@@ -82,6 +82,13 @@ $messages['es'] = array(
 	'semanticcompoundqueries-desc' => 'Una función analizadora que muestra múltiples consultas semánticas al mismo tiempo',
 );
 
+/** Finnish (Suomi)
+ * @author Centerlink
+ */
+$messages['fi'] = array(
+	'semanticcompoundqueries-desc' => 'Jäsennintoiminto, joka näyttää useita semanttisia kyselyjä samaan aikaan',
+);
+
 /** French (Français)
  * @author IAlex
  */
