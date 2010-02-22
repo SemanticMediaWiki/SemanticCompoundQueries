@@ -17,7 +17,6 @@ $wgExtensionCredits['parserhook'][] = array(
 	'version'	=> SCQ_VERSION,
 	'author'	=> 'Yaron Koren',
 	'url'	=> 'http://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries',
-	'description'	=>  'A parser function that displays multiple semantic queries at the same time',
 	'descriptionmsg' => 'semanticcompoundqueries-desc',
 );
 
