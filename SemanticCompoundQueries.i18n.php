@@ -84,9 +84,10 @@ $messages['es'] = array(
 
 /** Finnish (Suomi)
  * @author Centerlink
+ * @author Crt
  */
 $messages['fi'] = array(
-	'semanticcompoundqueries-desc' => 'Jäsennintoiminto, joka näyttää useita semanttisia kyselyjä samaan aikaan',
+	'semanticcompoundqueries-desc' => 'Jäsennintoiminto, joka näyttää useita semanttisia kyselyjä samaan aikaan.',
 );
 
 /** French (Français)
