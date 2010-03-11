@@ -9,7 +9,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'SCQ_VERSION', '0.2.3' );
+define( 'SCQ_VERSION', '0.2.4' );
 
 $wgExtensionCredits['parserhook'][] = array(
 	'path'  => __FILE__,
