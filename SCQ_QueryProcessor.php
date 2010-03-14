@@ -24,7 +24,7 @@ class SCQQueryProcessor {
 		for ( $i = 0; $i < strlen( $param ); $i++ ) {
 			$c = $param[$i];
 			if ( ( $c == ';' ) && ( $uncompleted_square_brackets <= 0 ) ) {
-				$sub_params[] = trim($sub_param);
+				$sub_params[] = trim( $sub_param );
 				$sub_param = "";
 			} else {
 				$sub_param .= $c;
@@ -34,7 +34,7 @@ class SCQQueryProcessor {
 					$uncompleted_square_brackets--;
 			}
 		}
-		$sub_params[] = trim($sub_param);
+		$sub_params[] = trim( $sub_param );
 		return $sub_params;
 	}
 
@@ -56,8 +56,8 @@ class SCQQueryProcessor {
 				if ( strpos( $param, '[' ) !== false ) {
 					$sub_params = SCQQueryProcessor::getSubParams( $param );
 					$next_result = SCQQueryProcessor::getQueryResultFromFunctionParams( $sub_params, SMW_OUTPUT_WIKI );
-					if (method_exists($next_result, 'getResults')) { // SMW 1.5+
-						$results = self::mergeSMWQueryResults($results, $next_result->getResults());
+					if ( method_exists( $next_result, 'getResults' ) ) { // SMW 1.5+
+						$results = self::mergeSMWQueryResults( $results, $next_result->getResults() );
 					} else {
 						if ( $query_result == null )
 							$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery() );
@@ -70,7 +70,7 @@ class SCQQueryProcessor {
 					}
 				}
 			}
-			if ( is_null($query_result) ) // SMW 1.5+
+			if ( is_null( $query_result ) ) // SMW 1.5+
 				$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
 			$result = SCQQueryProcessor::getResultFromQueryResult( $query_result, $other_params, null, SMW_OUTPUT_WIKI );
 		} else {
@@ -93,12 +93,12 @@ class SCQQueryProcessor {
 			return $result2;
 		}
 		$existing_page_names = array();
-		foreach ($result1 as $r1) {
+		foreach ( $result1 as $r1 ) {
 			$existing_page_names[] = $r1->getWikiValue();
 		}
-		foreach ($result2 as $r2) {
+		foreach ( $result2 as $r2 ) {
 			$page_name = $r2->getWikiValue();
-			if (! in_array($page_name, $existing_page_names)) {
+			if ( ! in_array( $page_name, $existing_page_names ) ) {
 				$result1[] = $r2;
 			}
 		}
@@ -138,8 +138,8 @@ class SCQQueryProcessor {
 			} else {
 				$display_options[$key] = $value;
 			}
-			if ( method_exists($query_result, 'getResults') ) { // SMW 1.5+
-				foreach ($query_result->getResults() as $wiki_page) {
+			if ( method_exists( $query_result, 'getResults' ) ) { // SMW 1.5+
+				foreach ( $query_result->getResults() as $wiki_page ) {
 					$wiki_page->display_options = $display_options;
 				}
 			} else {
