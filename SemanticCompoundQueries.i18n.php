@@ -167,7 +167,7 @@ $messages['ja'] = array(
 	'semanticcompoundqueries-desc' => '複数の意味的クエリーを一度に表示するパーサー関数',
 );
 
-/** Ripoarisch (Ripoarisch)
+/** Colognian (Ripoarisch)
  * @author Purodha
  */
 $messages['ksh'] = array(
