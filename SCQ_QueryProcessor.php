@@ -4,13 +4,12 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 
 /**
  * Class that holds static functions for handling compound queries.
- * This class is heavily based on Semantic MediaWiki's SMWQueryProcessor,
- * and calls that class's functions when possible.
+ * This class inherits from Semantic MediaWiki's SMWQueryProcessor.
  *
  * @ingroup SemanticCompoundQueries
  * @author Yaron Koren
  */
-class SCQQueryProcessor {
+class SCQQueryProcessor extends SMWQueryProcessor {
 
 	/**
 	 * An alternative to explode() - that function won't work here,
@@ -54,8 +53,8 @@ class SCQQueryProcessor {
 				// includes a square bracket, then it's a
 				// sub-query; otherwise it's a regular parameter
 				if ( strpos( $param, '[' ) !== false ) {
-					$sub_params = SCQQueryProcessor::getSubParams( $param );
-					$next_result = SCQQueryProcessor::getQueryResultFromFunctionParams( $sub_params, SMW_OUTPUT_WIKI );
+					$sub_params = self::getSubParams( $param );
+					$next_result = self::getQueryResultFromFunctionParams( $sub_params, SMW_OUTPUT_WIKI );
 					if ( method_exists( $next_result, 'getResults' ) ) { // SMW 1.5+
 						$results = self::mergeSMWQueryResults( $results, $next_result->getResults() );
 					} else {
@@ -81,8 +80,8 @@ class SCQQueryProcessor {
 	}
 
 	static function getQueryResultFromFunctionParams( $rawparams, $outputmode, $context = SMWQueryProcessor::INLINE_QUERY, $showmode = false ) {
-		SMWQueryProcessor::processFunctionParams( $rawparams, $querystring, $params, $printouts, $showmode );
-		return SCQQueryProcessor::getQueryResultFromQueryString( $querystring, $params, $printouts, SMW_OUTPUT_WIKI, $context );
+		self::processFunctionParams( $rawparams, $querystring, $params, $printouts, $showmode );
+		return self::getQueryResultFromQueryString( $querystring, $params, $printouts, SMW_OUTPUT_WIKI, $context );
 	}
 
 	/**
@@ -105,31 +104,9 @@ class SCQQueryProcessor {
 		return $result1;
 	}
 
-	// this method is an exact copy of SMWQueryProcessor's function,
-	// but it needs to be duplicated because there it's protected
-	static function getResultFormat( $params ) {
-		$format = 'auto';
-		if ( array_key_exists( 'format', $params ) ) {
-			$format = strtolower( trim( $params['format'] ) );
-			global $smwgResultAliases, $smwgResultFormats;
-			if ( !array_key_exists( $format, $smwgResultFormats ) ) {
-				$is_alias = false;
-				foreach ( $smwgResultAliases as $main_format => $aliases ) {
-					if ( in_array( $format, $aliases ) ) {
-						$format = $main_format;
-						$is_alias = true;
-						break;
-					}
-				}
-				if ( !$is_alias ) $format = 'auto';  // If it is an unknown format, defaults to list/table again
-			}
-		}
-		return $format;
-	}
-
 	static function getQueryResultFromQueryString( $querystring, $params, $extraprintouts, $outputmode, $context = SMWQueryProcessor::INLINE_QUERY ) {
 		wfProfileIn( 'SCQQueryProcessor::getQueryResultFromQueryString' );
-		$query  = SMWQueryProcessor::createQuery( $querystring, $params, $context, null, $extraprintouts );
+		$query  = self::createQuery( $querystring, $params, $context, null, $extraprintouts );
 		$query_result = smwfGetStore()->getQueryResult( $query );
 		$display_options = array();
 		foreach ( $params as $key => $value ) {
@@ -165,8 +142,8 @@ class SCQQueryProcessor {
 	 */
 	static function getResultFromQueryResult( $res, $params, $extraprintouts, $outputmode, $context = SMWQueryProcessor::INLINE_QUERY, $format = '' ) {
 		wfProfileIn( 'SCQQueryProcessor::getResultFromQueryResult' );
-		$format = SCQQueryProcessor::getResultFormat( $params );
-		$printer = SMWQueryProcessor::getResultPrinter( $format, $context, $res );
+		$format = self::getResultFormat( $params );
+		$printer = self::getResultPrinter( $format, $context, $res );
 		$result = $printer->getResult( $res, $params, $outputmode );
 		wfProfileOut( 'SCQQueryProcessor::getResultFromQueryResult' );
 		return $result;
