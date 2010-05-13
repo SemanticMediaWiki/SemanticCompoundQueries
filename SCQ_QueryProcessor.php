@@ -111,9 +111,17 @@ class SCQQueryProcessor {
 		$format = 'auto';
 		if ( array_key_exists( 'format', $params ) ) {
 			$format = strtolower( trim( $params['format'] ) );
-			global $smwgResultFormats;
+			global $smwgResultAliases, $smwgResultFormats;
 			if ( !array_key_exists( $format, $smwgResultFormats ) ) {
-				$format = 'auto'; // If it is an unknown format, defaults to list/table again
+				$is_alias = false;
+				foreach ( $smwgResultAliases as $main_format => $aliases ) {
+					if ( in_array( $format, $aliases ) ) {
+						$format = $main_format;
+						$is_alias = true;
+						break;
+					}
+				}
+				if ( !$is_alias ) $format = 'auto';  // If it is an unknown format, defaults to list/table again
 			}
 		}
 		return $format;
