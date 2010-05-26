@@ -73,7 +73,6 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 				$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
 			$result = SCQQueryProcessor::getResultFromQueryResult( $query_result, $other_params, null, SMW_OUTPUT_WIKI );
 		} else {
-			wfLoadExtensionMessages( 'SemanticMediaWiki' );
 			$result = smwfEncodeMessages( array( wfMsgForContent( 'smw_iq_disabled' ) ) );
 		}
 		return $result;
