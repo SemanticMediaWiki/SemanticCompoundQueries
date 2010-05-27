@@ -280,6 +280,13 @@ $messages['sv'] = array(
 	'semanticcompoundqueries-desc' => 'En parserfunktion som visar flera semantiska frågor på samma gång',
 );
 
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'semanticcompoundqueries-desc' => 'Isang tungkulin ng parser na kasabayang nagpapakita ng maramihang mga katanungang semantiko',
+);
+
 /** Turkish (Türkçe)
  * @author Vito Genovese
  */
