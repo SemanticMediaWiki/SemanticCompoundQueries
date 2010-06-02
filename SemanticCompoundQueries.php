@@ -27,9 +27,8 @@ $wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';
 // FIXME: Can be removed when new style magic words are used (introduced in r52503)
 $wgHooks['LanguageGetMagic'][] = 'scqgLanguageGetMagic';
 
-$scqIP = $IP . '/extensions/SemanticCompoundQueries';
-$wgAutoloadClasses['SCQQueryProcessor'] = $scqIP . '/SCQ_QueryProcessor.php';
-$wgAutoloadClasses['SCQQueryResult'] = $scqIP . '/SCQ_QueryResult.php';
+$wgAutoloadClasses['SCQQueryProcessor'] = dirname( __FILE__ ) . '/SCQ_QueryProcessor.php';
+$wgAutoloadClasses['SCQQueryResult'] = dirname( __FILE__ ) . '/SCQ_QueryResult.php';
 
 function scqgRegisterParser( &$parser ) {
 	$parser->setFunctionHook( 'compound_query', array( 'SCQQueryProcessor', 'doCompoundQuery' ) );
@@ -37,7 +36,7 @@ function scqgRegisterParser( &$parser ) {
 }
 
 // FIXME: Can be removed when new style magic words are used (introduced in r52503)
-function scqgLanguageGetMagic( &$magicWords, $langCode = "en" ) {
+function scqgLanguageGetMagic( &$magicWords, $langCode = 'en' ) {
 	switch ( $langCode ) {
 	default:
 		$magicWords['compound_query'] = array ( 0, 'compound_query' );
