@@ -2,7 +2,8 @@
 /**
  * Internationalisation file for SemanticCompoundQueries extension.
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  */
 
 // FIXME: Can be enabled when new style magic words are used (introduced in r52503)
