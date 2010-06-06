@@ -144,7 +144,7 @@ $messages['hu'] = array(
  * @author McDutchie
  */
 $messages['ia'] = array(
-	'semanticcompoundqueries-desc' => 'Un function syntactic que presenta plure consultas semantic al mesme tempore',
+	'semanticcompoundqueries-desc' => 'Un function analysator que presenta plure consultas semantic al mesme tempore',
 );
 
 /** Indonesian (Bahasa Indonesia)
