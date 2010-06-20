@@ -55,6 +55,13 @@ $messages['bs'] = array(
 	'semanticcompoundqueries-desc' => 'Parserska funkcija koja prikazuje više semantičkih upita u isto vrijeme',
 );
 
+/** Catalan (Català)
+ * @author Toniher
+ */
+$messages['ca'] = array(
+	'semanticcompoundqueries-desc' => "Una funció d'anàlisi que mostra múltiples consultes semàntiques alhora.",
+);
+
 /** German (Deutsch)
  * @author Purodha
  */
