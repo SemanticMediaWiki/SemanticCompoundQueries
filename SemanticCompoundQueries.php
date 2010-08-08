@@ -11,7 +11,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 
 define( 'SCQ_VERSION', '0.2.5' );
 
-$wgExtensionCredits['parserhook'][] = array(
+$wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserhook'][] = array(
 	'path'  => __FILE__,
 	'name'	=> 'Semantic Compound Queries',
 	'version'	=> SCQ_VERSION,
@@ -21,7 +21,6 @@ $wgExtensionCredits['parserhook'][] = array(
 );
 
 $wgExtensionMessagesFiles['SemanticCompoundQueries'] = dirname( __FILE__ ) . '/SemanticCompoundQueries.i18n.php';
-
 
 $wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';
 // FIXME: Can be removed when new style magic words are used (introduced in r52503)
