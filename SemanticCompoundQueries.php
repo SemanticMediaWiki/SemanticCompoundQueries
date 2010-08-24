@@ -1,10 +1,17 @@
 <?php
 /**
- * Initialization file for SemanticCompoundQueries
+ * Initialization file for the SemanticCompoundQueries extension.
  *
- * @file
+ * @file SemanticCompoundQueries.php
  * @ingroup SemanticCompoundQueries
+ * 
  * @author Yaron Koren
+ */
+
+/**
+ * This documenation group collects source code files belonging to SemanticCompoundQueries.
+ *
+ * @defgroup SemanticCompoundQueries SemanticCompoundQueries
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
@@ -15,7 +22,7 @@ $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserh
 	'path'  => __FILE__,
 	'name'	=> 'Semantic Compound Queries',
 	'version'	=> SCQ_VERSION,
-	'author'	=> 'Yaron Koren',
+	'author'	=> array( 'Yaron Koren' ),
 	'url'	=> 'http://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries',
 	'descriptionmsg' => 'semanticcompoundqueries-desc',
 );
@@ -29,7 +36,7 @@ $wgHooks['LanguageGetMagic'][] = 'scqgLanguageGetMagic';
 $wgAutoloadClasses['SCQQueryProcessor'] = dirname( __FILE__ ) . '/SCQ_QueryProcessor.php';
 $wgAutoloadClasses['SCQQueryResult'] = dirname( __FILE__ ) . '/SCQ_QueryResult.php';
 
-function scqgRegisterParser( &$parser ) {
+function scqgRegisterParser( Parser &$parser ) {
 	$parser->setFunctionHook( 'compound_query', array( 'SCQQueryProcessor', 'doCompoundQuery' ) );
 	return true; // always return true, in order not to stop MW's hook processing!
 }
