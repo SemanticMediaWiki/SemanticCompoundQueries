@@ -62,6 +62,13 @@ $messages['ca'] = array(
 	'semanticcompoundqueries-desc' => "Una funció d'anàlisi que mostra múltiples consultes semàntiques alhora.",
 );
 
+/** Czech (Česky)
+ * @author Juan de Vojníkov
+ */
+$messages['cs'] = array(
+	'semanticcompoundqueries-desc' => 'Parser, který zobrazuje více sémantických dotazů najednou',
+);
+
 /** Danish (Dansk)
  * @author Froztbyte
  */
