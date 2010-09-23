@@ -1,12 +1,12 @@
 <?php
 /**
- * Internationalisation file for SemanticCompoundQueries extension.
+ * Internationalization file for SemanticCompoundQueries extension.
  *
  * @file
  * @ingroup Extensions
  */
 
-// FIXME: Can be enabled when new style magic words are used (introduced in r52503)
+// FIXME: Can be enabled when new-style magic words are used (introduced in r52503)
 // require_once( dirname( __FILE__ ) . '/SemanticCompoundQueries.i18n.magic.php' );
 
 $messages = array();

@@ -60,7 +60,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 			if ( is_null( $query_result ) ) {
 				$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
 			}
-				
+			
 			$result = self::getResultFromQueryResult( $query_result, $other_params, SMW_OUTPUT_WIKI );
 		} else {
 			wfLoadExtensionMessages( 'SemanticMediaWiki' );
