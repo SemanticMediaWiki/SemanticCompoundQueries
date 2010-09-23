@@ -9,14 +9,15 @@
  */
 
 /**
- * This documenation group collects source code files belonging to SemanticCompoundQueries.
+ * This documentation group collects source-code files belonging to
+ * Semantic Compound Queries.
  *
  * @defgroup SemanticCompoundQueries SemanticCompoundQueries
  */
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'SCQ_VERSION', '0.2.5' );
+define( 'SCQ_VERSION', '0.2.6' );
 
 $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserhook'][] = array(
 	'path'  => __FILE__,
@@ -30,7 +31,7 @@ $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserh
 $wgExtensionMessagesFiles['SemanticCompoundQueries'] = dirname( __FILE__ ) . '/SemanticCompoundQueries.i18n.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';
-// FIXME: Can be removed when new style magic words are used (introduced in r52503)
+// FIXME: Can be removed when new-style magic words are used (introduced in r52503)
 $wgHooks['LanguageGetMagic'][] = 'scqgLanguageGetMagic';
 
 $wgAutoloadClasses['SCQQueryProcessor'] = dirname( __FILE__ ) . '/SCQ_QueryProcessor.php';
@@ -41,7 +42,7 @@ function scqgRegisterParser( Parser &$parser ) {
 	return true; // always return true, in order not to stop MW's hook processing!
 }
 
-// FIXME: Can be removed when new style magic words are used (introduced in r52503)
+// FIXME: Can be removed when new-style magic words are used (introduced in r52503)
 function scqgLanguageGetMagic( &$magicWords, $langCode = 'en' ) {
 	switch ( $langCode ) {
 	default:
