@@ -316,6 +316,13 @@ $messages['tr'] = array(
 	'semanticcompoundqueries-desc' => 'Birden fazla anlamsal sorguyu aynı anda görüntüleyen bir ayrıştırıcı fonksiyon',
 );
 
+/** Ukrainian (Українська)
+ * @author Тест
+ */
+$messages['uk'] = array(
+	'semanticcompoundqueries-desc' => 'Функція парсера, що показує кілька семантичних запитів одночасно',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  */
