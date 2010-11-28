@@ -77,10 +77,11 @@ $messages['da'] = array(
 );
 
 /** German (Deutsch)
+ * @author Kghbln
  * @author Purodha
  */
 $messages['de'] = array(
-	'semanticcompoundqueries-desc' => 'Eine Parserfunktion, die mehrere semantische Abfragen zugleich anzuzeigen erlaubt',
+	'semanticcompoundqueries-desc' => 'Erweitert den Parser um eine Funktion, die mehrere semantische Abfragen zugleich anzuzeigen erlaubt',
 );
 
 /** Lower Sorbian (Dolnoserbski)
