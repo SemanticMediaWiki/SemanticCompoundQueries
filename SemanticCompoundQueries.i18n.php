@@ -331,3 +331,10 @@ $messages['vi'] = array(
 	'semanticcompoundqueries-desc' => 'Hàm cú pháp hiển thị nhiều truy vấn ngữ nghĩa cùng lúc',
 );
 
+/** Simplified Chinese (‪中文(简体)‬)
+ * @author Hydra
+ */
+$messages['zh-hans'] = array(
+	'semanticcompoundqueries-desc' => '解析器的函数，同时显示多个语义查询',
+);
+
