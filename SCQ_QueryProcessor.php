@@ -170,13 +170,15 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		foreach ( $params as $key => $value ) {
 			// Special handling for 'icon' field, since it requires conversion of a name to a URL.
 			if ( $key == 'icon' ) {
-				$icon_title = Title::newFromText( $value );
-				$icon_image_page = new ImagePage( $icon_title );
+				$title = Title::newFromText( $value, NS_FILE );
 				
-				// Method was only added in MW 1.13
-				if ( method_exists( 'ImagePage', 'getDisplayedFile' ) ) {
-					$icon_url = $icon_image_page->getDisplayedFile()->getURL();
-					$display_options['icon'] = $icon_url;
+				if ( !is_null( $title ) && $title->getNamespace() == NS_FILE && $title->exists() ) {
+					$icon_image_page = new ImagePage( $title );
+				
+					// Method was only added in MW 1.13
+					if ( method_exists( 'ImagePage', 'getDisplayedFile' ) ) {
+						$display_options['icon'] = $icon_image_page->getDisplayedFile()->getURL();
+					}
 				}
 			} else {
 				$display_options[$key] = $value;
