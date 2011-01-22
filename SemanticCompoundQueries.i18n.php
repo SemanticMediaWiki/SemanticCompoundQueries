@@ -33,7 +33,7 @@ $messages['ar'] = array(
 	'semanticcompoundqueries-desc' => 'دالة محلل تعرض استعلامات دلالية متعددة في نفس الوقت',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  */
@@ -282,14 +282,14 @@ $messages['sk'] = array(
 	'semanticcompoundqueries-desc' => 'Funkcia syntaktického analyzátora, ktorá zobrazuje viaceré sémantické požiadavky naraz',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
 	'semanticcompoundqueries-desc' => 'Парсер-функција која приказује више семантичких захтева истовремено',
 );
 
-/** Serbian Latin ekavian (Srpski (latinica))
+/** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Liangent
  */
 $messages['sr-el'] = array(
