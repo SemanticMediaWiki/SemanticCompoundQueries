@@ -1,4 +1,7 @@
 <?php
+/**
+ *
+ */
 
 $magicWords = array();
 
@@ -9,7 +12,7 @@ $magicWords['en'] = array(
 
 /** Arabic (العربية) */
 $magicWords['ar'] = array(
-	'compound_query' => array( 0, 'استعلام_مركب', 'compound_query' ),
+	'compound_query' => array( 0, 'استعلام_مركب' ),
 );
 
 /** Egyptian Spoken Arabic (مصرى) */
@@ -20,6 +23,11 @@ $magicWords['arz'] = array(
 /** Japanese (日本語) */
 $magicWords['ja'] = array(
 	'compound_query' => array( 0, '複合クエリー' ),
+);
+
+/** Macedonian (Македонски) */
+$magicWords['mk'] = array(
+	'compound_query' => array( 0, 'мешовито_барање' ),
 );
 
 /** Nedersaksisch (Nedersaksisch) */
