@@ -137,11 +137,20 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		$existing_page_names = array();
 		
 		foreach ( $result1 as $r1 ) {
-			$existing_page_names[] = $r1->getWikiValue();
+			// SMW 1.6+
+			if ( $r1 instanceof SMWDIWikiPage ) {
+				$existing_page_names[] = $r1->getDBkey();
+			} else {
+				$existing_page_names[] = $r1->getWikiValue();
+			}
 		}
 		
 		foreach ( $result2 as $r2 ) {
-			$page_name = $r2->getWikiValue();
+			if ( $r1 instanceof SMWDIWikiPage ) {
+				$page_name = $r2->getDBkey();
+			} else {
+				$page_name = $r2->getWikiValue();
+			}
 			
 			if ( ! in_array( $page_name, $existing_page_names ) ) {
 				$result1[] = $r2;
