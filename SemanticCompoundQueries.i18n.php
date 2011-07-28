@@ -211,6 +211,13 @@ $messages['mk'] = array(
 	'semanticcompoundqueries-desc' => 'Парсерска функција која прикажува повеќе семантички барања истовремено',
 );
 
+/** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
+ */
+$messages['ms'] = array(
+	'semanticcompoundqueries-desc' => 'Fungsi penghurai yang memaparkan berbilang pertanyaan semantik pada masa yang sama',
+);
+
 /** Dutch (Nederlands)
  * @author Siebrand
  */
