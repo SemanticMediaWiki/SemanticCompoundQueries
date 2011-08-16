@@ -185,7 +185,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 					$icon_image_page = new ImagePage( $title );
 				
 					// Method was only added in MW 1.13
-					$realFunction = array( 'ImagePage', 'getDisplayedFile' );
+					$realFunction = array( $icon_image_page, 'getDisplayedFile' );
 					if ( is_callable( $realFunction ) ) {
 						$display_options['icon'] = $icon_image_page->getDisplayedFile()->getURL();
 					}
