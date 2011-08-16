@@ -183,12 +183,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 				
 				if ( !is_null( $title ) && $title->getNamespace() == NS_FILE && $title->exists() ) {
 					$icon_image_page = new ImagePage( $title );
-				
-					// Method was only added in MW 1.13
-					$realFunction = array( $icon_image_page, 'getDisplayedFile' );
-					if ( is_callable( $realFunction ) ) {
-						$display_options['icon'] = $icon_image_page->getDisplayedFile()->getURL();
-					}
+					$display_options['icon'] = $icon_image_page->getDisplayedFile()->getURL();
 				}
 			} else {
 				$display_options[$key] = $value;
