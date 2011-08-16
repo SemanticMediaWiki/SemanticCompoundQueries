@@ -20,40 +20,38 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	public static function doCompoundQuery( Parser &$parser ) {
 		global $smwgQEnabled, $smwgIQRunningNumber;
 		
-		if ( $smwgQEnabled ) {
-			$smwgIQRunningNumber++;
-			
-			$params = func_get_args();
-			array_shift( $params ); // We already know the $parser.
-			
-			$other_params = array();
-			$results = array();
-			
-			foreach ( $params as $param ) {
-				// very primitive heuristic - if the parameter
-				// includes a square bracket, then it's a
-				// sub-query; otherwise it's a regular parameter
-				if ( strpos( $param, '[' ) !== false ) {
-					$sub_params = self::getSubParams( $param );
-					$next_result = self::getQueryResultFromFunctionParams( $sub_params, SMW_OUTPUT_WIKI );
-					
-					$results = self::mergeSMWQueryResults( $results, $next_result->getResults() );
-				} else {
-					$parts = explode( '=', $param, 2 );
-					
-					if ( count( $parts ) >= 2 ) {
-						$other_params[strtolower( trim( $parts[0] ) )] = $parts[1]; // don't trim here, some params care for " "
-					}
+		if ( !$smwgQEnabled ) {
+			return smwfEncodeMessages( array( wfMsgForContent( 'smw_iq_disabled' ) ) );
+		}
+
+		$smwgIQRunningNumber++;
+
+		$params = func_get_args();
+		array_shift( $params ); // We already know the $parser.
+
+		$other_params = array();
+		$results = array();
+
+		foreach ( $params as $param ) {
+			// Very primitive heuristic - if the parameter
+			// includes a square bracket, then it's a
+			// sub-query; otherwise it's a regular parameter.
+			if ( strpos( $param, '[' ) !== false ) {
+				$sub_params = self::getSubParams( $param );
+				$next_result = self::getQueryResultFromFunctionParams( $sub_params, SMW_OUTPUT_WIKI );
+
+				$results = self::mergeSMWQueryResults( $results, $next_result->getResults() );
+			} else {
+				$parts = explode( '=', $param, 2 );
+
+				if ( count( $parts ) >= 2 ) {
+					$other_params[strtolower( trim( $parts[0] ) )] = $parts[1]; // don't trim here, some params care for " "
 				}
 			}
-			
-			$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
-			$result = self::getResultFromQueryResult( $query_result, $other_params, SMW_OUTPUT_WIKI );
-		} else {
-			$result = smwfEncodeMessages( array( wfMsgForContent( 'smw_iq_disabled' ) ) );
 		}
-		
-		return $result;
+
+		$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
+		return self::getResultFromQueryResult( $query_result, $other_params, SMW_OUTPUT_WIKI );
 	}	
 	
 	/**
