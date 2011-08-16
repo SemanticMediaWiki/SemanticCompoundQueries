@@ -27,7 +27,6 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 			array_shift( $params ); // We already know the $parser.
 			
 			$other_params = array();
-			$query_result = null;
 			$results = array();
 			
 			foreach ( $params as $param ) {
@@ -38,15 +37,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 					$sub_params = self::getSubParams( $param );
 					$next_result = self::getQueryResultFromFunctionParams( $sub_params, SMW_OUTPUT_WIKI );
 					
-					if ( method_exists( $next_result, 'getResults' ) ) { // SMW 1.5+
-						$results = self::mergeSMWQueryResults( $results, $next_result->getResults() );
-					} else {
-						if ( $query_result == null ) {
-							$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery() );
-						}
-						
-						$query_result->addResult( $next_result );
-					}
+					$results = self::mergeSMWQueryResults( $results, $next_result->getResults() );
 				} else {
 					$parts = explode( '=', $param, 2 );
 					
@@ -56,14 +47,9 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 				}
 			}
 			
-			// SMW 1.5+
-			if ( is_null( $query_result ) ) {
-				$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
-			}
-			
+			$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
 			$result = self::getResultFromQueryResult( $query_result, $other_params, SMW_OUTPUT_WIKI );
 		} else {
-			wfLoadExtensionMessages( 'SemanticMediaWiki' );
 			$result = smwfEncodeMessages( array( wfMsgForContent( 'smw_iq_disabled' ) ) );
 		}
 		
@@ -189,12 +175,8 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 				$display_options[$key] = $value;
 			}
 			
-			if ( method_exists( $query_result, 'getResults' ) ) { // SMW 1.5+
-				foreach ( $query_result->getResults() as $wiki_page ) {
-					$wiki_page->display_options = $display_options;
-				}
-			} else {
-				$query_result->display_options = $display_options;
+			foreach ( $query_result->getResults() as $wiki_page ) {
+				$wiki_page->display_options = $display_options;
 			}
 		}
 
