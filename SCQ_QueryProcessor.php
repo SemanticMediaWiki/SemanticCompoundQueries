@@ -158,28 +158,11 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		
 		$query  = self::createQuery( $querystring, $params, $context, null, $extraprintouts );
 		$query_result = smwfGetStore()->getQueryResult( $query );
-		$display_options = array();
-		
-		foreach ( $params as $key => $value ) {
-			// Special handling for 'icon' field, since it requires conversion of a name to a URL.
-			if ( $key == 'icon' ) {
-				$title = Title::newFromText( $value, NS_FILE );
-				
-				if ( !is_null( $title ) && $title->getNamespace() == NS_FILE && $title->exists() ) {
-					$icon_image_page = new ImagePage( $title );
-					$display_options['icon'] = $icon_image_page->getDisplayedFile()->getURL();
-				}
-			} else {
-				$display_options[$key] = $value;
-			}
-			
-			foreach ( $query_result->getResults() as $wiki_page ) {
-				$wiki_page->display_options = $display_options;
-			}
+		foreach ( $query_result->getResults() as $wiki_page ) {
+			$wiki_page->display_options = $params;
 		}
 
 		wfProfileOut( 'SCQQueryProcessor::getQueryResultFromQueryString' );
-		
 		return $query_result;
 	}
 	
