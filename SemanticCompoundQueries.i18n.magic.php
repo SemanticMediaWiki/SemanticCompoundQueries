@@ -20,6 +20,11 @@ $magicWords['arz'] = array(
 	'compound_query' => array( 0, 'استعلام_مركب', 'compound_query' ),
 );
 
+/** German (Deutsch) */
+$magicWords['de'] = array(
+	'compound_query' => array( 0, 'frage_zusammen' ),
+);
+
 /** Japanese (日本語) */
 $magicWords['ja'] = array(
 	'compound_query' => array( 0, '複合クエリー' ),
@@ -32,7 +37,7 @@ $magicWords['mk'] = array(
 
 /** Nedersaksisch (Nedersaksisch) */
 $magicWords['nds-nl'] = array(
-	'compound_query' => array( 0, 'samen-estelde_zeukopdrach', 'samengestelde_zoekopdracht', 'compound_query' ),
+	'compound_query' => array( 0, 'samenestelden_zeukopdrachte', 'samengestelde_zoekopdracht' ),
 );
 
 /** Dutch (Nederlands) */
