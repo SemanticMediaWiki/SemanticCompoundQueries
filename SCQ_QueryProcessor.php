@@ -51,7 +51,16 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		}
 
 		$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
-		return self::getResultFromQueryResult( $query_result, $other_params, SMW_OUTPUT_WIKI );
+		
+		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
+			$other_params = parent::getProcessedParams( $other_params );
+		}
+		
+		return self::getResultFromQueryResult(
+			$query_result,
+			$other_params,
+			SMW_OUTPUT_WIKI
+		);
 	}	
 	
 	/**
@@ -171,7 +180,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	 * except that formats of type 'debug' and 'count' aren't handled.
 	 * 
 	 * @param SCQQueryResult $res
-	 * @param array $params
+	 * @param array $params These need to be the result of a list fed to getProcessedParams as of SMW 1.6.2
 	 * @param $outputmode
 	 * @param $context
 	 * @param string $format
