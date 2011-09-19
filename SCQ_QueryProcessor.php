@@ -31,16 +31,14 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 
 		$other_params = array();
 		$results = array();
+		$queryParams = array();
 
 		foreach ( $params as $param ) {
 			// Very primitive heuristic - if the parameter
 			// includes a square bracket, then it's a
 			// sub-query; otherwise it's a regular parameter.
 			if ( strpos( $param, '[' ) !== false ) {
-				$sub_params = self::getSubParams( $param );
-				$next_result = self::getQueryResultFromFunctionParams( $sub_params, SMW_OUTPUT_WIKI );
-
-				$results = self::mergeSMWQueryResults( $results, $next_result->getResults() );
+				$queryParams[] = $param;
 			} else {
 				$parts = explode( '=', $param, 2 );
 
@@ -48,6 +46,21 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 					$other_params[strtolower( trim( $parts[0] ) )] = $parts[1]; // don't trim here, some params care for " "
 				}
 			}
+		}
+		
+		foreach ( $queryParams as $param ) {
+			$subQueryParams = self::getSubParams( $param );
+			
+			if ( array_key_exists( 'format', $other_params ) && !array_key_exists( 'format', $subQueryParams ) ) {
+				$subQueryParams['format'] = $other_params['format'];
+			}
+			
+			$next_result = self::getQueryResultFromFunctionParams(
+				$subQueryParams,
+				SMW_OUTPUT_WIKI
+			);
+
+			$results = self::mergeSMWQueryResults( $results, $next_result->getResults() );
 		}
 
 		$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
@@ -166,7 +179,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		wfProfileIn( 'SCQQueryProcessor::getQueryResultFromQueryString' );
 		
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			$params = self::getProcessedParams( $params, $extraprintouts );
+			$params = self::getProcessedParams( $params, $extraprintouts, false );
 		}
 		
 		$query  = self::createQuery( $querystring, $params, $context, null, $extraprintouts );
