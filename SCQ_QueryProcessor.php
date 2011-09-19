@@ -53,7 +53,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
 		
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			$other_params = parent::getProcessedParams( $other_params );
+			$other_params = parent::getProcessedParams( $other_params, $next_result->getPrintRequests() );
 		}
 		
 		return self::getResultFromQueryResult(
@@ -165,13 +165,19 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraprintouts, $outputmode, $context = SMWQueryProcessor::INLINE_QUERY ) {
 		wfProfileIn( 'SCQQueryProcessor::getQueryResultFromQueryString' );
 		
+		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
+			$params = self::getProcessedParams( $params, $extraprintouts );
+		}
+		
 		$query  = self::createQuery( $querystring, $params, $context, null, $extraprintouts );
 		$query_result = smwfGetStore()->getQueryResult( $query );
+		
 		foreach ( $query_result->getResults() as $wiki_page ) {
 			$wiki_page->display_options = $params;
 		}
 
 		wfProfileOut( 'SCQQueryProcessor::getQueryResultFromQueryString' );
+		
 		return $query_result;
 	}
 	
@@ -190,7 +196,13 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	protected static function getResultFromQueryResult( SCQQueryResult $res, array $params, $outputmode, $context = SMWQueryProcessor::INLINE_QUERY, $format = '' ) {
 		wfProfileIn( 'SCQQueryProcessor::getResultFromQueryResult' );
 
-		$format = self::getResultFormat( $params );
+		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
+			$format = $params['format'];
+		}
+		else {
+			$format = self::getResultFormat( $params );
+		}
+		
 		$printer = self::getResultPrinter( $format, $context, $res );
 		$result = $printer->getResult( $res, $params, $outputmode );
 		
