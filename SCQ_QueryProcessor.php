@@ -11,6 +11,16 @@
 class SCQQueryProcessor extends SMWQueryProcessor {
 
 	/**
+	 * Comparison helper function, used in sorting results.
+	 */
+	public static function compareQueryResults( $a, $b ) {
+		if ( $a->getDBKey() == $b->getDBKey() ) {
+			return 0;
+		}
+		return ( $a->getDBKey() < $b->getDBKey() ) ? -1 : 1;
+	}
+
+	/**
 	 * Handler for the #compound_query parser function.
 	 * 
 	 * @param Parser $parser
@@ -63,12 +73,15 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 			$results = self::mergeSMWQueryResults( $results, $next_result->getResults() );
 		}
 
+		// Sort results so that they'll show up by page name
+		uasort( $results, 'self::compareQueryResults' );
+
 		$query_result = new SCQQueryResult( $next_result->getPrintRequests(), new SMWQuery(), $results, smwfGetStore() );
 		
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			$printeouts = $next_result->getPrintRequests();
-			SMWQueryProcessor::addThisPrintout( $printeouts, $other_params );
-			$other_params = parent::getProcessedParams( $other_params, $printeouts );
+			$printouts = $next_result->getPrintRequests();
+			SMWQueryProcessor::addThisPrintout( $printouts, $other_params );
+			$other_params = parent::getProcessedParams( $other_params, $printouts );
 		}
 		
 		return self::getResultFromQueryResult(
@@ -185,7 +198,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 			$params = self::getProcessedParams( $params, $extraprintouts, false );
 		}
 		
-		$query  = self::createQuery( $querystring, $params, $context, null, $extraprintouts );
+		$query = self::createQuery( $querystring, $params, $context, null, $extraprintouts );
 		$query_result = smwfGetStore()->getQueryResult( $query );
 		
 		foreach ( $query_result->getResults() as $wiki_page ) {
