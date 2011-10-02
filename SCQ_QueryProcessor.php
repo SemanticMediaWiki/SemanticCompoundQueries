@@ -67,7 +67,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
 			$printeouts = $next_result->getPrintRequests();
-			SMWQueryProcessor::addThisPrinteout( $printeouts, $other_params );
+			SMWQueryProcessor::addThisPrintout( $printeouts, $other_params );
 			$other_params = parent::getProcessedParams( $other_params, $printeouts );
 		}
 		
@@ -181,7 +181,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		wfProfileIn( 'SCQQueryProcessor::getQueryResultFromQueryString' );
 		
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			SMWQueryProcessor::addThisPrinteout( $extraprintouts, $params );
+			SMWQueryProcessor::addThisPrintout( $extraprintouts, $params );
 			$params = self::getProcessedParams( $params, $extraprintouts, false );
 		}
 		
