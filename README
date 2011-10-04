@@ -29,7 +29,7 @@ http://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries
 
 == Requirements ==
 
-This version of the Semantic Compound Queries extension requires MediaWiki 1.8
+This version of the Semantic Compound Queries extension requires MediaWiki 1.14
 or higher and Semantic MediaWiki 1.2 or higher.
 
 == Installation ==
