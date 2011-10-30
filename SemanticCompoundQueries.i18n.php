@@ -33,6 +33,13 @@ $messages['ar'] = array(
 	'semanticcompoundqueries-desc' => 'دالة محلل تعرض استعلامات دلالية متعددة في نفس الوقت',
 );
 
+/** Asturian (Asturianu)
+ * @author Xuacu
+ */
+$messages['ast'] = array(
+	'semanticcompoundqueries-desc' => "Una función analítica qu'amuesa múltiples consultes semántiques al mesmu tiempu",
+);
+
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
@@ -81,7 +88,7 @@ $messages['da'] = array(
  * @author Purodha
  */
 $messages['de'] = array(
-	'semanticcompoundqueries-desc' => 'Erweitert den Parser um eine Funktion, die mehrere semantische Abfragen zugleich anzuzeigen erlaubt',
+	'semanticcompoundqueries-desc' => 'Ergänzt eine Parserfunktion, die mehrere semantische Abfragen zugleich anzuzeigen erlaubt',
 );
 
 /** Lower Sorbian (Dolnoserbski)
