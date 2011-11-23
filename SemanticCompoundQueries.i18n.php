@@ -296,14 +296,14 @@ $messages['sk'] = array(
 	'semanticcompoundqueries-desc' => 'Funkcia syntaktického analyzátora, ktorá zobrazuje viaceré sémantické požiadavky naraz',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
 	'semanticcompoundqueries-desc' => 'Парсер-функција која приказује више семантичких захтева истовремено',
 );
 
-/** Serbian Latin ekavian (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Liangent
  */
 $messages['sr-el'] = array(
