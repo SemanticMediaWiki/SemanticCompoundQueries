@@ -297,10 +297,11 @@ $messages['sk'] = array(
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+ * @author Rancher
  * @author Михајло Анђелковић
  */
 $messages['sr-ec'] = array(
-	'semanticcompoundqueries-desc' => 'Парсер-функција која приказује више семантичких захтева истовремено',
+	'semanticcompoundqueries-desc' => 'Рашчлањивачка функција која приказује више семантичких упита истовремено',
 );
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
