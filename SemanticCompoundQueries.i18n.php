@@ -353,3 +353,8 @@ $messages['zh-hans'] = array(
 	'semanticcompoundqueries-desc' => '解析器的函数，同时显示多个语义查询',
 );
 
+/** Traditional Chinese (‪中文(繁體)‬) */
+$messages['zh-hant'] = array(
+	'semanticcompoundqueries-desc' => '解析器的函數，同時顯示多個語義查詢',
+);
+
