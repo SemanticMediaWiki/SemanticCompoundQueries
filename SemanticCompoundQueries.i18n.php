@@ -225,18 +225,18 @@ $messages['ms'] = array(
 	'semanticcompoundqueries-desc' => 'Fungsi penghurai yang memaparkan berbilang pertanyaan semantik pada masa yang sama',
 );
 
-/** Dutch (Nederlands)
- * @author Siebrand
- */
-$messages['nl'] = array(
-	'semanticcompoundqueries-desc' => 'Een parserfunctie die meerdere semantische zoekopdrachten op hetzelfde moment kan weergeven',
-);
-
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
 	'semanticcompoundqueries-desc' => 'En tolkefunksjon som viser flere semantiske spørringer samtidig',
+);
+
+/** Dutch (Nederlands)
+ * @author Siebrand
+ */
+$messages['nl'] = array(
+	'semanticcompoundqueries-desc' => 'Een parserfunctie die meerdere semantische zoekopdrachten op hetzelfde moment kan weergeven',
 );
 
 /** Occitan (Occitan)
@@ -306,9 +306,10 @@ $messages['sr-ec'] = array(
 
 /** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Liangent
+ * @author Rancher
  */
 $messages['sr-el'] = array(
-	'semanticcompoundqueries-desc' => 'Parser-funkcija koja prikazuje više semantičkih zahteva istovremeno',
+	'semanticcompoundqueries-desc' => 'Raščlanjivačka funkcija koja prikazuje više semantičkih upita istovremeno',
 );
 
 /** Swedish (Svenska)
