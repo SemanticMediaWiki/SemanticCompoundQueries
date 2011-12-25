@@ -44,3 +44,8 @@ $magicWords['nds-nl'] = array(
 $magicWords['nl'] = array(
 	'compound_query' => array( 0, 'samengestelde_zoekopdracht' ),
 );
+
+/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+$magicWords['sr-el'] = array(
+	'compound_query' => array( 0, 'sastavi_upit' ),
+);
