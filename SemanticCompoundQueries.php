@@ -17,14 +17,14 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'SCQ_VERSION', '0.3' );
+define( 'SCQ_VERSION', '0.3.1' );
 
 $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserhook'][] = array(
 	'path'  => __FILE__,
 	'name'	=> 'Semantic Compound Queries',
 	'version'	=> SCQ_VERSION,
 	'author'	=> array( 'Yaron Koren' ),
-	'url'	=> 'http://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries',
+	'url'	=> 'https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries',
 	'descriptionmsg' => 'semanticcompoundqueries-desc',
 );
 
