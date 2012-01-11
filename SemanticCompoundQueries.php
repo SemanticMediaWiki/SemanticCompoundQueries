@@ -17,7 +17,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'SCQ_VERSION', '0.3.1' );
+define( 'SCQ_VERSION', '0.3.2' );
 
 $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserhook'][] = array(
 	'path'  => __FILE__,
@@ -29,10 +29,9 @@ $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserh
 );
 
 $wgExtensionMessagesFiles['SemanticCompoundQueries'] = dirname( __FILE__ ) . '/SemanticCompoundQueries.i18n.php';
+$wgExtensionMessagesFiles['SemanticCompoundQueriesMagic'] = dirname( __FILE__ ) . '/SemanticCompoundQueries.i18n.magic.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';
-// FIXME: Can be removed when new-style magic words are used (introduced in r52503)
-$wgHooks['LanguageGetMagic'][] = 'scqgLanguageGetMagic';
 
 $wgAutoloadClasses['SCQQueryProcessor'] = dirname( __FILE__ ) . '/SCQ_QueryProcessor.php';
 $wgAutoloadClasses['SCQQueryResult'] = dirname( __FILE__ ) . '/SCQ_QueryResult.php';
@@ -40,13 +39,4 @@ $wgAutoloadClasses['SCQQueryResult'] = dirname( __FILE__ ) . '/SCQ_QueryResult.p
 function scqgRegisterParser( Parser &$parser ) {
 	$parser->setFunctionHook( 'compound_query', array( 'SCQQueryProcessor', 'doCompoundQuery' ) );
 	return true; // always return true, in order not to stop MW's hook processing!
-}
-
-// FIXME: Can be removed when new-style magic words are used (introduced in r52503)
-function scqgLanguageGetMagic( &$magicWords, $langCode = 'en' ) {
-	switch ( $langCode ) {
-	default:
-		$magicWords['compound_query'] = array ( 0, 'compound_query' );
-	}
-	return true;
 }
