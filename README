@@ -1,6 +1,6 @@
 Semantic Compound Queries Extension
 
-        Version 0.3.1
+        Version 0.3.2
         Yaron Koren
 
 This is free software licensed under the GNU General Public License. Please
@@ -29,8 +29,8 @@ http://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries
 
 == Requirements ==
 
-This version of the Semantic Compound Queries extension requires MediaWiki 1.14
-or higher and Semantic MediaWiki 1.2 or higher.
+This version of the Semantic Compound Queries extension requires MediaWiki 1.16
+or higher and Semantic MediaWiki 1.6 or higher.
 
 == Installation ==
 
