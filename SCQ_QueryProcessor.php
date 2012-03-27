@@ -156,24 +156,14 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		if ( $result1 == null ) {
 			return $result2;
 		}
-		$existing_page_names = array();
 
+		$existing_page_names = array();
 		foreach ( $result1 as $r1 ) {
-			// SMW 1.6+
-			if ( $r1 instanceof SMWDIWikiPage ) {
-				$existing_page_names[] = $r1->getDBkey();
-			} else {
-				$existing_page_names[] = $r1->getWikiValue();
-			}
+			$existing_page_names[] = $r1->getDBkey();
 		}
 
 		foreach ( $result2 as $r2 ) {
-			if ( $r2 instanceof SMWDIWikiPage ) {
-				$page_name = $r2->getDBkey();
-			} else {
-				$page_name = $r2->getWikiValue();
-			}
-
+			$page_name = $r2->getDBkey();
 			if ( ! in_array( $page_name, $existing_page_names ) ) {
 				$result1[] = $r2;
 			}
@@ -243,8 +233,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
 			$format = $params['format'];
-		}
-		else {
+		} else {
 			$format = self::getResultFormat( $params );
 		}
 
