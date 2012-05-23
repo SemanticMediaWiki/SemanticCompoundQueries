@@ -22,7 +22,7 @@ $magicWords['arz'] = array(
 
 /** German (Deutsch) */
 $magicWords['de'] = array(
-	'compound_query' => array( 0, 'frage_zusammen' ),
+	'compound_query' => array( 0, 'abfrage_zusammen', 'frage_zusammen' ),
 );
 
 /** Japanese (日本語) */
