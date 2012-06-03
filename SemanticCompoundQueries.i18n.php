@@ -265,7 +265,7 @@ $messages['pt'] = array(
 	'semanticcompoundqueries-desc' => 'Uma função de análise gramatical que mostra várias consultas semânticas em simultâneo',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author Eduardo.mps
  */
 $messages['pt-br'] = array(
