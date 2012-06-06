@@ -194,6 +194,13 @@ $messages['ja'] = array(
 	'semanticcompoundqueries-desc' => '複数の意味的クエリーを一度に表示するパーサー関数',
 );
 
+/** Korean (한국어)
+ * @author 아라
+ */
+$messages['ko'] = array(
+	'semanticcompoundqueries-desc' => '동시에 시멘틱 쿼리 여러 개를 보여주는 파서 함수',
+);
+
 /** Colognian (Ripoarisch)
  * @author Purodha
  */
