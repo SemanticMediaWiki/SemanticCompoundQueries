@@ -30,7 +30,12 @@ $magicWords['ja'] = array(
 	'compound_query' => array( 0, '複合クエリー' ),
 );
 
-/** Macedonian (Македонски) */
+/** Korean (한국어) */
+$magicWords['ko'] = array(
+	'compound_query' => array( 0, '복합_쿼리' ),
+);
+
+/** Macedonian (македонски) */
 $magicWords['mk'] = array(
 	'compound_query' => array( 0, 'мешовито_барање' ),
 );
@@ -45,7 +50,7 @@ $magicWords['nl'] = array(
 	'compound_query' => array( 0, 'samengestelde_zoekopdracht' ),
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬) */
+/** Serbian (Latin script) (‪srpski (latinica)‬) */
 $magicWords['sr-el'] = array(
 	'compound_query' => array( 0, 'sastavi_upit' ),
 );
