@@ -30,7 +30,7 @@ $messages['ar'] = array(
 	'semanticcompoundqueries-desc' => 'دالة محلل تعرض استعلامات دلالية متعددة في نفس الوقت',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Xuacu
  */
 $messages['ast'] = array(
@@ -45,35 +45,35 @@ $messages['be-tarask'] = array(
 	'semanticcompoundqueries-desc' => 'Функцыя парсэра, якая паказвае шматлікія сэмантычныя запыты ў адзін час',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  */
 $messages['br'] = array(
 	'semanticcompoundqueries-desc' => "Un arc'hwel eus ar parser a ziskwel meur a reked ereadurel war un dro",
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
 	'semanticcompoundqueries-desc' => 'Parserska funkcija koja prikazuje više semantičkih upita u isto vrijeme',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Toniher
  */
 $messages['ca'] = array(
 	'semanticcompoundqueries-desc' => "Una funció d'anàlisi que mostra múltiples consultes semàntiques alhora.",
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Juan de Vojníkov
  */
 $messages['cs'] = array(
 	'semanticcompoundqueries-desc' => 'Parser, který zobrazuje více sémantických dotazů najednou',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Froztbyte
  */
 $messages['da'] = array(
@@ -102,14 +102,14 @@ $messages['el'] = array(
 	'semanticcompoundqueries-desc' => 'Μια λεξιαναλυτική συνάρτηση που προβάλλει πολλαπλά σημασιολογικά αιτήματα ταυτόχρονα',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Crazymadlover
  */
 $messages['es'] = array(
 	'semanticcompoundqueries-desc' => 'Una función analizadora que muestra múltiples consultas semánticas al mismo tiempo',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Centerlink
  * @author Crt
  */
@@ -117,7 +117,7 @@ $messages['fi'] = array(
 	'semanticcompoundqueries-desc' => 'Jäsennintoiminto, joka näyttää useita semanttisia kyselyjä samaan aikaan.',
 );
 
-/** French (Français)
+/** French (français)
  * @author IAlex
  */
 $messages['fr'] = array(
@@ -159,14 +159,14 @@ $messages['hsb'] = array(
 	'semanticcompoundqueries-desc' => 'Parserowa funkcija, kotraž wjacore semantiske wotprašowanja nadobo zwobrazuje',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Glanthor Reviol
  */
 $messages['hu'] = array(
 	'semanticcompoundqueries-desc' => 'Egyszerre több szemantikus lekérdezést megjelenítő elemzőfüggvény',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -180,7 +180,7 @@ $messages['id'] = array(
 	'semanticcompoundqueries-desc' => 'Fungsi parser untuk menampilkan beberapa kueri semantik secara bersamaan',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author Gianfranco
  */
 $messages['it'] = array(
@@ -215,7 +215,7 @@ $messages['lb'] = array(
 	'semanticcompoundqueries-desc' => 'Eng Parserfonctioun déi et erlaabt méi semantesch Ufroe mateneen ze weisen',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -243,14 +243,14 @@ $messages['nl'] = array(
 	'semanticcompoundqueries-desc' => 'Een parserfunctie die meerdere semantische zoekopdrachten op hetzelfde moment kan weergeven',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
 	'semanticcompoundqueries-desc' => "Una foncion del parser qu'aficha mai d'una requèsta semanticas a l'encòp",
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -264,7 +264,7 @@ $messages['pms'] = array(
 	'semanticcompoundqueries-desc' => 'Na fonsion dël parser che a visualisa vàire antërogassion semàntiche al midem temp',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author Hamilton Abreu
  * @author Waldir
  */
@@ -279,28 +279,28 @@ $messages['pt-br'] = array(
 	'semanticcompoundqueries-desc' => 'Uma função analisadora que exibe múltiplas consultas semânticas ao mesmo tempo',
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
 	'semanticcompoundqueries-desc' => "'Na funziona de analisi ca visualizze le inderrogazziune semandiche multiple jndr'à 'u stesse mumende",
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'semanticcompoundqueries-desc' => 'Функция парсера, показывающая несколько семантических запросов за один раз',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  */
 $messages['sk'] = array(
 	'semanticcompoundqueries-desc' => 'Funkcia syntaktického analyzátora, ktorá zobrazuje viaceré sémantické požiadavky naraz',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Rancher
  * @author Михајло Анђелковић
  */
@@ -308,7 +308,7 @@ $messages['sr-ec'] = array(
 	'semanticcompoundqueries-desc' => 'Рашчлањивачка функција која приказује више семантичких упита истовремено',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author Liangent
  * @author Rancher
  */
@@ -316,7 +316,7 @@ $messages['sr-el'] = array(
 	'semanticcompoundqueries-desc' => 'Raščlanjivačka funkcija koja prikazuje više semantičkih upita istovremeno',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Boivie
  */
 $messages['sv'] = array(
@@ -337,7 +337,7 @@ $messages['tr'] = array(
 	'semanticcompoundqueries-desc' => 'Birden fazla anlamsal sorguyu aynı anda görüntüleyen bir ayrıştırıcı fonksiyon',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
  * @author Тест
  */
 $messages['uk'] = array(
@@ -351,14 +351,14 @@ $messages['vi'] = array(
 	'semanticcompoundqueries-desc' => 'Hàm cú pháp hiển thị nhiều truy vấn ngữ nghĩa cùng lúc',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Hydra
  */
 $messages['zh-hans'] = array(
 	'semanticcompoundqueries-desc' => '解析器的函数，同时显示多个语义查询',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬) */
+/** Traditional Chinese (‪中文（繁體）‬) */
 $messages['zh-hant'] = array(
 	'semanticcompoundqueries-desc' => '解析器的函數，同時顯示多個語義查詢',
 );
