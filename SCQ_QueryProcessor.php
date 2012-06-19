@@ -190,25 +190,36 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	/**
 	 * @param $querystring
 	 * @param array $params
-	 * @param $extraprintouts
-	 * @param $outputmode
+	 * @param $extraPrintouts
+	 * @param $outputMode
 	 * @param $context
 	 * 
 	 * @return SMWQueryResult
 	 */
-	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraprintouts, $outputmode, $context = SMWQueryProcessor::INLINE_QUERY ) {
+	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraPrintouts, $outputMode, $context = SMWQueryProcessor::INLINE_QUERY ) {
 		wfProfileIn( 'SCQQueryProcessor::getQueryResultFromQueryString' );
 
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			SMWQueryProcessor::addThisPrintout( $extraprintouts, $params );
-			$params = self::getProcessedParams( $params, $extraprintouts, false );
+			SMWQueryProcessor::addThisPrintout( $extraPrintouts, $params );
+			$params = self::getProcessedParams( $params, $extraPrintouts, false );
 		}
 
-		$query = self::createQuery( $querystring, $params, $context, null, $extraprintouts );
+		$query = self::createQuery( $querystring, $params, $context, null, $extraPrintouts );
 		$query_result = smwfGetStore()->getQueryResult( $query );
 
+		$parameters = array();
+
+		if ( version_compare( SMW_VERSION, '1.7.2', '>' ) ) {
+			foreach ( $params as $param ) {
+				$parameters[$param->getName()] = $param->getValue();
+			}
+		}
+		else {
+			$parameters = $params;
+		}
+
 		foreach ( $query_result->getResults() as $wiki_page ) {
-			$wiki_page->display_options = $params;
+			$wiki_page->display_options = $parameters;
 		}
 
 		wfProfileOut( 'SCQQueryProcessor::getQueryResultFromQueryString' );
@@ -233,6 +244,10 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
 			$format = $params['format'];
+
+			if ( version_compare( SMW_VERSION, '1.7.2', '>' ) ) {
+				$format = $format->getValue();
+			}
 		} else {
 			$format = self::getResultFormat( $params );
 		}
