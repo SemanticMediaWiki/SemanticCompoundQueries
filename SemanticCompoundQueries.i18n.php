@@ -37,7 +37,7 @@ $messages['ast'] = array(
 	'semanticcompoundqueries-desc' => "Una función analítica qu'amuesa múltiples consultes semántiques al mesmu tiempu",
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  */
@@ -88,7 +88,7 @@ $messages['de'] = array(
 	'semanticcompoundqueries-desc' => 'Ergänzt eine Funktion, die mehrere semantische Abfragen zugleich anzuzeigen erlaubt',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -124,7 +124,7 @@ $messages['fr'] = array(
 	'semanticcompoundqueries-desc' => 'Une fonction du parseur qui affiche plusieurs requêtes sémantiques en même temps',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Toliño
  */
 $messages['gl'] = array(
@@ -152,7 +152,7 @@ $messages['hil'] = array(
 	'semanticcompoundqueries-desc' => 'Ang parser panksiyon nga nagapakita sang multiple semantik pamangkotanon sa parehas nga tiyempo',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
