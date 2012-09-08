@@ -27,7 +27,7 @@ $magicWords['de'] = array(
 
 /** Japanese (日本語) */
 $magicWords['ja'] = array(
-	'compound_query' => array( 0, '複合クエリー' ),
+	'compound_query' => array( 0, '複合クエリ', '複合クエリー' ),
 );
 
 /** Korean (한국어) */
