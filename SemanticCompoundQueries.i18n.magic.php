@@ -50,7 +50,7 @@ $magicWords['nl'] = array(
 	'compound_query' => array( 0, 'samengestelde_zoekopdracht' ),
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬) */
+/** Serbian (Latin script) (srpski (latinica)‎) */
 $magicWords['sr-el'] = array(
 	'compound_query' => array( 0, 'sastavi_upit' ),
 );
