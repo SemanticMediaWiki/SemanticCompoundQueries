@@ -37,7 +37,7 @@ $messages['ast'] = array(
 	'semanticcompoundqueries-desc' => "Una función analítica qu'amuesa múltiples consultes semántiques al mesmu tiempu",
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  */
@@ -68,6 +68,7 @@ $messages['ca'] = array(
 
 /** Czech (česky)
  * @author Juan de Vojníkov
+ * @author Juandev
  */
 $messages['cs'] = array(
 	'semanticcompoundqueries-desc' => 'Parser, který zobrazuje více sémantických dotazů najednou',
@@ -229,7 +230,7 @@ $messages['ms'] = array(
 	'semanticcompoundqueries-desc' => 'Fungsi penghurai yang memaparkan berbilang pertanyaan semantik pada masa yang sama',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
@@ -300,7 +301,7 @@ $messages['sk'] = array(
 	'semanticcompoundqueries-desc' => 'Funkcia syntaktického analyzátora, ktorá zobrazuje viaceré sémantické požiadavky naraz',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Rancher
  * @author Михајло Анђелковић
  */
@@ -308,7 +309,7 @@ $messages['sr-ec'] = array(
 	'semanticcompoundqueries-desc' => 'Рашчлањивачка функција која приказује више семантичких упита истовремено',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬)
+/** Serbian (Latin script) (srpski (latinica)‎)
  * @author Liangent
  * @author Rancher
  */
@@ -351,14 +352,14 @@ $messages['vi'] = array(
 	'semanticcompoundqueries-desc' => 'Hàm cú pháp hiển thị nhiều truy vấn ngữ nghĩa cùng lúc',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Hydra
  */
 $messages['zh-hans'] = array(
 	'semanticcompoundqueries-desc' => '解析器的函数，同时显示多个语义查询',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬) */
+/** Traditional Chinese (中文（繁體）‎) */
 $messages['zh-hant'] = array(
 	'semanticcompoundqueries-desc' => '解析器的函數，同時顯示多個語義查詢',
 );
