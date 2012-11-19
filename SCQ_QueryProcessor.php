@@ -14,10 +14,10 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	 * Comparison helper function, used in sorting results.
 	 */
 	public static function compareQueryResults( $a, $b ) {
-		if ( $a->getDBKey() == $b->getDBKey() ) {
+		if ( $a->getSerialization() == $b->getSerialization() ) {
 			return 0;
 		}
-		return ( $a->getDBKey() < $b->getDBKey() ) ? -1 : 1;
+		return ( $a->getSerialization() < $b->getSerialization() ) ? -1 : 1;
 	}
 
 	/**
@@ -159,11 +159,11 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 
 		$existing_page_names = array();
 		foreach ( $result1 as $r1 ) {
-			$existing_page_names[] = $r1->getDBkey();
+			$existing_page_names[] = $r1->getSerialization();
 		}
 
 		foreach ( $result2 as $r2 ) {
-			$page_name = $r2->getDBkey();
+			$page_name = $r2->getSerialization();
 			if ( ! in_array( $page_name, $existing_page_names ) ) {
 				$result1[] = $r2;
 			}
