@@ -86,7 +86,7 @@ $messages['da'] = array(
  * @author Purodha
  */
 $messages['de'] = array(
-	'semanticcompoundqueries-desc' => 'Ergänzt eine Funktion, die mehrere semantische Abfragen zugleich anzuzeigen erlaubt',
+	'semanticcompoundqueries-desc' => 'Ergänzt eine Funktion, die das Ergebnis mehrerer semantischer Abfragen zugleich anzuzeigen erlaubt',
 );
 
 /** Lower Sorbian (dolnoserbski)
