@@ -40,7 +40,7 @@ $magicWords['mk'] = array(
 	'compound_query' => array( 0, 'мешовито_барање' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $magicWords['nds-nl'] = array(
 	'compound_query' => array( 0, 'samenestelden_zeukopdrachte', 'samengestelde_zoekopdracht' ),
 );
