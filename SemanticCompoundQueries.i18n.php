@@ -18,9 +18,10 @@ $messages['en'] = array(
 /** Message documentation (Message documentation)
  * @author Fryed-peach
  * @author Purodha
+ * @author Shirayuki
  */
 $messages['qqq'] = array(
-	'semanticcompoundqueries-desc' => '{{desc}}',
+	'semanticcompoundqueries-desc' => '{{desc|name=Semantic Compound Queries|url=http://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries}}',
 );
 
 /** Arabic (العربية)
@@ -190,9 +191,10 @@ $messages['it'] = array(
 
 /** Japanese (日本語)
  * @author Fryed-peach
+ * @author Shirayuki
  */
 $messages['ja'] = array(
-	'semanticcompoundqueries-desc' => '複数の意味的クエリーを一度に表示するパーサー関数',
+	'semanticcompoundqueries-desc' => '複数の意味的クエリを一度に表示するパーサー関数',
 );
 
 /** Korean (한국어)
