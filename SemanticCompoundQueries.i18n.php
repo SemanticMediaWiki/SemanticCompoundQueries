@@ -201,7 +201,7 @@ $messages['ja'] = array(
  * @author 아라
  */
 $messages['ko'] = array(
-	'semanticcompoundqueries-desc' => '동시에 시멘틱 쿼리 여러 개를 보여주는 파서 함수',
+	'semanticcompoundqueries-desc' => '동시에 시맨틱 쿼리 여러 개를 보여주는 파서 함수',
 );
 
 /** Colognian (Ripoarisch)
