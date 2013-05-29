@@ -50,6 +50,11 @@ $magicWords['nl'] = array(
 	'compound_query' => array( 0, 'samengestelde_zoekopdracht' ),
 );
 
+/** Brazilian Portuguese (português do Brasil) */
+$magicWords['pt-br'] = array(
+	'compound_query' => array( 0, 'consulta_composta' ),
+);
+
 /** Serbian (Latin script) (srpski (latinica)‎) */
 $magicWords['sr-el'] = array(
 	'compound_query' => array( 0, 'sastavi_upit' ),
