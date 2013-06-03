@@ -232,7 +232,7 @@ $messages['ms'] = array(
 	'semanticcompoundqueries-desc' => 'Fungsi penghurai yang memaparkan berbilang pertanyaan semantik pada masa yang sama',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
