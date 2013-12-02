@@ -17,7 +17,7 @@ $magicWords['ar'] = array(
 
 /** Egyptian Spoken Arabic (مصرى) */
 $magicWords['arz'] = array(
-	'compound_query' => array( 0, 'استعلام_مركب', 'compound_query' ),
+	'compound_query' => array( 0, 'استعلام_مركب' ),
 );
 
 /** German (Deutsch) */
