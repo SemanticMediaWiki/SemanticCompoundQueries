@@ -67,7 +67,7 @@ $messages['ca'] = array(
 	'semanticcompoundqueries-desc' => "Una funció d'anàlisi que mostra múltiples consultes semàntiques alhora.",
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Juan de Vojníkov
  * @author Juandev
  */
