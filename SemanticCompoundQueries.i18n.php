@@ -222,7 +222,7 @@ $messages['lb'] = array(
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
-	'semanticcompoundqueries-desc' => 'Парсерска функција која прикажува повеќе семантички барања истовремено',
+	'semanticcompoundqueries-desc' => 'Расчленувачка функција која прикажува повеќе семантички барања истовремено',
 );
 
 /** Malay (Bahasa Melayu)
