@@ -111,6 +111,13 @@ $messages['es'] = array(
 	'semanticcompoundqueries-desc' => 'Una función analizadora que muestra múltiples consultas semánticas al mismo tiempo',
 );
 
+/** Persian (فارسی)
+ * @author Armin1392
+ */
+$messages['fa'] = array(
+	'semanticcompoundqueries-desc' => 'عملیات تجزیه‌کننده‌ای که چند صف معنایی را هم زمان نشان می‌دهد',
+);
+
 /** Finnish (suomi)
  * @author Centerlink
  * @author Crt
