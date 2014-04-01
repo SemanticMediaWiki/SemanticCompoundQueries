@@ -4,7 +4,7 @@
  *
  * @file SemanticCompoundQueries.php
  * @ingroup SemanticCompoundQueries
- * 
+ *
  * @author Yaron Koren
  */
 
@@ -17,7 +17,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'SCQ_VERSION', '0.3.4' );
+define( 'SCQ_VERSION', '0.4.0' );
 
 $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserhook'][] = array(
 	'path'  => __FILE__,
@@ -28,6 +28,7 @@ $wgExtensionCredits[defined( 'SEMANTIC_EXTENSION_TYPE' ) ? 'semantic' : 'parserh
 	'descriptionmsg' => 'semanticcompoundqueries-desc',
 );
 
+$wgMessagesDirs['SemanticCompoundQueries'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['SemanticCompoundQueries'] = dirname( __FILE__ ) . '/SemanticCompoundQueries.i18n.php';
 $wgExtensionMessagesFiles['SemanticCompoundQueriesMagic'] = dirname( __FILE__ ) . '/SemanticCompoundQueries.i18n.magic.php';
 
