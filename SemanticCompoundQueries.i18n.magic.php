@@ -59,3 +59,8 @@ $magicWords['pt-br'] = array(
 $magicWords['sr-el'] = array(
 	'compound_query' => array( 0, 'sastavi_upit' ),
 );
+
+/** Simplified Chinese (中文（简体）‎) */
+$magicWords['zh-hans'] = array(
+	'compound_query' => array( 0, '混合查询' ),
+);
