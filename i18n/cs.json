@@ -1,9 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-            "Juan de Vojníkov",
-            "Juandev"
-        ]
-    },
-    "semanticcompoundqueries-desc": "Parser, který zobrazuje více sémantických dotazů najednou"
+	"@metadata": {
+		"authors": [
+			"Juan de Vojníkov",
+			"Juandev"
+		]
+	},
+	"semanticcompoundqueries-desc": "Parser, který zobrazuje více sémantických dotazů najednou"
 }

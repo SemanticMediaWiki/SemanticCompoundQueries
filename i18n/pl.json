@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Sp5uhe"
-        ]
-    },
-    "semanticcompoundqueries-desc": "Funkcja parsera wyświetlająca różnorodne znaczeniowo zapytania w tym samym czasie"
+	"@metadata": {
+		"authors": [
+			"Sp5uhe"
+		]
+	},
+	"semanticcompoundqueries-desc": "Funkcja parsera wyświetlająca różnorodne znaczeniowo zapytania w tym samym czasie"
 }

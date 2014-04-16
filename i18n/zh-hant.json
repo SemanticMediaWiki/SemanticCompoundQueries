@@ -1,6 +1,4 @@
 {
-    "@metadata": {
-        "authors": []
-    },
-    "semanticcompoundqueries-desc": "解析器的函數，同時顯示多個語義查詢"
+	"@metadata": [],
+	"semanticcompoundqueries-desc": "解析器的函數，同時顯示多個語義查詢"
 }

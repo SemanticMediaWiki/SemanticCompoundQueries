@@ -1,8 +1,8 @@
 {
-    "@metadata": {
-        "authors": [
-            "Helix84"
-        ]
-    },
-    "semanticcompoundqueries-desc": "Funkcia syntaktického analyzátora, ktorá zobrazuje viaceré sémantické požiadavky naraz"
+	"@metadata": {
+		"authors": [
+			"Helix84"
+		]
+	},
+	"semanticcompoundqueries-desc": "Funkcia syntaktického analyzátora, ktorá zobrazuje viaceré sémantické požiadavky naraz"
 }
