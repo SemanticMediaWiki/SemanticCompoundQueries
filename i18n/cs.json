@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Juan de Vojníkov",
-			"Juandev"
+			"Juandev",
+			"Matěj Grabovský"
 		]
 	},
-	"semanticcompoundqueries-desc": "Parser, který zobrazuje více sémantických dotazů najednou"
+	"semanticcompoundqueries-desc": "Syntaktický analyzátor, který zobrazuje více sémantických dotazů najednou"
 }
