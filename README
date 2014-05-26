@@ -1,6 +1,6 @@
 Semantic Compound Queries Extension
 
-        Version 0.3.4
+        Version 0.4
         Yaron Koren
 
 This is free software licensed under the GNU General Public License. Please
@@ -49,4 +49,3 @@ the Semantic MediaWiki mailing list:
 
 If possible, please add "[SCQ]" at the beginning of the subject line, to
 clarify the subject matter.
-
