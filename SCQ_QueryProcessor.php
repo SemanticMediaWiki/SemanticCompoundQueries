@@ -31,7 +31,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		global $smwgQEnabled, $smwgIQRunningNumber;
 
 		if ( !$smwgQEnabled ) {
-			return smwfEncodeMessages( array( wfMsgForContent( 'smw_iq_disabled' ) ) );
+			return smwfEncodeMessages( array( wfMessage( 'smw_iq_disabled' )->inContentLanguage()->text() ) );
 		}
 
 		$smwgIQRunningNumber++;
