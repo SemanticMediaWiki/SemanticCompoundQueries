@@ -62,5 +62,5 @@ $magicWords['sr-el'] = array(
 
 /** Simplified Chinese (中文（简体）‎) */
 $magicWords['zh-hans'] = array(
-	'compound_query' => array( 0, '混合查询' ),
+	'compound_query' => array( 0, '组合查询' ),
 );
