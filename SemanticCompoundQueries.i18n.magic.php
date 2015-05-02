@@ -20,6 +20,11 @@ $magicWords['arz'] = array(
 	'compound_query' => array( 0, 'استعلام_مركب' ),
 );
 
+/** Chuvash (Чӑвашла) */
+$magicWords['cv'] = array(
+	'compound_query' => array( 0, 'compound_query' ),
+);
+
 /** German (Deutsch) */
 $magicWords['de'] = array(
 	'compound_query' => array( 0, 'abfrage_zusammen', 'frage_zusammen' ),
