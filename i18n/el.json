@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Omnipaedista"
+			"Omnipaedista",
+			"Protnet"
 		]
 	},
-	"semanticcompoundqueries-desc": "Μια λεξιαναλυτική συνάρτηση που προβάλλει πολλαπλά σημασιολογικά αιτήματα ταυτόχρονα"
+	"semanticcompoundqueries-desc": "Συνάρτηση του συντακτικού αναλυτή που προβάλλει πολλαπλά σημασιολογικά ερωτήματα ταυτόχρονα"
 }
