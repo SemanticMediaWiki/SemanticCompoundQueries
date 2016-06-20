@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Andibing"
+		]
+	},
+	"semanticcompoundqueries-desc": "A parser function that displays multiple semantic queries at the same time"
+}
