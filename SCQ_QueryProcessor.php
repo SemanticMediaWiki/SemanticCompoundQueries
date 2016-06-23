@@ -7,6 +7,7 @@
  * @ingroup SemanticCompoundQueries
  * 
  * @author Yaron Koren
+ * @author Peter Grassberger < petertheone@gmail.com >
  */
 class SCQQueryProcessor extends SMWQueryProcessor {
 
@@ -39,10 +40,25 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		$params = func_get_args();
 		array_shift( $params ); // We already know the $parser.
 
-		$otherParams = array();
-		$results = array();
-		$printRequests = array();
+		list( $queryParams, $otherParams ) = self::separateParams( $params );
+		list( $queryResult, $otherParams ) = self::queryAndMergeResults( $queryParams, $otherParams );
+
+		return self::getResultFromQueryResult(
+			$queryResult,
+			$otherParams,
+			SMW_OUTPUT_WIKI
+		);
+	}
+
+	/**
+	 * Separates $queryParams from $otherParams.
+	 *
+	 * @param $params
+	 * @return array
+	 */
+	public static function separateParams( $params ) {
 		$queryParams = array();
+		$otherParams = array();
 
 		foreach ( $params as $param ) {
 			// Very primitive heuristic - if the parameter
@@ -58,6 +74,19 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 				}
 			}
 		}
+		return array( $queryParams, $otherParams );
+	}
+
+	/**
+	 * Query and merge results of subqueries.
+	 *
+	 * @param $queryParams
+	 * @param $otherParams
+	 * @return array
+	 */
+	public static function queryAndMergeResults( $queryParams, $otherParams ) {
+		$results = array();
+		$printRequests = array();
 
 		foreach ( $queryParams as $param ) {
 			$subQueryParams = self::getSubParams( $param );
