@@ -114,11 +114,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 			$otherParams = parent::getProcessedParams( $otherParams, $printRequests );
 		}
 
-		return self::getResultFromQueryResult(
-			$queryResult,
-			$otherParams,
-			SMW_OUTPUT_WIKI
-		);
+		return array( $queryResult, $otherParams );
 	}
 
 	/**
