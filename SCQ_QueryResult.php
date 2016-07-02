@@ -15,7 +15,7 @@ class SCQQueryResult extends SMWQueryResult {
 	 * Adds in the pages from a new query result to the existing set of
 	 * pages - only pages that weren't in the set already get added.
 	 * 
-	 * @param SMWQueryResult $new_result
+	 * @param SMWQueryResult $newResult
 	 */
 	public function addResult( SMWQueryResult $newResult ) {
 		$existingPageNames = array();
