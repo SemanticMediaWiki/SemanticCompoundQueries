@@ -7,8 +7,7 @@
  * @author Peter Grassberger < petertheone@gmail.com >
  */
 
-class SCQQueryProcessorTest extends \PHPUnit_Framework_TestCase
-{
+class SCQQueryProcessorTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * Call protected/private method of a class.
 	 *

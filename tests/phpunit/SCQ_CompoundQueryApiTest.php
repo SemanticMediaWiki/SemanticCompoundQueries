@@ -10,8 +10,7 @@ use SMW\Tests\Utils\MwApiFactory;
  * @author Peter Grassberger < petertheone@gmail.com >
  */
 
-class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase
-{
+class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @var MwApiFactory
 	 */
@@ -34,9 +33,6 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * @param array $query
-	 * @param array $expected
-	 *
 	 * @dataProvider sampleQueryProvider
 	 */
 	public function testExecute( array $query, array $expected ) {
@@ -54,8 +50,7 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase
 	}
 
 	public function sampleQueryProvider() {
-		// #0 Standard query
-		$provider[] = array(
+		$provider['Standard query'] = array(
 			array(
 				'[[Modification date::+]];?Modification date;limit=10',
 			),
@@ -74,7 +69,7 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase
 				)
 			)
 		);
-		$provider[] = array(
+		$provider['Compound query'] = array(
 			array(
 				'[[Modification date::+]];?Modification date;limit=10',
 				'[[Modification date::+]];?Modification date'
@@ -94,7 +89,7 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase
 				)
 			)
 		);
-		$provider[] = array(
+		$provider['Invalid query, should produces an error'] = array(
 			array(
 				'[[Modification date::+!]];limit=3'
 			),
