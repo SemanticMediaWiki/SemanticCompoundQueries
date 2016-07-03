@@ -105,7 +105,9 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		}
 
 		// Sort results so that they'll show up by page name
-		uasort( $results, array( 'SCQQueryProcessor', 'compareQueryResults' ) );
+		if( strcmp( $other_params['unsorted'], 'on' ) ) {
+			uasort( $results, array( 'SCQQueryProcessor', 'compareQueryResults' ) );
+		}
 
 		$queryResult = new SCQQueryResult( $printRequests, new SMWQuery(), $results, smwfGetStore() );
 
