@@ -31,6 +31,8 @@ else
 	php maintenance/install.php --dbtype $DBTYPE --dbuser root --dbname its_a_mw --dbpath $(pwd) --pass nyan TravisWiki admin --scriptpath /TravisWiki
 fi
 
+composer install mediawiki/semantic-media-wiki=$SMW --prefer-source
+
 #composer require 'mediawiki/semantic-compound-queries=dev-master' --prefer-source
 
 cd extensions
