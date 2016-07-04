@@ -8,6 +8,6 @@ if ( !is_readable( $path = __DIR__ . '/../../SemanticMediaWiki/tests/autoloader.
 	die( 'The SemanticMediaWiki test autoloader is not available' );
 }
 
-print sprintf( "\n%-20s%s\n", "Compound Queries: ", SCQ_VERSION );
+print sprintf( "\n%-20s%s\n", "Semantic Compound Queries: ", SCQ_VERSION );
 
 require $path;

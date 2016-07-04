@@ -1,5 +1,9 @@
 <?php
 
+namespace SCQ\Tests;
+
+use SCQQueryProcessor;
+
 /**
  * @covers SCQQueryProcessor
  * @ingroup SemanticCompoundQueries
