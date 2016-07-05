@@ -91,16 +91,6 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase {
 				)
 			)
 		);
-		$provider['Invalid query, should produces an error'] = array(
-			array(
-				'[[Modification date::+!]];limit=3'
-			),
-			array(
-				array(
-					'error'=> 'foo',
-				)
-			)
-		);
 		return $provider;
 	}
 }
