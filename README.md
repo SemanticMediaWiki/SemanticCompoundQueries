@@ -21,10 +21,10 @@ To install the extension, place the entire `SemanticCompoundQueries` directory
 within your MediaWiki `extensions` directory, then add the following
 line to your `LocalSettings.php` file:
 
-    require_once( "$IP/extensions/SemanticCompoundQueries/SemanticCompoundQueries.php" );
+    require_once "$IP/extensions/SemanticCompoundQueries/SemanticCompoundQueries.php";
 
 
-The recommended way to install Semantic Interlanguage Links is by using [Composer][composer]
+The recommended way to install Semantic Compound Queries is by using [Composer][composer]
 with an entry in MediaWiki's `composer.json`.
 
 ```json
@@ -52,14 +52,18 @@ A sample call to `#compound query`, which retrieves both biographies, along
 with their subject; and fiction books, along with their author; is:
 
 ```
-{{#compound_query: [[Category:Books]][[Has gentre::Biography]];?Covers subject=Subject
-  |[[Category:Books]][[Has genre::Fiction]];?Has author=Author
+{{#compound_query:
+  [[Category:Books]] [[Has genre::Biography]]
+  ;?Covers subject=Subject
+  |
+  [[Category:Books]] [[Has genre::Fiction]]
+  ;?Has author=Author
   |format=list
 }}
 ```
 
 For more information, see the extension homepage at:
-http://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries
+https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries
 
 ## Contribution and support
 
@@ -70,7 +74,7 @@ have a look at the contribution guideline.
 
 * [File an issue](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/issues)
 * [Submit a pull request](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/pulls)
-* Ask a question on [the mailing list](https://semantic-mediawiki.org/wiki/Mailing_list)
+* Ask a question on [the mailing list](https://www.semantic-mediawiki.org/wiki/Mailing_list)
 * Ask a question on the #semantic-mediawiki IRC channel on Freenode.
 
 ## Tests
