@@ -6,8 +6,6 @@ use SMW\Tests\Utils\UtilityFactory;
 
 /**
  * @group semantic-compound-queries
- * @group semantic-mediawiki-integration
- *
  * @group medium
  *
  * @license GNU GPL v2+
