@@ -30,7 +30,6 @@ $wgExtensionCredits['semantic'][] = array(
 );
 
 $wgMessagesDirs['SemanticCompoundQueries'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['SemanticCompoundQueries'] = __DIR__ . '/SemanticCompoundQueries.i18n.php';
 $wgExtensionMessagesFiles['SemanticCompoundQueriesMagic'] = __DIR__ . '/SemanticCompoundQueries.i18n.magic.php';
 
 $wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';
