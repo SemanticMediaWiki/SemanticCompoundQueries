@@ -1,7 +1,9 @@
 <?php
 
+namespace SCQ\Tests;
 
 use SMW\Tests\Utils\MwApiFactory;
+use SCQCompoundQueryApi;
 
 /**
  * @covers SCQCompoundQueryApi

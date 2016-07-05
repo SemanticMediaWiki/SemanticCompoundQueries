@@ -2,24 +2,27 @@
 
 set -x
 
+BASE_PATH=$(pwd)
+MW_INSTALL_PATH=$BASE_PATH/../mw
+
 originalDirectory=$(pwd)
 
 cd ..
 
 wget https://github.com/wikimedia/mediawiki/archive/$MW.tar.gz
 tar -zxf $MW.tar.gz
-mv mediawiki-$MW phase3
+mv mediawiki-$MW mw
 
-cd phase3
+cd mw
 
-git checkout $MW
+##git checkout $MW
 
 ## MW 1.25 requires Psr\Logger
 if [ -f composer.json ]
 then
-	composer install --prefer-source
+	composer install
 else
-	composer require 'phpunit/phpunit=3.7.*' --prefer-source
+	composer require 'phpunit/phpunit=3.7.*'
 fi
 
 if [ "$DB" == "postgres" ]
@@ -31,16 +34,16 @@ else
 	php maintenance/install.php --dbtype $DBTYPE --dbuser root --dbname its_a_mw --dbpath $(pwd) --pass nyan TravisWiki admin --scriptpath /TravisWiki
 fi
 
-composer install mediawiki/semantic-media-wiki=$SMW --prefer-source
+composer require 'mediawiki/semantic-media-wiki='$SMW --update-with-dependencies
 
 #composer require 'mediawiki/semantic-compound-queries=dev-master' --prefer-source
 
 cd extensions
 
 rm -rf SemanticCompoundQueries
-cp -r $originalDirectory SemanticCompoundQueries
+cp -r $BASE_PATH SemanticCompoundQueries
 
-cd ..
+cd $MW_INSTALL_PATH
 
 echo 'require_once( __DIR__ . "/extensions/SemanticCompoundQueries/SemanticCompoundQueries.php" );' >> LocalSettings.php
 
