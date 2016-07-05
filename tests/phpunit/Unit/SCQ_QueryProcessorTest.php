@@ -69,7 +69,8 @@ class SCQQueryProcessorTest extends \PHPUnit_Framework_TestCase {
 			'[[don\'t;split',
 		];
 
-		$actual = $this->invokeMethod( new SCQQueryProcessor(), 'getSubParams', array( $param ) );
+		$processor = new SCQQueryProcessor();
+		$actual = $this->invokeMethod( $processor, 'getSubParams', array( $param ) );
 		$this->assertEquals( $expected, $actual );
 	}
 }

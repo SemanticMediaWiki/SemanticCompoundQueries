@@ -105,7 +105,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 		}
 
 		// Sort results so that they'll show up by page name
-		if( strcmp( $other_params['unsorted'], 'on' ) ) {
+		if( !isset($otherParams['unsorted']) || !strcmp( $otherParams['unsorted'], 'on' ) ) {
 			uasort( $results, array( 'SCQQueryProcessor', 'compareQueryResults' ) );
 		}
 
