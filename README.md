@@ -7,9 +7,7 @@
 [![Packagist download count](https://poser.pugx.org/mediawiki/semantic-compound-queries/d/total.png)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
 [![Dependency Status](https://www.versioneye.com/php/mediawiki:semantic-compound-queries/badge.png)](https://www.versioneye.com/php/mediawiki:semantic-compound-queries)
 
-Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] that defines a
-parser function, `#compound_query`, that displays the results of the
-equivalent of multiple Semantic MediaWiki #ask queries at the same time.
+Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension that defines the `#compound_query` parser function which can display results of multiple `#ask` queries (as compound construct) at the same time.
 
 ## Requirements
 
@@ -54,7 +52,7 @@ A sample call to `#compound query`, which retrieves both biographies, along
 with their subject; and fiction books, along with their author; is:
 
 ```
-{{#compound_query:[[Category:Books]][[Has gentre::Biography]];?Covers subject=Subject
+{{#compound_query: [[Category:Books]][[Has gentre::Biography]];?Covers subject=Subject
   |[[Category:Books]][[Has genre::Fiction]];?Has author=Author
   |format=list
 }}
@@ -65,8 +63,7 @@ http://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries
 
 ## Contribution and support
 
-- Version 0.4.1
-- Yaron Koren
+Original author: Yaron Koren (Version 0.4.1)
 
 If you want to contribute work to the project please subscribe to the developers mailing list and
 have a look at the contribution guideline.
