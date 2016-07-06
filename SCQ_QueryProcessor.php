@@ -95,10 +95,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 				$subQueryParams['format'] = $otherParams['format'];
 			}
 
-			$nextResult = self::getQueryResultFromFunctionParams(
-				$subQueryParams,
-				SMW_OUTPUT_WIKI
-			);
+			$nextResult = self::getQueryResultFromFunctionParams($subQueryParams);
 
 			$results = self::mergeSMWQueryResults( $results, $nextResult->getResults() );
 			$printRequests = self::mergeSMWPrintRequests( $printRequests, $nextResult->getPrintRequests() );
@@ -113,7 +110,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
 			SMWQueryProcessor::addThisPrintout( $printRequests, $otherParams );
-			$otherParams = parent::getProcessedParams( $otherParams, $printRequests );
+			$otherParams = self::getProcessedParams( $otherParams, $printRequests );
 		}
 
 		return array( $queryResult, $otherParams );
@@ -159,16 +156,15 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 
 	/**
 	 * @param $rawparams
-	 * @param $outputmode
 	 * @param $context
 	 * @param $showmode
 	 * 
 	 * @return SMWQueryResult
 	 */
-	protected static function getQueryResultFromFunctionParams( $rawparams, $outputmode, $context = SMWQueryProcessor::INLINE_QUERY, $showmode = false ) {
-		$printouts = null;
+	protected static function getQueryResultFromFunctionParams( $rawparams, $context = SMWQueryProcessor::INLINE_QUERY, $showmode = false ) {
+		$printouts = array();
 		self::processFunctionParams( $rawparams, $querystring, $params, $printouts, $showmode );
-		return self::getQueryResultFromQueryString( $querystring, $params, $printouts, SMW_OUTPUT_WIKI, $context );
+		return self::getQueryResultFromQueryString( $querystring, $params, $printouts, $context );
 	}
 
 	/**
@@ -223,7 +219,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	 * 
 	 * @return SMWQueryResult
 	 */
-	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraPrintouts, $outputMode, $context = SMWQueryProcessor::INLINE_QUERY ) {
+	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraPrintouts, $context = SMWQueryProcessor::INLINE_QUERY ) {
 		wfProfileIn( 'SCQQueryProcessor::getQueryResultFromQueryString' );
 
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
@@ -279,7 +275,7 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 			$format = self::getResultFormat( $params );
 		}
 
-		$printer = self::getResultPrinter( $format, $context, $res );
+		$printer = self::getResultPrinter( $format, $context );
 		$result = $printer->getResult( $res, $params, $outputmode );
 
 		wfProfileOut( 'SCQQueryProcessor::getResultFromQueryResult' );

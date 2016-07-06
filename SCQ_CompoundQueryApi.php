@@ -21,7 +21,7 @@ class SCQCompoundQueryApi extends Query
 		$parameters = $parameterFormatter->getAskApiParameters();
 
 		list( $queryParams, $otherParams ) = SCQQueryProcessor::separateParams( $parameters );
-		list( $queryResult, $otherParams ) = SCQQueryProcessor::queryAndMergeResults( $queryParams, $otherParams );
+		list( $queryResult ) = SCQQueryProcessor::queryAndMergeResults( $queryParams, $otherParams );
 
 		$outputFormat = 'json';
 		if ( $this->getMain()->getPrinter() instanceof \ApiFormatXml ) {
