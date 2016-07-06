@@ -6,6 +6,7 @@ use SCQQueryProcessor;
 
 /**
  * @covers SCQQueryProcessor
+ * @group SemanticCompoundQueries
  * @ingroup SemanticCompoundQueries
  *
  * @author Peter Grassberger < petertheone@gmail.com >
