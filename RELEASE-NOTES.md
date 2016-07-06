@@ -4,15 +4,16 @@ These are the release notes for the Semantic Compound Queries extension.
 
 Development version
 
-* Add `compoundquery` API endpoint
-* Add tests
-* Add `unsorted` parameter
-* Add composer support
+* Bumped Requirements to:
+    * PHP 5.3.2 or later
+    * MediaWiki 1.23 or later
+    * Semantic MediaWiki 2.1 or later
+
+* Added `compoundquery` API endpoint
+* Added `unsorted` parameter
+* Added composer support
 * General repository cleanup
-* Bump Requirements to:
-  * PHP 5.3.2 or later,
-  * MediaWiki 1.23 or later and
-  * Semantic MediaWiki 2.1 or later
+* Added tests
 
 ## Semantic Compound Queries 0.4.1
 
