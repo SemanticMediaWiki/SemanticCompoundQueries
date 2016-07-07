@@ -21,7 +21,7 @@
 		"issues": "https://github.com/SemanticMediaWiki/SemanticCompoundQueries/issues",
 		"irc": "irc://irc.freenode.net/semantic-mediawiki",
 		"forum": "https://www.semantic-mediawiki.org/wiki/semantic-mediawiki.org_talk:Community_portal",
-		"wiki": "https://www.semantic-mediawiki.org/wiki/Extension:Semantic_Compound_Queries",
+		"wiki": "https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries",
 		"source": "https://github.com/SemanticCompoundQueries/SemanticCompoundQueries"
 	},
 	"require": {
