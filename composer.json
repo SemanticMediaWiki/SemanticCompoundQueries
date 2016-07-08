@@ -8,7 +8,7 @@
 		"Wiki",
 		"MediaWiki"
 	],
-	"homepage": "https://semantic-mediawiki.org/wiki/",
+	"homepage": "https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries",
 	"license": "GPL-2.0+",
 	"authors": [
 		{
@@ -20,8 +20,8 @@
 		"email": "semediawiki-user@lists.sourceforge.net",
 		"issues": "https://github.com/SemanticMediaWiki/SemanticCompoundQueries/issues",
 		"irc": "irc://irc.freenode.net/semantic-mediawiki",
-		"forum": "https://semantic-mediawiki.org/wiki/semantic-mediawiki.org_talk:Community_portal",
-		"wiki": "https://semantic-mediawiki.org/wiki/",
+		"forum": "https://www.semantic-mediawiki.org/wiki/semantic-mediawiki.org_talk:Community_portal",
+		"wiki": "https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries",
 		"source": "https://github.com/SemanticCompoundQueries/SemanticCompoundQueries"
 	},
 	"require": {
