@@ -7,6 +7,7 @@ use SCQCompoundQueryApi;
 
 /**
  * @covers SCQCompoundQueryApi
+ * @group SemanticCompoundQueries
  * @ingroup SemanticCompoundQueries
  *
  * @author Peter Grassberger < petertheone@gmail.com >

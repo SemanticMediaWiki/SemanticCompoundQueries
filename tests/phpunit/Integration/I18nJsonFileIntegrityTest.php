@@ -5,8 +5,8 @@ namespace SCQ\Tests\Integration;
 use SMW\Tests\Utils\UtilityFactory;
 
 /**
- * @group semantic-compound-queries
- * @group medium
+ * @group SemanticCompoundQueries
+ * @ingroup SemanticCompoundQueries
  *
  * @license GNU GPL v2+
  * @since 1.0
