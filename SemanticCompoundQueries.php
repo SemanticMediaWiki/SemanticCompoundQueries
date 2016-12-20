@@ -19,7 +19,7 @@ if ( !defined( 'MEDIAWIKI' ) ) die();
 
 define( 'SCQ_VERSION', '1.0.0' );
 
-$wgExtensionCredits['semantic'][] = array(
+$GLOBALS['wgExtensionCredits']['semantic'][] = array(
 	'path' => __FILE__,
 	'name' => 'Semantic Compound Queries',
 	'version' => SCQ_VERSION,
@@ -29,16 +29,16 @@ $wgExtensionCredits['semantic'][] = array(
 	'license-name' => 'GPL-2.0+'
 );
 
-$wgMessagesDirs['SemanticCompoundQueries'] = __DIR__ . '/i18n';
-$wgExtensionMessagesFiles['SemanticCompoundQueriesMagic'] = __DIR__ . '/SemanticCompoundQueries.i18n.magic.php';
+$GLOBALS['wgMessagesDirs']['SemanticCompoundQueries'] = __DIR__ . '/i18n';
+$GLOBALS['wgExtensionMessagesFiles']['SemanticCompoundQueriesMagic'] = __DIR__ . '/SemanticCompoundQueries.i18n.magic.php';
 
-$wgHooks['ParserFirstCallInit'][] = 'scqgRegisterParser';
+$GLOBALS['wgHooks']['ParserFirstCallInit'][] = 'scqgRegisterParser';
 
-$wgAutoloadClasses['SCQQueryProcessor'] = __DIR__ . '/SCQ_QueryProcessor.php';
-$wgAutoloadClasses['SCQQueryResult'] = __DIR__ . '/SCQ_QueryResult.php';
-$wgAutoloadClasses['SCQCompoundQueryApi'] = __DIR__ . '/SCQ_CompoundQueryApi.php';
+$GLOBALS['wgAutoloadClasses']['SCQQueryProcessor'] = __DIR__ . '/SCQ_QueryProcessor.php';
+$GLOBALS['wgAutoloadClasses']['SCQQueryResult'] = __DIR__ . '/SCQ_QueryResult.php';
+$GLOBALS['wgAutoloadClasses']['SCQCompoundQueryApi'] = __DIR__ . '/SCQ_CompoundQueryApi.php';
 
-$wgAPIModules['compoundquery'] = '\SCQCompoundQueryApi';
+$GLOBALS['wgAPIModules']['compoundquery'] = '\SCQCompoundQueryApi';
 
 function scqgRegisterParser( Parser &$parser ) {
 	$parser->setFunctionHook( 'compound_query', array( 'SCQQueryProcessor', 'doCompoundQuery' ) );
