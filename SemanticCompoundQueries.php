@@ -17,7 +17,7 @@
 
 if ( !defined( 'MEDIAWIKI' ) ) die();
 
-define( 'SCQ_VERSION', '1.0.0' );
+define( 'SCQ_VERSION', '1.0.1' );
 
 $GLOBALS['wgExtensionCredits']['semantic'][] = array(
 	'path' => __FILE__,
