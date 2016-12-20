@@ -32,7 +32,7 @@ The recommended way to install Semantic Compound Queries is by using [Composer][
    has been successfully installed.
    
 Note that the required extension Semantic MediaWiki must be installed first according to the installation
-instructions provided with them.
+instructions provided with it.
 
 ## Usage
 
@@ -59,8 +59,7 @@ with their subject; and fiction books, along with their author; is:
 }}
 ```
 
-For more information, see the extension homepage at:
-https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries
+For more information, see the extension's homepage at [MediaWiki.org][homepage].
 
 ## Contribution and support
 
@@ -88,3 +87,4 @@ but can also be executed using `composer phpunit` from the extension base direct
 [travis]: https://travis-ci.org/SemanticMediaWiki/SemanticCompoundQueries
 [gpl-licence]: https://www.gnu.org/copyleft/gpl.html
 [composer]: https://getcomposer.org/
+[homepage]: https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries
