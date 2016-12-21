@@ -17,15 +17,7 @@ Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension 
 
 ## Installation
 
-To install the extension, place the entire `SemanticCompoundQueries` directory
-within your MediaWiki `extensions` directory, then add the following
-line to your `LocalSettings.php` file:
-
-    require_once "$IP/extensions/SemanticCompoundQueries/SemanticCompoundQueries.php";
-
-
-The recommended way to install Semantic Compound Queries is by using [Composer][composer]
-with an entry in MediaWiki's `composer.json`.
+The recommended way to install Semantic Compound Queries is by using [Composer][composer] with an entry in MediaWiki's `composer.json` or alternatively `composer.local.json`.
 
 ```json
 {
@@ -34,10 +26,13 @@ with an entry in MediaWiki's `composer.json`.
 	}
 }
 ```
-1. From your MediaWiki installation directory, execute
+1. From your MediaWiki installation directory, execute  
    `composer require mediawiki/semantic-compound-queries:~1.0`
-2. Navigate to _Special:Version_ on your wiki and verify that the package
-   have been successfully installed.
+2. Navigate to _Special:Version_ on your wiki and verify that the extension
+   has been successfully installed.
+   
+Note that the required extension Semantic MediaWiki must be installed first according to the installation
+instructions provided with it.
 
 ## Usage
 
@@ -53,17 +48,18 @@ with their subject; and fiction books, along with their author; is:
 
 ```
 {{#compound_query:
-  [[Category:Books]] [[Has genre::Biography]]
+  [[Category:Books]]
+  [[Has genre::Biography]]
   ;?Covers subject=Subject
   |
-  [[Category:Books]] [[Has genre::Fiction]]
+  [[Category:Books]]
+  [[Has genre::Fiction]]
   ;?Has author=Author
   |format=list
 }}
 ```
 
-For more information, see the extension homepage at:
-https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries
+For more information, see the extension's homepage at [MediaWiki.org][homepage].
 
 ## Contribution and support
 
@@ -91,3 +87,4 @@ but can also be executed using `composer phpunit` from the extension base direct
 [travis]: https://travis-ci.org/SemanticMediaWiki/SemanticCompoundQueries
 [gpl-licence]: https://www.gnu.org/copyleft/gpl.html
 [composer]: https://getcomposer.org/
+[homepage]: https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries

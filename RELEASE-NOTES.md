@@ -1,8 +1,14 @@
 These are the release notes for the Semantic Compound Queries extension.
 
-## Semantic Compound Queries 1.0
+## Semantic Compound Queries 1.0.1
 
-Released on  September 21, 2016.
+Released on December 21, 2016
+
+* Fixed issue with the extension not loading properly
+
+## Semantic Compound Queries 1.0.0
+
+Released on September 21, 2016.
 
 * Bumped Requirements to:
     * PHP 5.3.2 or later
@@ -12,7 +18,7 @@ Released on  September 21, 2016.
 * Added `compoundquery` API endpoint
 * Added `unsorted` parameter
 * Added composer support
-* General repository cleanup
+* Made general repository cleanup
 * Added tests
 
 ## Semantic Compound Queries 0.4.1
@@ -21,44 +27,44 @@ Released on June 15, 2016.
 
 * Replaced deprecated wfMsgForContent() call; other small fixes
 
-## Semantic Compound Queries 0.4
+## Semantic Compound Queries 0.4.0
 
-Released on  May 26, 2014.
+Released on May 26, 2014.
 
 * i18n messages moved into JSON files
 
 ## Semantic Compound Queries 0.3.4
 
-Released on  November 19, 2012.
+Released on November 19, 2012.
 
-* Fix for handling identical page names in different namespaces
+* Fixed handling for identical page names in different namespaces
 
 ## Semantic Compound Queries 0.3.3
 
-Released on  October 22, 2012.
+Released on October 22, 2012.
 
 * Added support for SMW 1.8
 
 ## Semantic Compound Queries 0.3.2
 
-Released on  March 27, 2012.
+Released on March 27, 2012.
 
-* Fix for handling the display of multiple properties
+* Fixed handling for the display of multiple properties
 * Removed support for MW 1.15 and earlier
 * Removed support for SMW 1.5
 
 ## Semantic Compound Queries 0.3.1
 
-Released on  January 9, 2012.
+Released on January 9, 2012.
 
-* Fix for PHP < 5.3
+* Fixed compatibility for PHP < 5.3
 
-## Semantic Compound Queries 0.3
+## Semantic Compound Queries 0.3.0
 
-Released on  October 4, 2011.
+Released on October 4, 2011.
 
-* Results now sorted by page name
-* Further support added for SMW 1.6.2
+* Made results now sorting by page name
+* Added further support for SMW 1.6.2
 
 ## Semantic Compound Queries 0.2.10
 
@@ -72,7 +78,7 @@ Released on August 23, 2011.
 
 * Removed support for MW 1.13 and earlier
 * Removed support for SMW 1.4 and earlier
-* Small fixes
+* Made small fixes
 
 ## Semantic Compound Queries 0.2.8
 
@@ -84,28 +90,28 @@ Released on July 25, 2011.
 
 Released on April 4, 2011.
 
-* Fix for display of map icons
-* Support added for HipHop
+* Fixed the display of map icons
+* Added support for HipHop
 
 ## Semantic Compound Queries 0.2.6
 
 Released on September 23, 2010.
 
-* Improvements to PHP syntax
-* Minor fix for SMW < 1.5
+* Made improvements to PHP syntax
+* Made minor fix for SMW < 1.5
 
 ## Semantic Compound Queries 0.2.5
 
 Released on May 13, 2010.
 
-* Fix for handling of query format aliases
+* Fixed handling of query format aliases
 
 ## Semantic Compound Queries 0.2.4
 
 Released on March 11, 2010.
 
-* Fix for extra whitespace in queries
-* Duplication of values removed for SMW 1.5
+* Fixed handling for extra whitespace in queries
+* Removed duplication of values for SMW 1.5
 
 ## Semantic Compound Queries 0.2.3
 
@@ -118,22 +124,22 @@ Released on October 13, 2009.
 
 Released on June 4, 2009.
 
-* Added internationalization, for extension description
+* Added internationalization for extension description
 
 ## Semantic Compound Queries 0.2.1
 
 Released on December 1, 2008.
 
-* Fix for map icons with MW 1.12 or earlier
+* Fixed handling of map icons with MW 1.12 or earlier
 
-## Semantic Compound Queries 0.2
+## Semantic Compound Queries 0.2.0
 
 Released on November 25, 2008.
 
-* Two defined classes moved to their own files
-* Fix for semicolons contained within query filters
+* Moved two defined classes to their own files
+* Fixed handling of semicolons contained within query filters
 
-## Semantic Compound Queries 0.1
+## Semantic Compound Queries 0.1.0
 
 Released on November 19, 2008.
 
