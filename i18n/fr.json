@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"IAlex"
+			"IAlex",
+			"Urhixidur"
 		]
 	},
-	"semanticcompoundqueries-desc": "Une fonction du parseur qui affiche plusieurs requêtes sémantiques en même temps"
+	"semanticcompoundqueries-desc": "Une fonction de l’analyseur qui affiche plusieurs requêtes sémantiques en même temps"
 }
