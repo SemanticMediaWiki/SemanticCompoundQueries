@@ -1,31 +1,40 @@
 <?php
 
+namespace SCQ;
+
+use SMWQueryProcessor as QueryProcessor;
+use SMWQuery as Query;
+use Parser;
+
 /**
  * Class that holds static functions for handling compound queries.
- * This class inherits from Semantic MediaWiki's SMWQueryProcessor.
+ * This class inherits from Semantic MediaWiki's QueryProcessor.
  *
- * @ingroup SemanticCompoundQueries
- * 
+ * @license GNU GPL v2+
+ * @since 1.0
+ *
  * @author Yaron Koren
  * @author Peter Grassberger < petertheone@gmail.com >
  */
-class SCQQueryProcessor extends SMWQueryProcessor {
+class CompoundQueryProcessor extends QueryProcessor {
 
 	/**
 	 * Comparison helper function, used in sorting results.
 	 */
 	public static function compareQueryResults( $a, $b ) {
+
 		if ( $a->getSerialization() == $b->getSerialization() ) {
 			return 0;
 		}
+
 		return ( $a->getSerialization() < $b->getSerialization() ) ? -1 : 1;
 	}
 
 	/**
 	 * Handler for the #compound_query parser function.
-	 * 
+	 *
 	 * @param Parser $parser
-	 * 
+	 *
 	 * @return string
 	 */
 	public static function doCompoundQuery( Parser &$parser ) {
@@ -103,13 +112,13 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 
 		// Sort results so that they'll show up by page name
 		if( !isset($otherParams['unsorted']) || !strcmp( $otherParams['unsorted'], 'on' ) ) {
-			uasort( $results, array( 'SCQQueryProcessor', 'compareQueryResults' ) );
+			uasort( $results, array( '\SCQ\CompoundQueryProcessor', 'compareQueryResults' ) );
 		}
 
-		$queryResult = new SCQQueryResult( $printRequests, new SMWQuery(), $results, smwfGetStore() );
+		$queryResult = new CompoundQueryResult( $printRequests, new Query(), $results, smwfGetStore() );
 
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			SMWQueryProcessor::addThisPrintout( $printRequests, $otherParams );
+			self::addThisPrintout( $printRequests, $otherParams );
 			$otherParams = self::getProcessedParams( $otherParams, $printRequests );
 		}
 
@@ -120,9 +129,9 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	 * An alternative to explode() - that function won't work here,
 	 * because we don't want to split the string on all semicolons, just
 	 * the ones that aren't contained within square brackets
-	 * 
+	 *
 	 * @param string $param
-	 * 
+	 *
 	 * @return array
 	 */
 	protected static function getSubParams( $param ) {
@@ -158,10 +167,10 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	 * @param $rawparams
 	 * @param $context
 	 * @param $showmode
-	 * 
+	 *
 	 * @return SMWQueryResult
 	 */
-	protected static function getQueryResultFromFunctionParams( $rawparams, $context = SMWQueryProcessor::INLINE_QUERY, $showmode = false ) {
+	protected static function getQueryResultFromFunctionParams( $rawparams, $context = QueryProcessor::INLINE_QUERY, $showmode = false ) {
 		$printouts = array();
 		self::processFunctionParams( $rawparams, $querystring, $params, $printouts, $showmode );
 		return self::getQueryResultFromQueryString( $querystring, $params, $printouts, $context );
@@ -169,10 +178,10 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 
 	/**
 	 * Combine two arrays of SMWWikiPageValue objects into one
-	 * 
+	 *
 	 * @param array $result1
 	 * @param array $result2
-	 * 
+	 *
 	 * @return array
 	 */
 	protected static function mergeSMWQueryResults( $result1, $result2 ) {
@@ -216,14 +225,13 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 	 * @param $extraPrintouts
 	 * @param $outputMode
 	 * @param $context
-	 * 
+	 *
 	 * @return SMWQueryResult
 	 */
-	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraPrintouts, $context = SMWQueryProcessor::INLINE_QUERY ) {
-		wfProfileIn( 'SCQQueryProcessor::getQueryResultFromQueryString' );
+	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraPrintouts, $context = QueryProcessor::INLINE_QUERY ) {
 
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			SMWQueryProcessor::addThisPrintout( $extraPrintouts, $params );
+			QueryProcessor::addThisPrintout( $extraPrintouts, $params );
 			$params = self::getProcessedParams( $params, $extraPrintouts, false );
 		}
 
@@ -245,25 +253,22 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 			$wikiPage->display_options = $parameters;
 		}
 
-		wfProfileOut( 'SCQQueryProcessor::getQueryResultFromQueryString' );
-
 		return $queryResult;
 	}
 
 	/**
 	 * Matches getResultFromQueryResult() from SMWQueryProcessor,
 	 * except that formats of type 'debug' and 'count' aren't handled.
-	 * 
-	 * @param SCQQueryResult $res
+	 *
+	 * @param CompoundQueryResult $res
 	 * @param array $params These need to be the result of a list fed to getProcessedParams as of SMW 1.6.2
 	 * @param $outputmode
 	 * @param $context
 	 * @param string $format
-	 * 
+	 *
 	 * @return string
 	 */
-	protected static function getResultFromQueryResult( SCQQueryResult $res, array $params, $outputmode, $context = SMWQueryProcessor::INLINE_QUERY, $format = '' ) {
-		wfProfileIn( 'SCQQueryProcessor::getResultFromQueryResult' );
+	protected static function getResultFromQueryResult( CompoundQueryResult $res, array $params, $outputmode, $context = QueryProcessor::INLINE_QUERY, $format = '' ) {
 
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
 			$format = $params['format'];
@@ -277,8 +282,6 @@ class SCQQueryProcessor extends SMWQueryProcessor {
 
 		$printer = self::getResultPrinter( $format, $context );
 		$result = $printer->getResult( $res, $params, $outputmode );
-
-		wfProfileOut( 'SCQQueryProcessor::getResultFromQueryResult' );
 
 		return $result;
 	}

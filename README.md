@@ -11,9 +11,9 @@ Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension 
 
 ## Requirements
 
-- PHP 5.3.2 or later
+- PHP 5.5 or later
 - MediaWiki 1.23 or later
-- [Semantic MediaWiki][smw] 2.1 or later
+- [Semantic MediaWiki][smw] 2.4 or later
 
 ## Installation
 
@@ -26,11 +26,11 @@ The recommended way to install Semantic Compound Queries is by using [Composer][
 	}
 }
 ```
-1. From your MediaWiki installation directory, execute  
+1. From your MediaWiki installation directory, execute
    `composer require mediawiki/semantic-compound-queries:~1.0`
 2. Navigate to _Special:Version_ on your wiki and verify that the extension
    has been successfully installed.
-   
+
 Note that the required extension Semantic MediaWiki must be installed first according to the installation
 instructions provided with it.
 
