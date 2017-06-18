@@ -5,13 +5,12 @@ namespace SCQ\Tests\Integration;
 use SMW\Tests\Utils\UtilityFactory;
 
 /**
- * @group SemanticCompoundQueries
- * @ingroup SemanticCompoundQueries
+ * @group semantic-compound-queries
  *
  * @license GNU GPL v2+
  * @since 1.0
  *
- * @author mwjames
+ * @author Peter Grassberger < petertheone@gmail.com >
  */
 class I18nJsonFileIntegrityTest extends \PHPUnit_Framework_TestCase {
 

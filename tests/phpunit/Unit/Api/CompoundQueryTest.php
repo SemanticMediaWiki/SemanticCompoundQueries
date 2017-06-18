@@ -1,19 +1,21 @@
 <?php
 
-namespace SCQ\Tests;
+namespace SCQ\Tests\Api;
 
 use SMW\Tests\Utils\MwApiFactory;
-use SCQCompoundQueryApi;
+use SCQ\Api\CompoundQuery;
 
 /**
- * @covers SCQCompoundQueryApi
- * @group SemanticCompoundQueries
- * @ingroup SemanticCompoundQueries
+ * @covers \SCQ\Api\CompoundQuery
+ * @group semantic-compound-queries
+ *
+ * @license GNU GPL v2+
+ * @since 1.0
  *
  * @author Peter Grassberger < petertheone@gmail.com >
  */
+class CompoundQueryTest extends \PHPUnit_Framework_TestCase {
 
-class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * @var MwApiFactory
 	 */
@@ -25,12 +27,14 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testCanConstruct() {
-		$instance = new SCQCompoundQueryApi(
+
+		$instance = new CompoundQuery(
 			$this->apiFactory->newApiMain( array( 'query' => 'Foo' ) ),
 			'compoundquery'
 		);
+
 		$this->assertInstanceOf(
-			'SCQCompoundQueryApi',
+			CompoundQuery::class,
 			$instance
 		);
 	}
@@ -39,11 +43,17 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase {
 	 * @dataProvider sampleQueryProvider
 	 */
 	public function testExecute( array $query, array $expected ) {
+
 		$results = $this->apiFactory->doApiRequest( array(
 			'action' => 'compoundquery',
 			'query' => implode( '|', $query )
 		) );
-		$this->assertInternalType( 'array', $results );
+
+		$this->assertInternalType(
+			'array',
+			$results
+		);
+
 		// If their is no printrequests array we expect an error array
 		if ( isset( $results['query']['printrequests'] ) ) {
 			$this->assertEquals( $expected, $results['query']['printrequests'] );
@@ -53,6 +63,7 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function sampleQueryProvider() {
+
 		$provider['Standard query'] = array(
 			array(
 				'[[Modification date::+]];?Modification date;limit=10',
@@ -62,16 +73,21 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase {
 					'label'=> '',
 					'typeid' => '_wpg',
 					'mode' => 2,
-					'format' => false
+					'format' => false,
+					'key' => '',
+					'redi' => ''
 				),
 				array(
 					'label'=> 'Modification date',
 					'typeid' => '_dat',
 					'mode' => 1,
-					'format' => ''
+					'format' => '',
+					'key' => '_MDAT',
+					'redi' => ''
 				)
 			)
 		);
+
 		$provider['Compound query'] = array(
 			array(
 				'[[Modification date::+]];?Modification date;limit=10',
@@ -82,16 +98,22 @@ class SCQCompoundQueryApiTest extends \PHPUnit_Framework_TestCase {
 					'label'=> '',
 					'typeid' => '_wpg',
 					'mode' => 2,
-					'format' => false
+					'format' => false,
+					'key' => '',
+					'redi' => ''
 				),
 				array(
 					'label'=> 'Modification date',
 					'typeid' => '_dat',
 					'mode' => 1,
-					'format' => ''
+					'format' => '',
+					'key' => '_MDAT',
+					'redi' => ''
 				)
 			)
 		);
+
 		return $provider;
 	}
+
 }

@@ -2,17 +2,19 @@
 
 namespace SCQ\Tests;
 
-use SCQQueryProcessor;
+use SCQ\CompoundQueryProcessor;
 
 /**
- * @covers SCQQueryProcessor
- * @group SemanticCompoundQueries
- * @ingroup SemanticCompoundQueries
+ * @covers \SCQ\CompoundQueryProcessor
+ * @group semantic-compound-queries
+ *
+ * @license GNU GPL v2+
+ * @since 1.0
  *
  * @author Peter Grassberger < petertheone@gmail.com >
  */
+class CompoundQueryProcessorTest extends \PHPUnit_Framework_TestCase {
 
-class SCQQueryProcessorTest extends \PHPUnit_Framework_TestCase {
 	/**
 	 * Call protected/private method of a class.
 	 *
@@ -23,6 +25,7 @@ class SCQQueryProcessorTest extends \PHPUnit_Framework_TestCase {
 	 * @return mixed Method return.
 	 */
 	public function invokeMethod( &$object, $methodName, array $parameters = array() ) {
+
 		$reflection = new \ReflectionClass( get_class( $object ) );
 		$method = $reflection->getMethod( $methodName );
 		$method->setAccessible( true );
@@ -54,7 +57,7 @@ class SCQQueryProcessorTest extends \PHPUnit_Framework_TestCase {
 			]
 		];
 
-		$this->assertEquals( $expected, SCQQueryProcessor::separateParams( $params ) );
+		$this->assertEquals( $expected, CompoundQueryProcessor::separateParams( $params ) );
 	}
 
 	public function testGetSubParams() {
@@ -70,8 +73,9 @@ class SCQQueryProcessorTest extends \PHPUnit_Framework_TestCase {
 			'[[don\'t;split',
 		];
 
-		$processor = new SCQQueryProcessor();
+		$processor = new CompoundQueryProcessor();
 		$actual = $this->invokeMethod( $processor, 'getSubParams', array( $param ) );
 		$this->assertEquals( $expected, $actual );
 	}
+
 }
