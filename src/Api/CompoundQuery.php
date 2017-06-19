@@ -42,12 +42,12 @@ class CompoundQuery extends Query {
 	 * @return array
 	 */
 	public function getAllowedParams() {
-		return array(
-			'query' => array(
+		return [
+			'query' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -57,9 +57,9 @@ class CompoundQuery extends Query {
 	 * @return array
 	 */
 	public function getParamDescription() {
-		return array(
+		return [
 			'query' => 'The multiple queries string in ask-language'
-		);
+		];
 	}
 
 	/**
@@ -69,9 +69,9 @@ class CompoundQuery extends Query {
 	 * @return array
 	 */
 	public function getDescription() {
-		return array(
+		return [
 			'API module to query SMW by providing a multiple queries in the ask language.'
-		);
+		];
 	}
 
 	/**
@@ -81,10 +81,10 @@ class CompoundQuery extends Query {
 	 * @return array
 	 */
 	protected function getExamples() {
-		return array(
+		return [
 			'api.php?action=compoundquery&query=' . urlencode( '[[Has city::Vienna]]; ?Has coordinates|[[Has city::Graz]]; ?Has coordinates' ),
 			'api.php?action=compoundquery&query=' . urlencode( '|[[Has city::Vienna]]; ?Has coordinates|[[Has city::Graz]]; ?Has coordinates' ),
-		);
+		];
 	}
 
 	/**

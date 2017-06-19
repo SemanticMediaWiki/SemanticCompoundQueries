@@ -41,7 +41,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 		global $smwgQEnabled, $smwgIQRunningNumber;
 
 		if ( !$smwgQEnabled ) {
-			return smwfEncodeMessages( array( wfMessage( 'smw_iq_disabled' )->inContentLanguage()->text() ) );
+			return smwfEncodeMessages( [ wfMessage( 'smw_iq_disabled' )->inContentLanguage()->text() ] );
 		}
 
 		$smwgIQRunningNumber++;
@@ -66,8 +66,8 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * @return array
 	 */
 	public static function separateParams( $params ) {
-		$queryParams = array();
-		$otherParams = array();
+		$queryParams = [];
+		$otherParams = [];
 
 		foreach ( $params as $param ) {
 			// Very primitive heuristic - if the parameter
@@ -83,7 +83,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 				}
 			}
 		}
-		return array( $queryParams, $otherParams );
+		return [ $queryParams, $otherParams ];
 	}
 
 	/**
@@ -94,8 +94,8 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * @return array
 	 */
 	public static function queryAndMergeResults( $queryParams, $otherParams ) {
-		$results = array();
-		$printRequests = array();
+		$results = [];
+		$printRequests = [];
 
 		foreach ( $queryParams as $param ) {
 			$subQueryParams = self::getSubParams( $param );
@@ -112,7 +112,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 
 		// Sort results so that they'll show up by page name
 		if( !isset($otherParams['unsorted']) || !strcmp( $otherParams['unsorted'], 'on' ) ) {
-			uasort( $results, array( '\SCQ\CompoundQueryProcessor', 'compareQueryResults' ) );
+			uasort( $results, [ '\SCQ\CompoundQueryProcessor', 'compareQueryResults' ] );
 		}
 
 		$queryResult = new CompoundQueryResult( $printRequests, new Query(), $results, smwfGetStore() );
@@ -122,7 +122,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 			$otherParams = self::getProcessedParams( $otherParams, $printRequests );
 		}
 
-		return array( $queryResult, $otherParams );
+		return [ $queryResult, $otherParams ];
 	}
 
 	/**
@@ -135,7 +135,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * @return array
 	 */
 	protected static function getSubParams( $param ) {
-		$sub_params = array();
+		$sub_params = [];
 		$sub_param = '';
 		$uncompleted_square_brackets = 0;
 
@@ -171,7 +171,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * @return SMWQueryResult
 	 */
 	protected static function getQueryResultFromFunctionParams( $rawparams, $context = QueryProcessor::INLINE_QUERY, $showmode = false ) {
-		$printouts = array();
+		$printouts = [];
 		self::processFunctionParams( $rawparams, $querystring, $params, $printouts, $showmode );
 		return self::getQueryResultFromQueryString( $querystring, $params, $printouts, $context );
 	}
@@ -189,7 +189,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 			return $result2;
 		}
 
-		$existing_page_names = array();
+		$existing_page_names = [];
 		foreach ( $result1 as $r1 ) {
 			$existing_page_names[] = $r1->getSerialization();
 		}
@@ -205,7 +205,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 	}
 
 	protected static function mergeSMWPrintRequests( $printRequests1, $printRequests2 ) {
-		$existingPrintoutLabels = array();
+		$existingPrintoutLabels = [];
 		foreach ( $printRequests1 as $p1 ) {
 			$existingPrintoutLabels[] = $p1->getLabel();
 		}
@@ -238,7 +238,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 		$query = self::createQuery( $querystring, $params, $context, null, $extraPrintouts );
 		$queryResult = smwfGetStore()->getQueryResult( $query );
 
-		$parameters = array();
+		$parameters = [];
 
 		if ( version_compare( SMW_VERSION, '1.7.2', '>' ) ) {
 			foreach ( $params as $param ) {

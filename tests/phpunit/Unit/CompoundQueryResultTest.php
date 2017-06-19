@@ -34,7 +34,7 @@ class CompoundQueryResultTest extends \PHPUnit_Framework_TestCase {
 
 		$this->assertInstanceOf(
 			CompoundQueryResult::class,
-			new CompoundQueryResult( array(), $this->query, array(), $this->store )
+			new CompoundQueryResult( [], $this->query, [], $this->store )
 		);
 	}
 

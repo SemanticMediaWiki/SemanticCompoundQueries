@@ -24,7 +24,7 @@ class CompoundQueryProcessorTest extends \PHPUnit_Framework_TestCase {
 	 *
 	 * @return mixed Method return.
 	 */
-	public function invokeMethod( &$object, $methodName, array $parameters = array() ) {
+	public function invokeMethod( &$object, $methodName, array $parameters = [] ) {
 
 		$reflection = new \ReflectionClass( get_class( $object ) );
 		$method = $reflection->getMethod( $methodName );
@@ -74,7 +74,7 @@ class CompoundQueryProcessorTest extends \PHPUnit_Framework_TestCase {
 		];
 
 		$processor = new CompoundQueryProcessor();
-		$actual = $this->invokeMethod( $processor, 'getSubParams', array( $param ) );
+		$actual = $this->invokeMethod( $processor, 'getSubParams', [ $param ] );
 		$this->assertEquals( $expected, $actual );
 	}
 

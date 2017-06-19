@@ -3,74 +3,74 @@
  *
  */
 
-$magicWords = array();
+$magicWords = [];
 
 /** English (English) */
-$magicWords['en'] = array(
-	'compound_query' => array( 0, 'compound_query' ),
-);
+$magicWords['en'] = [
+	'compound_query' => [ 0, 'compound_query' ],
+];
 
 /** Arabic (العربية) */
-$magicWords['ar'] = array(
-	'compound_query' => array( 0, 'استعلام_مركب' ),
-);
+$magicWords['ar'] = [
+	'compound_query' => [ 0, 'استعلام_مركب' ],
+];
 
 /** Egyptian Arabic (مصرى) */
-$magicWords['arz'] = array(
-	'compound_query' => array( 0, 'استعلام_مركب' ),
-);
+$magicWords['arz'] = [
+	'compound_query' => [ 0, 'استعلام_مركب' ],
+];
 
 /** Chuvash (Чӑвашла) */
-$magicWords['cv'] = array(
-	'compound_query' => array( 0, 'compound_query' ),
-);
+$magicWords['cv'] = [
+	'compound_query' => [ 0, 'compound_query' ],
+];
 
 /** German (Deutsch) */
-$magicWords['de'] = array(
-	'compound_query' => array( 0, 'abfrage_zusammen', 'frage_zusammen' ),
-);
+$magicWords['de'] = [
+	'compound_query' => [ 0, 'abfrage_zusammen', 'frage_zusammen' ],
+];
 
 /** Japanese (日本語) */
-$magicWords['ja'] = array(
-	'compound_query' => array( 0, '複合クエリ', '複合クエリー' ),
-);
+$magicWords['ja'] = [
+	'compound_query' => [ 0, '複合クエリ', '複合クエリー' ],
+];
 
 /** Korean (한국어) */
-$magicWords['ko'] = array(
-	'compound_query' => array( 0, '복합_쿼리' ),
-);
+$magicWords['ko'] = [
+	'compound_query' => [ 0, '복합_쿼리' ],
+];
 
 /** Macedonian (македонски) */
-$magicWords['mk'] = array(
-	'compound_query' => array( 0, 'мешовито_барање' ),
-);
+$magicWords['mk'] = [
+	'compound_query' => [ 0, 'мешовито_барање' ],
+];
 
 /** Low Saxon (Netherlands) (Nedersaksies) */
-$magicWords['nds-nl'] = array(
-	'compound_query' => array( 0, 'samenestelden_zeukopdrachte', 'samengestelde_zoekopdracht' ),
-);
+$magicWords['nds-nl'] = [
+	'compound_query' => [ 0, 'samenestelden_zeukopdrachte', 'samengestelde_zoekopdracht' ],
+];
 
 /** Dutch (Nederlands) */
-$magicWords['nl'] = array(
-	'compound_query' => array( 0, 'samengestelde_zoekopdracht' ),
-);
+$magicWords['nl'] = [
+	'compound_query' => [ 0, 'samengestelde_zoekopdracht' ],
+];
 
 /** Brazilian Portuguese (português do Brasil) */
-$magicWords['pt-br'] = array(
-	'compound_query' => array( 0, 'consulta_composta' ),
-);
+$magicWords['pt-br'] = [
+	'compound_query' => [ 0, 'consulta_composta' ],
+];
 
 /** Serbian (Latin script) (srpski (latinica)‎) */
-$magicWords['sr-el'] = array(
-	'compound_query' => array( 0, 'sastavi_upit' ),
-);
+$magicWords['sr-el'] = [
+	'compound_query' => [ 0, 'sastavi_upit' ],
+];
 
 /** Simplified Chinese (中文（简体）‎) */
-$magicWords['zh-hans'] = array(
-	'compound_query' => array( 0, '组合查询' ),
-);
+$magicWords['zh-hans'] = [
+	'compound_query' => [ 0, '组合查询' ],
+];
 
 /** Traditional Chinese (中文（繁體）‎) */
-$magicWords['zh-hant'] = array(
-	'compound_query' => array( 0, '組合搜尋' ),
-);
+$magicWords['zh-hant'] = [
+	'compound_query' => [ 0, '組合搜尋' ],
+];

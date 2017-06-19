@@ -29,7 +29,7 @@ class CompoundQueryTest extends \PHPUnit_Framework_TestCase {
 	public function testCanConstruct() {
 
 		$instance = new CompoundQuery(
-			$this->apiFactory->newApiMain( array( 'query' => 'Foo' ) ),
+			$this->apiFactory->newApiMain( [ 'query' => 'Foo' ] ),
 			'compoundquery'
 		);
 
@@ -44,10 +44,10 @@ class CompoundQueryTest extends \PHPUnit_Framework_TestCase {
 	 */
 	public function testExecute( array $query, array $expected ) {
 
-		$results = $this->apiFactory->doApiRequest( array(
+		$results = $this->apiFactory->doApiRequest( [
 			'action' => 'compoundquery',
 			'query' => implode( '|', $query )
-		) );
+		] );
 
 		$this->assertInternalType(
 			'array',
@@ -64,54 +64,54 @@ class CompoundQueryTest extends \PHPUnit_Framework_TestCase {
 
 	public function sampleQueryProvider() {
 
-		$provider['Standard query'] = array(
-			array(
+		$provider['Standard query'] = [
+			[
 				'[[Modification date::+]];?Modification date;limit=10',
-			),
-			array(
-				array(
+			],
+			[
+				[
 					'label'=> '',
 					'typeid' => '_wpg',
 					'mode' => 2,
 					'format' => false,
 					'key' => '',
 					'redi' => ''
-				),
-				array(
+				],
+				[
 					'label'=> 'Modification date',
 					'typeid' => '_dat',
 					'mode' => 1,
 					'format' => '',
 					'key' => '_MDAT',
 					'redi' => ''
-				)
-			)
-		);
+				]
+			]
+		];
 
-		$provider['Compound query'] = array(
-			array(
+		$provider['Compound query'] = [
+			[
 				'[[Modification date::+]];?Modification date;limit=10',
 				'[[Modification date::+]];?Modification date'
-			),
-			array(
-				array(
+			],
+			[
+				[
 					'label'=> '',
 					'typeid' => '_wpg',
 					'mode' => 2,
 					'format' => false,
 					'key' => '',
 					'redi' => ''
-				),
-				array(
+				],
+				[
 					'label'=> 'Modification date',
 					'typeid' => '_dat',
 					'mode' => 1,
 					'format' => '',
 					'key' => '_MDAT',
 					'redi' => ''
-				)
-			)
-		);
+				]
+			]
+		];
 
 		return $provider;
 	}
