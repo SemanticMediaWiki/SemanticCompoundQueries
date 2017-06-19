@@ -10,7 +10,7 @@ use SMW\Tests\Utils\UtilityFactory;
  * @license GNU GPL v2+
  * @since 1.0
  *
- * @author Peter Grassberger < petertheone@gmail.com >
+ * @author mwjames
  */
 class I18nJsonFileIntegrityTest extends \PHPUnit_Framework_TestCase {
 
