@@ -1,5 +1,16 @@
 These are the release notes for the Semantic Compound Queries extension.
 
+## Semantic Compound Queries 1.1.0
+
+This is not a release yet.
+
+* Bumped Requirements to:
+    * PHP 5.5 or later
+    * Semantic MediaWiki 2.4 or later
+
+* Made general repository cleanup ... continued
+* Provided translation updates (by translatewiki.net community)
+
 ## Semantic Compound Queries 1.0.1
 
 Released on December 21, 2016
