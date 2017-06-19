@@ -6,7 +6,7 @@
  * @defgroup SemanticCompoundQueries SemanticCompoundQueries
  */
 if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'This file is part of the SemanticCompoundQueries extension, it is not a valid entry point.' );
+	die( 'This file is part of the Semantic Compound Queries extension, it is not a valid entry point.' );
 }
 
 if ( defined( 'SCQ_VERSION' ) ) {
@@ -86,12 +86,12 @@ class SemanticCompoundQueries {
 	 */
 	public static function checkRequirements() {
 
-		if ( version_compare( $GLOBALS[ 'wgVersion' ], '1.13', 'lt' ) ) {
-			die( '<b>Error:</b> This version of <a href="https://github.com/SemanticMediaWiki/SemanticCompoundQueries/">Semantic Compound Queries</a> is only compatible with MediaWiki 1.13 or above. You need to upgrade MediaWiki first.' );
+		if ( version_compare( $GLOBALS[ 'wgVersion' ], '1.23', 'lt' ) ) {
+			die( '<b>Error:</b> This version of <a href="https://github.com/SemanticMediaWiki/SemanticCompoundQueries/">Semantic Compound Queries</a> is only compatible with MediaWiki 1.23 or above. You need to upgrade MediaWiki first.' );
 		}
 
 		if ( !defined( 'SMW_VERSION' ) ) {
-			die( '<b>Error:</b> <a href="https://github.com/SemanticMediaWiki/SemanticCompoundQueries/">Semantic Compound Queries</a> requires the <a href="https://github.com/SemanticMediaWiki/SemanticMediaWiki/">Semantic MediaWiki</a> extension, please enable or install the extension first.' );
+			die( '<b>Error:</b> <a href="https://github.com/SemanticMediaWiki/SemanticCompoundQueries/">Semantic Compound Queries</a> requires the <a href="https://github.com/SemanticMediaWiki/SemanticMediaWiki/">Semantic MediaWiki</a> extension. Please enable or install the extension first.' );
 		}
 	}
 
