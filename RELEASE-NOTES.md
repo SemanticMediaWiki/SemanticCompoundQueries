@@ -2,7 +2,7 @@ These are the release notes for the Semantic Compound Queries extension.
 
 ## Semantic Compound Queries 1.1.0
 
-This is not a release yet.
+Released on June 24, 2017.
 
 * Bumped Requirements to:
     * PHP 5.5 or later

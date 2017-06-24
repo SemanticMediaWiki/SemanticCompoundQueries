@@ -22,12 +22,12 @@ The recommended way to install Semantic Compound Queries is by using [Composer][
 ```json
 {
 	"require": {
-		"mediawiki/semantic-compound-queries": "~1.0"
+		"mediawiki/semantic-compound-queries": "~1.1"
 	}
 }
 ```
 1. From your MediaWiki installation directory, execute
-   `composer require mediawiki/semantic-compound-queries:~1.0`
+   `composer require mediawiki/semantic-compound-queries:~1.1`
 2. Navigate to _Special:Version_ on your wiki and verify that the extension
    has been successfully installed.
 
