@@ -1,5 +1,9 @@
 These are the release notes for the Semantic Compound Queries extension.
 
+## Semantic Compound Queries 1.2.0
+
+This is not a release yet.
+
 ## Semantic Compound Queries 1.1.0
 
 Released on June 24, 2017.
