@@ -56,7 +56,7 @@ class SemanticCompoundQueries {
 	 */
 	public static function initExtension() {
 
-		define( 'SCQ_VERSION', '1.1.0' );
+		define( 'SCQ_VERSION', '1.2.0-alpha' );
 
 		// Register the extension
 		$GLOBALS['wgExtensionCredits']['semantic'][] = [
