@@ -24,7 +24,7 @@ class CompoundQueryResult extends QueryResult {
 	 * @param QueryResult $newResult
 	 */
 	public function addResult( QueryResult $newResult ) {
-		$existingPageNames = array();
+		$existingPageNames = [];
 
 		while ( $row = $this->getNext() ) {
 			if ( $row[0] instanceof ResultArray ) {

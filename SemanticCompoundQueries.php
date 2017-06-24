@@ -59,18 +59,18 @@ class SemanticCompoundQueries {
 		define( 'SCQ_VERSION', '1.1.0-alpha' );
 
 		// Register the extension
-		$GLOBALS['wgExtensionCredits']['semantic'][] = array(
+		$GLOBALS['wgExtensionCredits']['semantic'][] = [
 			'path' => __FILE__,
 			'name' => 'Semantic Compound Queries',
 			'version' => SCQ_VERSION,
-			'author' => array(
+			'author' => [
 				'[https://www.semantic-mediawiki.org/ Semantic MediaWiki project]',
 				'Yaron Koren'
-			),
+			],
 			'url' => 'https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries',
 			'descriptionmsg' => 'semanticcompoundqueries-desc',
 			'license-name' => 'GPL-2.0+'
-		);
+		];
 
 		// Register message files
 		$GLOBALS['wgMessagesDirs']['SemanticCompoundQueries'] = __DIR__ . '/i18n';
@@ -109,7 +109,7 @@ class SemanticCompoundQueries {
 		$GLOBALS['wgAPIModules']['compoundquery'] = 'SCQ\Api\CompoundQuery';
 
 		$GLOBALS['wgHooks']['ParserFirstCallInit'][] = function( Parser &$parser  ) {
-			$parser->setFunctionHook( 'compound_query', array( '\SCQ\CompoundQueryProcessor', 'doCompoundQuery' ) );
+			$parser->setFunctionHook( 'compound_query', [ '\SCQ\CompoundQueryProcessor', 'doCompoundQuery' ] );
 
 			// always return true, in order not to stop MW's hook processing!
 			return true;
