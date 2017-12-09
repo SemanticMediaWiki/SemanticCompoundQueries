@@ -5,7 +5,6 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SemanticMediaWiki/SemanticCompoundQueries/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/SemanticMediaWiki/SemanticCompoundQueries/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/mediawiki/semantic-compound-queries/version.png)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
 [![Packagist download count](https://poser.pugx.org/mediawiki/semantic-compound-queries/d/total.png)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
-[![Dependency Status](https://www.versioneye.com/php/mediawiki:semantic-compound-queries/badge.png)](https://www.versioneye.com/php/mediawiki:semantic-compound-queries)
 
 Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension that defines the `#compound_query` parser function which can display results of multiple `#ask` queries (as compound construct) at the same time.
 
