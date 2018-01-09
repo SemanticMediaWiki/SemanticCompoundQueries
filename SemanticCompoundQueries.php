@@ -69,7 +69,7 @@ class SemanticCompoundQueries {
 			],
 			'url' => 'https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries',
 			'descriptionmsg' => 'semanticcompoundqueries-desc',
-			'license-name' => 'GPL-2.0+'
+			'license-name' => 'GPL-2.0-or-later'
 		];
 
 		// Register message files
