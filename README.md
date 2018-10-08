@@ -10,35 +10,64 @@ Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension 
 
 ## Requirements
 
-- PHP 5.5 or later
-- MediaWiki 1.23 or later
-- [Semantic MediaWiki][smw] 2.4 or later
+- PHP 5.6 or later
+- MediaWiki 1.27 or later
+- [Semantic MediaWiki][smw] 2.5 or later
 
 ## Installation
 
-The recommended way to install Semantic Compound Queries is by using [Composer][composer] with an entry in MediaWiki's `composer.json` or alternatively `composer.local.json`.
+The recommended way to install Semantic Compound Queries is using [Composer](http://getcomposer.org) with
+[MediaWiki's built-in support for Composer](https://www.mediawiki.org/wiki/Composer).
 
-```json
+Note that the required extension Semantic MediaWiki must be installed first according to the installation
+instructions provided.
+
+### Step 1
+
+Change to the base directory of your MediaWiki installation. This is where the "LocalSettings.php"
+file is located. If you have not yet installed Composer do it now by running the following command
+in your shell:
+
+    wget https://getcomposer.org/composer.phar
+
+### Step 2
+    
+If you do not have a "composer.local.json" file yet, create one and add the following content to it:
+
+```
 {
 	"require": {
-		"mediawiki/semantic-compound-queries": "~1.1"
+		"mediawiki/semantic-compound-queries": "~1.2"
 	}
 }
 ```
-1. From your MediaWiki installation directory, execute
-   `composer require mediawiki/semantic-compound-queries:~1.1`
-2. Navigate to _Special:Version_ on your wiki and verify that the extension
-   has been successfully installed.
 
-Note that the required extension Semantic MediaWiki must be installed first according to the installation
-instructions provided with it.
+If you already have a "composer.local.json" file add the following line to the end of the "require"
+section in your file:
+
+    "mediawiki/semantic-compound-queries": "~1.2"
+
+Remember to add a comma to the end of the preceding line in this section.
+
+### Step 3
+
+Run the following command in your shell:
+
+    php composer.phar update --no-dev
+
+Note if you have Git installed on your system add the `--prefer-source` flag to the above command. Also
+note that it may be necessary to run this command twice. If unsure do it twice right away.
+
+### Verify installation success
+
+As final step, you can verify SCI got installed by looking at the "Special:Version" page on your wiki and
+check that it is listed in the semantic extensions section.
 
 ## Usage
 
-The syntax of `#compound_query` resembles that of `#ask`, but with more than
-one query, and with the elements of each sub-query delimited by semicolons
-instead of pipes. Elements that are common across all sub-queries, like
-`format=` and `width=` (for maps) should be placed after all sub-queries.
+The syntax of `#compound_query` resembles that of `#ask`, but with more than one query, and with the elements
+of each sub-query delimited by semicolons instead of pipes. Elements that are common across all sub-queries,
+like `format=` and `width=` (for maps) should be placed after all sub-queries.
 
 ### Example
 
