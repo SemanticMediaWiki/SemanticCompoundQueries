@@ -2,18 +2,23 @@ These are the release notes for the Semantic Compound Queries extension.
 
 ## Semantic Compound Queries 1.2.0
 
-This is not a release yet.
+Released on Oktober 8, 2018
+
+* Minimum requirement for
+  * PHP changed to version 5.6 and later
+  * MediaWiki changed to version 1.27 and later
+  * Semantic MediaWiki changed to version 2.5 and later
+* Localization updates from https://translatewiki.net
 
 ## Semantic Compound Queries 1.1.0
 
 Released on June 24, 2017.
 
-* Bumped Requirements to:
-    * PHP 5.5 or later
-    * Semantic MediaWiki 2.4 or later
-
+* Minimum requirement for
+  * PHP changed to version 5.5 and later
+  * Semantic MediaWiki changed to version 2.4 and later
 * Made general repository cleanup ... continued
-* Provided translation updates (by translatewiki.net community)
+* Localization updates from https://translatewiki.net
 
 ## Semantic Compound Queries 1.0.1
 
@@ -25,11 +30,10 @@ Released on December 21, 2016
 
 Released on September 21, 2016.
 
-* Bumped Requirements to:
-    * PHP 5.3.2 or later
-    * MediaWiki 1.23 or later
-    * Semantic MediaWiki 2.1 or later
-
+* Minimum requirement for
+  * PHP changed to version 5.3 and later
+  * MediaWiki changed to version 1.23 and later
+  * Semantic MediaWiki changed to version 2.1 and later
 * Added `compoundquery` API endpoint
 * Added `unsorted` parameter
 * Added composer support
