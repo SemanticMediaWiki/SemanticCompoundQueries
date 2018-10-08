@@ -56,7 +56,7 @@ class SemanticCompoundQueries {
 	 */
 	public static function initExtension() {
 
-		define( 'SCQ_VERSION', '1.2.0-alpha' );
+		define( 'SCQ_VERSION', '1.2.0' );
 
 		// Register the extension
 		$GLOBALS['wgExtensionCredits']['semantic'][] = [
@@ -86,7 +86,7 @@ class SemanticCompoundQueries {
 	 */
 	public static function checkRequirements() {
 
-		if ( version_compare( $GLOBALS[ 'wgVersion' ], '1.23', 'lt' ) ) {
+		if ( version_compare( $GLOBALS[ 'wgVersion' ], '1.27', 'lt' ) ) {
 			die( '<b>Error:</b> This version of <a href="https://github.com/SemanticMediaWiki/SemanticCompoundQueries/">Semantic Compound Queries</a> is only compatible with MediaWiki 1.23 or above. You need to upgrade MediaWiki first.' );
 		}
 
