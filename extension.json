@@ -1,0 +1,28 @@
+{
+  "name": "SemanticCompoundQueries",
+	"version": "2.0.0-alpha",
+	"author": [
+		"James Hong Kong",
+		"Yaron Koren",
+		"..."
+	],
+	"url": "https://www.semantic-mediawiki.org/wiki/Extension:Semantic_Compound_Queries",
+	"descriptionmsg": "semanticcompoundqueries-desc",
+	"namemsg": "semanticcompoundqueries-name",
+	"license-name": "GPL-2.0-or-later",
+	"type": "semantic",
+	"requires": {
+		"MediaWiki": ">= 1.27"
+	},
+	"MessagesDirs": {
+		"SemanticResultFormats": [
+			"i18n"
+		]
+	},
+	"callback": "SemanticCompoundQueries::initExtension",
+	"ExtensionFunctions": [
+		"SemanticCompoundQueries::onExtensionFunction"
+	],
+	"load_composer_autoloader":true,
+	"manifest_version": 1
+}
