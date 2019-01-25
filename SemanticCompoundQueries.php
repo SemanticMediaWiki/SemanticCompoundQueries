@@ -5,14 +5,6 @@
  *
  * @defgroup SemanticCompoundQueries SemanticCompoundQueries
  */
-if ( !defined( 'MEDIAWIKI' ) ) {
-	die( 'This file is part of the Semantic Compound Queries extension, it is not a valid entry point.' );
-}
-
-if ( defined( 'SCQ_VERSION' ) ) {
-	// Do not initialize more than once.
-	return 1;
-}
 
 SemanticCompoundQueries::load();
 
@@ -33,22 +25,6 @@ class SemanticCompoundQueries {
 		if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 			include_once __DIR__ . '/vendor/autoload.php';
 		}
-
-		/**
-		 * In case extension.json is being used, the succeeding steps are
-		 * expected to be handled by the ExtensionRegistry aka extension.json
-		 * ...
-		 *
-		 * 	"callback": "SemanticCompoundQueries::initExtension",
-		 * 	"ExtensionFunctions": [
-		 * 		"SemanticCompoundQueries::onExtensionFunction"
-		 * 	],
-		 */
-		self::initExtension();
-
-		$GLOBALS['wgExtensionFunctions'][] = function() {
-			self::onExtensionFunction();
-		};
 	}
 
 	/**
@@ -56,43 +32,13 @@ class SemanticCompoundQueries {
 	 */
 	public static function initExtension() {
 
-		define( 'SCQ_VERSION', '2.0.0-alpha' );
-
-		// Register the extension
-		$GLOBALS['wgExtensionCredits']['semantic'][] = [
-			'path' => __FILE__,
-			'name' => 'Semantic Compound Queries',
-			'version' => SCQ_VERSION,
-			'author' => [
-				'[https://www.semantic-mediawiki.org/ Semantic MediaWiki project]',
-				'Yaron Koren'
-			],
-			'url' => 'https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries',
-			'descriptionmsg' => 'semanticcompoundqueries-desc',
-			'license-name' => 'GPL-2.0-or-later'
-		];
+		// See https://phabricator.wikimedia.org/T151136
+		define( 'SRF_VERSION', isset( $credits['version'] ) ? $credits['version'] : 'UNKNOWN' );
 
 		// Register message files
 		$GLOBALS['wgMessagesDirs']['SemanticCompoundQueries'] = __DIR__ . '/i18n';
 		$GLOBALS['wgExtensionMessagesFiles']['SemanticCompoundQueriesMagic'] = __DIR__ . '/i18n/SemanticCompoundQueries.i18n.magic.php';
 
-		//$GLOBALS['wgAutoloadClasses']['SCQQueryProcessor'] = __DIR__ . '/SCQ_QueryProcessor.php';
-		//$GLOBALS['wgAutoloadClasses']['SCQQueryResult'] = __DIR__ . '/SCQ_QueryResult.php';
-		//$GLOBALS['wgAutoloadClasses']['SCQCompoundQueryApi'] = __DIR__ . '/SCQ_CompoundQueryApi.php';
-	}
-
-	/**
-	 * @since 1.1
-	 */
-	public static function checkRequirements() {
-
-		if ( version_compare( $GLOBALS[ 'wgVersion' ], '1.27', 'lt' ) ) {
-			die( '<b>Error:</b> This version of <a href="https://github.com/SemanticMediaWiki/SemanticCompoundQueries/">Semantic Compound Queries</a> is only compatible with MediaWiki 1.23 or above. You need to upgrade MediaWiki first.' );
-		}
-
-		if ( !defined( 'SMW_VERSION' ) ) {
-			die( '<b>Error:</b> <a href="https://github.com/SemanticMediaWiki/SemanticCompoundQueries/">Semantic Compound Queries</a> requires the <a href="https://github.com/SemanticMediaWiki/SemanticMediaWiki/">Semantic MediaWiki</a> extension. Please enable or install the extension first.' );
-		}
 	}
 
 	/**
@@ -100,14 +46,23 @@ class SemanticCompoundQueries {
 	 */
 	public static function onExtensionFunction() {
 
-		// Check requirements after LocalSetting.php has been processed, thid has
-		// be done here to ensure SMW is loaded in case
-		// wfLoadExtension( 'SemanticMediaWiki' ) is used
-		self::checkRequirements();
+		if ( !defined( 'SMW_VERSION' ) ) {
+
+			if ( PHP_SAPI === 'cli' || PHP_SAPI === 'phpdbg' ) {
+				die( "\nThe 'Semantic Compound Queries' extension requires 'Semantic MediaWiki' to be installed and enabled.\n" );
+			} else {
+				die(
+					'<b>Error:</b> The <a href="https://www.semantic-mediawiki.org/wiki/Extension:Semantic_Compound_Queries">Semantic Compound Queries</a> ' .
+					'extension requires <a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a> to be ' .
+					'installed and enabled.<br />'
+				);
+			}
+		}
 
 		// wgAPIModules
 		$GLOBALS['wgAPIModules']['compoundquery'] = 'SCQ\Api\CompoundQuery';
 
+		// wgHooks
 		$GLOBALS['wgHooks']['ParserFirstCallInit'][] = function( Parser &$parser  ) {
 			$parser->setFunctionHook( 'compound_query', [ '\SCQ\CompoundQueryProcessor', 'doCompoundQuery' ] );
 
