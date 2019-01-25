@@ -56,6 +56,11 @@ function updateConfiguration {
 
 	cd $MW_INSTALL_PATH
 
+	# SMW#1732
+	echo 'wfLoadExtension( "SemanticMediaWiki" );' >> LocalSettings.php
+
+	echo 'wfLoadExtension( "SemanticCompoundQueries" );' >> LocalSettings.php
+
 	# Site language
 	if [ "$SITELANG" != "" ]
 	then
