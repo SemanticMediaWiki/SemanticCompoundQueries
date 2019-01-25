@@ -33,7 +33,7 @@ class SemanticCompoundQueries {
 	public static function initExtension() {
 
 		// See https://phabricator.wikimedia.org/T151136
-		define( 'SRF_VERSION', isset( $credits['version'] ) ? $credits['version'] : 'UNKNOWN' );
+		define( 'SCQ_VERSION', isset( $credits['version'] ) ? $credits['version'] : 'UNKNOWN' );
 
 		// Register message files
 		$GLOBALS['wgMessagesDirs']['SemanticCompoundQueries'] = __DIR__ . '/i18n';
