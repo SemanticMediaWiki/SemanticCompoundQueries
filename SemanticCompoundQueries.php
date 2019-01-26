@@ -30,7 +30,7 @@ class SemanticCompoundQueries {
 	/**
 	 * @since 1.1
 	 */
-	public static function initExtension() {
+	public static function initExtension( $credits = [] ) {
 
 		// See https://phabricator.wikimedia.org/T151136
 		define( 'SCQ_VERSION', isset( $credits['version'] ) ? $credits['version'] : 'UNKNOWN' );
