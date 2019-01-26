@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Yaron Koren"
+			"Yaron Koren",
+			"Karsten Hoffmeyer"
 		]
 	},
-	"semanticcompoundqueries-desc": "A parser function that displays multiple semantic queries at the same time"
+	"semanticcompoundqueries-desc": "A parser function that displays multiple semantic queries at the same time",
+	"semanticcompoundqueries-name": "Semantic Compound Queries"
 }
