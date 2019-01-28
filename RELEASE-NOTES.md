@@ -1,4 +1,13 @@
-These are the release notes for the Semantic Compound Queries extension.
+These are the RELEASE NOTES for the **Semantic Compound Queries** (a.k.a. SCQ) extension.
+
+## Semantic Compound Queries 2.0.0
+
+Released on January 29, 2019.
+
+* Minimum requirement for Semantic MediaWiki changed to version 3.0 and later
+* #39 Adds support for extension registration via "extension.json"  
+  → Now you have to use `wfLoadExtension( 'SemanticCompoundQueries' );` in the "LocalSettings.php" file to invoke the extension
+* Localization updates from https://translatewiki.net
 
 ## Semantic Compound Queries 1.2.0
 
