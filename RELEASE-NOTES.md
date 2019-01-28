@@ -1,6 +1,6 @@
 These are the RELEASE NOTES for the **Semantic Compound Queries** (a.k.a. SCQ) extension.
 
-### Semantic Compound Queries 2.0.0
+## Semantic Compound Queries 2.0.0
 
 Released on January 29, 2019.
 
