@@ -5,5 +5,5 @@
 			"Waldir"
 		]
 	},
-	"semanticcompoundqueries-desc": "Uma função de análise gramatical que mostra várias consultas semânticas em simultâneo"
+	"semanticcompoundqueries-desc": "Uma função de análise sintática que mostra várias consultas semânticas em simultâneo"
 }
