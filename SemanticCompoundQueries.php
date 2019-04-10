@@ -3,7 +3,7 @@
 /**
  * @see https://github.com/SemanticMediaWiki/SemanticCompoundQueries/
  *
- * @defgroup SemanticCompoundQueries SemanticCompoundQueries
+ * @defgroup SCQ Semantic Compound Queries
  */
 
 SemanticCompoundQueries::load();
