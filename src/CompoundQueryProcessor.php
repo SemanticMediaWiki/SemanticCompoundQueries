@@ -170,9 +170,9 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 *
 	 * @return SMWQueryResult
 	 */
-	protected static function getQueryResultFromFunctionParams( $rawparams, $context = QueryProcessor::INLINE_QUERY, $showmode = false ) {
-		$printouts = [];
-		self::processFunctionParams( $rawparams, $querystring, $params, $printouts, $showmode );
+	protected static function getQueryResultFromFunctionParams( $rawParams, $context = QueryProcessor::INLINE_QUERY, $showMode = false ) {
+		list( $querystring, $params, $printouts ) = self::getComponentsFromFunctionParams( $rawParams, $showMode );
+
 		return self::getQueryResultFromQueryString( $querystring, $params, $printouts, $context );
 	}
 
