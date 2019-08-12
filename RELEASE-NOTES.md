@@ -1,5 +1,14 @@
 These are the RELEASE NOTES for the **Semantic Compound Queries** (a.k.a. SCQ) extension.
 
+## 2.1.0
+
+Released on August 12, 2019.
+
+* Added support for Semantic MediaWiki 3.1
+* Dropped support for PHP < 7.0
+* Dropped support for MediaWiki < 1.31
+* Localization updates from https://translatewiki.net
+
 ## 2.0.0
 
 Released on January 29, 2019.
