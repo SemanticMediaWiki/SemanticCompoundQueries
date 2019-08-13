@@ -10,8 +10,8 @@ Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension 
 
 ## Requirements
 
-- PHP 5.6 or later
-- MediaWiki 1.27 or later
+- PHP 7.0 or later
+- MediaWiki 1.31 or later
 - [Semantic MediaWiki][smw] 3.0 or later
 
 ## Installation
