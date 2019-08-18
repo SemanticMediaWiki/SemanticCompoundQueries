@@ -10,8 +10,8 @@ Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension 
 
 ## Requirements
 
-- PHP 5.6 or later
-- MediaWiki 1.27 or later
+- PHP 7.0 or later
+- MediaWiki 1.31 or later
 - [Semantic MediaWiki][smw] 3.0 or later
 
 ## Installation
@@ -37,7 +37,7 @@ If you do not have a "composer.local.json" file yet, create one and add the foll
 ```
 {
 	"require": {
-		"mediawiki/semantic-compound-queries": "~2.0"
+		"mediawiki/semantic-compound-queries": "~2.1"
 	}
 }
 ```
@@ -45,7 +45,7 @@ If you do not have a "composer.local.json" file yet, create one and add the foll
 If you already have a "composer.local.json" file add the following line to the end of the "require"
 section in your file:
 
-    "mediawiki/semantic-compound-queries": "~2.0"
+    "mediawiki/semantic-compound-queries": "~2.1"
 
 Remember to add a comma to the end of the preceding line in this section.
 

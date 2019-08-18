@@ -1,6 +1,6 @@
 {
   "name": "SemanticCompoundQueries",
-	"version": "2.1.0-alpha",
+	"version": "2.1.0",
 	"author": [
 		"James Hong Kong",
 		"Yaron Koren",
@@ -12,7 +12,10 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "semantic",
 	"requires": {
-		"MediaWiki": ">= 1.27"
+		"MediaWiki": ">= 1.31",
+		"extensions": {
+			"SemanticMediaWiki": ">= 3.0"
+		}
 	},
 	"MessagesDirs": {
 		"SemanticCompoundQueries": [
@@ -24,5 +27,5 @@
 		"SemanticCompoundQueries::onExtensionFunction"
 	],
 	"load_composer_autoloader": true,
-	"manifest_version": 1
+	"manifest_version": 2
 }
