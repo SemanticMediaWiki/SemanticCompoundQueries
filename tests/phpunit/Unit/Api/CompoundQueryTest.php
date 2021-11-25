@@ -21,7 +21,7 @@ class CompoundQueryTest extends \PHPUnit_Framework_TestCase {
 	 */
 	private $apiFactory;
 
-	protected function setUp() {
+	protected function setUp() : void {
 		parent::setUp();
 		$this->apiFactory = new MwApiFactory();
 	}
