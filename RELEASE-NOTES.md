@@ -1,5 +1,13 @@
 These are the RELEASE NOTES for the **Semantic Compound Queries** (a.k.a. SCQ) extension.
 
+## 2.2.0
+
+Released on January 20, 2022.
+
+* Minimum requirement for
+  * PHP changed to version 7.3 and later
+* Localization updates from https://translatewiki.net
+
 ## 2.1.0
 
 Released on August 18, 2019.
