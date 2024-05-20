@@ -1,8 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"Siebrand"
-		]
-	},
-	"semanticcompoundqueries-desc": "Een parserfunctie die meerdere semantische zoekopdrachten op hetzelfde moment kan weergeven"
-}

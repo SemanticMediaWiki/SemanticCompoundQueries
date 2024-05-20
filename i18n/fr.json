@@ -1,9 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"IAlex",
-			"Urhixidur"
-		]
-	},
-	"semanticcompoundqueries-desc": "Une fonction de l’analyseur qui affiche plusieurs requêtes sémantiques en même temps"
-}

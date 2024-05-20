@@ -1,9 +1,0 @@
-{
-	"@metadata": {
-		"authors": [
-			"Hamilton Abreu",
-			"Waldir"
-		]
-	},
-	"semanticcompoundqueries-desc": "Uma função de análise sintática que mostra várias consultas semânticas em simultâneo"
-}
