@@ -49,8 +49,7 @@ class CompoundQueryTest extends \PHPUnit_Framework_TestCase {
 			'query' => implode( '|', $query )
 		] );
 
-		$this->assertInternalType(
-			'array',
+		$this->assertIsArray(
 			$results
 		);
 
