@@ -29,6 +29,10 @@
 	"AutoloadNamespaces": {
 		"SCQ\\": "src/"
 	},
+	"TestAutoloadNamespaces": {
+		"SCQ\\Tests\\": "tests/phpunit/Unit/",
+		"SCQ\\Tests\\Integration\\": "tests/phpunit/Integration/"
+	},
 	"AutoloadClasses": {
 		"SemanticCompoundQueries": "SemanticCompoundQueries.php"
 	},
