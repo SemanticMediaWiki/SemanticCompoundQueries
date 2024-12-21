@@ -1,10 +1,10 @@
 # Semantic Compound Queries
 
-[![Build Status](https://secure.travis-ci.org/SemanticMediaWiki/SemanticCompoundQueries.svg?branch=master)](http://travis-ci.org/SemanticMediaWiki/SemanticCompoundQueries)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/SemanticMediaWiki/SemanticCompoundQueries/ci.yml?branch=master)](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/actions?query=workflow%3ACI)
 [![Code Coverage](https://scrutinizer-ci.com/g/SemanticMediaWiki/SemanticCompoundQueries/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/SemanticMediaWiki/SemanticCompoundQueries/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SemanticMediaWiki/SemanticCompoundQueries/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/SemanticMediaWiki/SemanticCompoundQueries/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/mediawiki/semantic-compound-queries/version.png)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
-[![Packagist download count](https://poser.pugx.org/mediawiki/semantic-compound-queries/d/total.png)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
+[![Latest Stable Version](https://poser.pugx.org/mediawiki/semantic-compound-queries/v/stable)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
+[![Packagist download count](https://poser.pugx.org/mediawiki/semantic-compound-queries/downloads)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
 
 Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension that defines the `#compound_query` parser function which can display results of multiple `#ask` queries (as compound construct) at the same time.
 
