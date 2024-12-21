@@ -2,7 +2,6 @@
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/SemanticMediaWiki/SemanticCompoundQueries/ci.yml?branch=master)](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/actions?query=workflow%3ACI)
 [![Code Coverage](https://codecov.io/gh/SemanticMediaWiki/SemanticCompoundQueries/branch/master/graph/badge.svg)](https://codecov.io/gh/SemanticMediaWiki/SemanticCompoundQueries)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SemanticMediaWiki/SemanticCompoundQueries/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/SemanticMediaWiki/SemanticCompoundQueries/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/mediawiki/semantic-compound-queries/v/stable)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
 [![Packagist download count](https://poser.pugx.org/mediawiki/semantic-compound-queries/downloads)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
 
