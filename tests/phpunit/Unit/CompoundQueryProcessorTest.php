@@ -13,7 +13,7 @@ use SCQ\CompoundQueryProcessor;
  *
  * @author Peter Grassberger < petertheone@gmail.com >
  */
-class CompoundQueryProcessorTest extends \PHPUnit_Framework_TestCase {
+class CompoundQueryProcessorTest extends \PHPUnit\Framework\TestCase {
 
 	/**
 	 * Call protected/private method of a class.
