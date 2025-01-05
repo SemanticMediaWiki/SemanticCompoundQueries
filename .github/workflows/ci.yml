@@ -11,7 +11,7 @@ jobs:
 
   test:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental }}
 
     strategy:
@@ -21,37 +21,30 @@ jobs:
             smw_version: dev-master
             php_version: 8.1
             database_type: mysql
-            database_image: "mysql:5.7"
+            database_image: "mariadb:11.2"
             coverage: false
-            experimental: true
+            experimental: false
           - mediawiki_version: '1.39'
             smw_version: dev-master
             php_version: 8.1
             database_type: mysql
             database_image: "mysql:8"
             coverage: false
-            experimental: true
+            experimental: false
           - mediawiki_version: '1.40'
             smw_version: dev-master
             php_version: 8.1
             database_type: mysql
-            database_image: "mysql:8"
-            coverage: false
-            experimental: true
-          - mediawiki_version: '1.40'
-            smw_version: dev-master
-            php_version: 8.1
-            database_type: mysql
-            database_image: "mariadb:latest"
-            coverage: false
-            experimental: true
+            database_image: "mariadb:11.2"
+            coverage: true
+            experimental: false
           - mediawiki_version: '1.40'
             smw_version: dev-master
             php_version: 8.1
             database_type: postgres
             database_image: "postgres:14"
             coverage: false
-            experimental: true
+            experimental: false
 
     env:
       MW_VERSION: ${{ matrix.mediawiki_version }}
