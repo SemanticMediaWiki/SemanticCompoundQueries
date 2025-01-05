@@ -40,7 +40,6 @@ jobs:
             experimental: false
           - mediawiki_version: '1.40'
             smw_version: dev-master
-            smw_version: dev-master
             php_version: 8.1
             database_type: postgres
             database_image: "postgres:14"
