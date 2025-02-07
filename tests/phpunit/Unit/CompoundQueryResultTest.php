@@ -13,7 +13,7 @@ use SCQ\CompoundQueryResult;
  *
  * @author Peter Grassberger < petertheone@gmail.com >
  */
-class CompoundQueryResultTest extends \PHPUnit_Framework_TestCase {
+class CompoundQueryResultTest extends \PHPUnit\Framework\TestCase {
 
 	private $store;
 	private $query;
