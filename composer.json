@@ -47,15 +47,18 @@
 		}
 	},
 	"config": {
-		"process-timeout": 0
+		"process-timeout": 0,
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	},
 	"scripts": {
-			"test": [
-				"@phpunit"
-			],
-			"test-coverage": [
-				"@phpunit-coverage"
-			],
+		"test": [
+			"@phpunit"
+		],
+		"test-coverage": [
+			"@phpunit-coverage"
+		],
 		"phpunit": "php ../../tests/phpunit/phpunit.php -c phpunit.xml.dist",
 		"phpunit-coverage": "php ../../tests/phpunit/phpunit.php -c phpunit.xml.dist --testdox --coverage-text --coverage-html coverage/php --coverage-clover coverage/php/coverage.xml",
 		"unit": [
