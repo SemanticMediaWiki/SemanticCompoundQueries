@@ -2,6 +2,7 @@
 
 namespace SCQ;
 
+use SMW\Query\QueryResult;
 use SMWQueryProcessor as QueryProcessor;
 use SMWQuery as Query;
 use Parser;
@@ -168,7 +169,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * @param $context
 	 * @param $showmode
 	 *
-	 * @return SMWQueryResult
+	 * @return QueryResult
 	 */
 	protected static function getQueryResultFromFunctionParams( $rawParams, $context = QueryProcessor::INLINE_QUERY, $showMode = false ) {
 		list( $querystring, $params, $printouts ) = self::getComponentsFromFunctionParams( $rawParams, $showMode );
@@ -226,7 +227,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * @param $outputMode
 	 * @param $context
 	 *
-	 * @return SMWQueryResult
+	 * @return QueryResult
 	 */
 	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraPrintouts, $context = QueryProcessor::INLINE_QUERY ) {
 
