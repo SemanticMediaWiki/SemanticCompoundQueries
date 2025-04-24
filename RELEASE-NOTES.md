@@ -1,5 +1,12 @@
 These are the RELEASE NOTES for the **Semantic Compound Queries** (a.k.a. SCQ) extension.
 
+## 3.0.0
+
+Not released yet
+
+* Minimum requirement for
+  * MediaWiki changed to version 1.39 and later 
+
 ## 2.2.0
 
 Released on January 20, 2022.

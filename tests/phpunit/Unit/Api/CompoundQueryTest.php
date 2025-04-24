@@ -14,7 +14,7 @@ use SCQ\Api\CompoundQuery;
  *
  * @author Peter Grassberger < petertheone@gmail.com >
  */
-class CompoundQueryTest extends \PHPUnit_Framework_TestCase {
+class CompoundQueryTest extends \PHPUnit\Framework\TestCase {
 
 	/**
 	 * @var MwApiFactory
@@ -49,8 +49,7 @@ class CompoundQueryTest extends \PHPUnit_Framework_TestCase {
 			'query' => implode( '|', $query )
 		] );
 
-		$this->assertInternalType(
-			'array',
+		$this->assertIsArray(
 			$results
 		);
 

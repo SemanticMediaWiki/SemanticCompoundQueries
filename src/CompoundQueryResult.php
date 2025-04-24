@@ -2,8 +2,8 @@
 
 namespace SCQ;
 
-use SMWQueryResult as QueryResult;
-use SMWResultArray as ResultArray;
+use SMW\Query\QueryResult;
+use SMW\Query\Result\ResultArray;
 
 /**
  * Subclass of SMWQueryResult - this class was mostly created in order to

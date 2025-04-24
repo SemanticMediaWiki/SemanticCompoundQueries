@@ -60,6 +60,11 @@ $magicWords['pt-br'] = [
 	'compound_query' => [ 0, 'consulta_composta' ],
 ];
 
+/** Serbian (Cyrillic script) (српски (ћирилица)‎) */
+$magicWords['sr-ec'] = [
+	'compound_query' => [ 0, 'састави_упит' ],
+];
+
 /** Serbian (Latin script) (srpski (latinica)‎) */
 $magicWords['sr-el'] = [
 	'compound_query' => [ 0, 'sastavi_upit' ],

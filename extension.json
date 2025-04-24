@@ -1,6 +1,6 @@
 {
   "name": "SemanticCompoundQueries",
-	"version": "2.2.0",
+	"version": "3.0.0-beta",
 	"author": [
 		"James Hong Kong",
 		"Yaron Koren",
@@ -12,9 +12,9 @@
 	"license-name": "GPL-2.0-or-later",
 	"type": "semantic",
 	"requires": {
-		"MediaWiki": ">= 1.31",
+		"MediaWiki": ">= 1.39",
 		"extensions": {
-			"SemanticMediaWiki": ">= 3.0"
+			"SemanticMediaWiki": ">= 4.0"
 		}
 	},
 	"MessagesDirs": {
@@ -26,6 +26,16 @@
 	"ExtensionFunctions": [
 		"SemanticCompoundQueries::onExtensionFunction"
 	],
+	"AutoloadNamespaces": {
+		"SCQ\\": "src/"
+	},
+	"TestAutoloadNamespaces": {
+		"SCQ\\Tests\\": "tests/phpunit/Unit/",
+		"SCQ\\Tests\\Integration\\": "tests/phpunit/Integration/"
+	},
+	"AutoloadClasses": {
+		"SemanticCompoundQueries": "SemanticCompoundQueries.php"
+	},
 	"load_composer_autoloader": true,
 	"manifest_version": 2
 }

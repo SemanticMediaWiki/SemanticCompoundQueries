@@ -25,9 +25,8 @@
 		"source": "https://github.com/SemanticCompoundQueries/SemanticCompoundQueries"
 	},
 	"require": {
-		"php": ">=7.3",
-		"composer/installers": "1.*,>=1.0.1",
-		"mediawiki/semantic-media-wiki": "~3.0|~4.0"
+		"php": ">=7.4",
+		"composer/installers": "^2|^1.0.1"
 	},
 	"require-dev": {
 		"mediawiki/semantic-media-wiki": "@dev",
@@ -36,7 +35,7 @@
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "2.x-dev"
+			"dev-master": "3.x-dev"
 		}
 	},
 	"autoload": {
@@ -48,15 +47,18 @@
 		}
 	},
 	"config": {
-		"process-timeout": 0
+		"process-timeout": 0,
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	},
 	"scripts": {
-			"test": [
-				"@phpunit"
-			],
-			"test-coverage": [
-				"@phpunit-coverage"
-			],
+		"test": [
+			"@phpunit"
+		],
+		"test-coverage": [
+			"@phpunit-coverage"
+		],
 		"phpunit": "php ../../tests/phpunit/phpunit.php -c phpunit.xml.dist",
 		"phpunit-coverage": "php ../../tests/phpunit/phpunit.php -c phpunit.xml.dist --testdox --coverage-text --coverage-html coverage/php --coverage-clover coverage/php/coverage.xml",
 		"unit": [
