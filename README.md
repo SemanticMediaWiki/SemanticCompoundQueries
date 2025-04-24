@@ -3,9 +3,12 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/SemanticMediaWiki/SemanticCompoundQueries/ci.yml?branch=master)](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/actions?query=workflow%3ACI)
 [![Code Coverage](https://codecov.io/gh/SemanticMediaWiki/SemanticCompoundQueries/branch/master/graph/badge.svg)](https://codecov.io/gh/SemanticMediaWiki/SemanticCompoundQueries)
 [![Latest Stable Version](https://poser.pugx.org/mediawiki/semantic-compound-queries/v/stable)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
-[![Packagist download count](https://poser.pugx.org/mediawiki/semantic-compound-queries/downloads)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
+[![Download count](https://poser.pugx.org/mediawiki/semantic-compound-queries/downloads)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
+[![License](https://poser.pugx.org/mediawiki/semantic-media-wiki/license)](COPYING)
 
-Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension that defines the `#compound_query` parser function which can display results of multiple `#ask` queries (as compound construct) at the same time.
+Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension that defines the
+`#compound_query` parser function, which can display the results of multiple `#ask` queries 
+(as compound constructs) at the same time.
 
 ## Requirements
 
@@ -34,7 +37,7 @@ create one and add the following content to it:
 }
 ```
 
-If you already have a "composer.local.json" file add the following line to the end of the "require"
+If you already have a "composer.local.json" file, add the following line to the end of the "require"
 section in your file:
 
     "mediawiki/semantic-compound-queries": "~2.2"
@@ -47,7 +50,7 @@ Run the following command in your shell:
 
     php composer.phar update --no-dev
 
-Note if you have Git installed on your system add the `--prefer-source` flag to the above command.
+Note that if you have Git installed on your system, you can add the `--prefer-source` flag to the above command.
 
 ### Step 3
 
@@ -58,9 +61,9 @@ Add the following line to the end of your "LocalSettings.php" file:
 
 ## Usage
 
-The syntax of `#compound_query` resembles that of `#ask`, but with more than one query, and with the elements
-of each sub-query delimited by semicolons instead of pipes. Elements that are common across all sub-queries,
-like `format=` and `width=` (for maps) should be placed after all sub-queries.
+The syntax of `#compound_query` resembles that of `#ask`, but with more than one query and the elements
+of each sub-query delimited by semicolons instead of pipes. Elements common across all sub-queries,
+like `format=` and `width=` (for maps), should be placed after all sub-queries.
 
 ### Example
 
@@ -86,8 +89,8 @@ For more information, see the extension's homepage at [MediaWiki.org][homepage].
 
 Original author: Yaron Koren (Version 0.4.1)
 
-If you want to contribute work to the project please subscribe to the developers mailing list and
-have a look at the contribution guideline.
+If you want to contribute work to the project, please subscribe to the developer's mailing list and
+have a look at the contribution guidelines.
 
 * [File an issue](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/issues)
 * [Submit a pull request](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/pulls)
@@ -95,8 +98,8 @@ have a look at the contribution guideline.
 
 ## Tests
 
-This extension provides unit and integration tests that are run by a [continues integration platform][travis]
-but can also be executed using `composer phpunit` from the extension base directory.
+This extension provides unit and integration tests and is run by a [continuous integration platform][github-actions]
+but can also be executed locally using the shortcut command `composer phpunit` from the extension base directory.
 
 ## License
 
@@ -104,7 +107,7 @@ but can also be executed using `composer phpunit` from the extension base direct
 
 [smw]: https://github.com/SemanticMediaWiki/SemanticMediaWiki
 [contributors]: https://github.com/SemanticMediaWiki/SemanticCompoundQueries/graphs/contributors
-[travis]: https://travis-ci.org/SemanticMediaWiki/SemanticCompoundQueries
+[github-actions]: https://docs.github.com/en/actions
 [gpl-licence]: https://www.gnu.org/copyleft/gpl.html
 [composer]: https://getcomposer.org/
 [homepage]: https://www.mediawiki.org/wiki/Extension:Semantic_Compound_Queries
