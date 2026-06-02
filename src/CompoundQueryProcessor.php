@@ -223,23 +223,8 @@ class CompoundQueryProcessor extends QueryProcessor {
 		}
 
 		$query = self::createQuery( $querystring, $params, $context, null, $extraPrintouts );
-		$queryResult = smwfGetStore()->getQueryResult( $query );
 
-		$parameters = [];
-
-		if ( version_compare( SMW_VERSION, '1.7.2', '>' ) ) {
-			foreach ( $params as $param ) {
-				$parameters[$param->getName()] = $param->getValue();
-			}
-		} else {
-			$parameters = $params;
-		}
-
-		foreach ( $queryResult->getResults() as $wikiPage ) {
-			$wikiPage->display_options = $parameters;
-		}
-
-		return $queryResult;
+		return smwfGetStore()->getQueryResult( $query );
 	}
 
 	/**

@@ -12,6 +12,7 @@ skipped to align with SMW.
 * Minimum requirement for PHP raised to 8.1.
 * Minimum requirement for MediaWiki raised to 1.43.
 * Minimum requirement for Semantic MediaWiki raised to 7.0.
+* Fixed `Creation of dynamic property` deprecation notice on PHP 8.2 and later (#87).
 * Localization updates from https://translatewiki.net
 
 ## 3.0.0
