@@ -117,10 +117,8 @@ class CompoundQueryProcessor extends QueryProcessor {
 
 		$queryResult = new CompoundQueryResult( $printRequests, new Query(), $results, smwfGetStore() );
 
-		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			self::addThisPrintout( $printRequests, $otherParams );
-			$otherParams = self::getProcessedParams( $otherParams, $printRequests );
-		}
+		self::addThisPrintout( $printRequests, $otherParams );
+		$otherParams = self::getProcessedParams( $otherParams, $printRequests );
 
 		return [ $queryResult, $otherParams ];
 	}
@@ -217,10 +215,8 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * @return QueryResult
 	 */
 	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraPrintouts, $context = QueryProcessor::INLINE_QUERY ) {
-		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			QueryProcessor::addThisPrintout( $extraPrintouts, $params );
-			$params = self::getProcessedParams( $params, $extraPrintouts, false );
-		}
+		QueryProcessor::addThisPrintout( $extraPrintouts, $params );
+		$params = self::getProcessedParams( $params, $extraPrintouts, false );
 
 		$query = self::createQuery( $querystring, $params, $context, null, $extraPrintouts );
 
@@ -232,7 +228,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * except that formats of type 'debug' and 'count' aren't handled.
 	 *
 	 * @param CompoundQueryResult $res
-	 * @param array $params These need to be the result of a list fed to getProcessedParams as of SMW 1.6.2
+	 * @param array $params These need to be the result of a list fed to getProcessedParams
 	 * @param $outputmode
 	 * @param $context
 	 * @param string $format
@@ -240,15 +236,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * @return string
 	 */
 	protected static function getResultFromQueryResult( CompoundQueryResult $res, array $params, $outputmode, $context = QueryProcessor::INLINE_QUERY, $format = '' ) {
-		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
-			$format = $params['format'];
-
-			if ( version_compare( SMW_VERSION, '1.7.2', '>' ) ) {
-				$format = $format->getValue();
-			}
-		} else {
-			$format = self::getResultFormat( $params );
-		}
+		$format = $params['format']->getValue();
 
 		$printer = self::getResultPrinter( $format, $context );
 		$result = $printer->getResult( $res, $params, $outputmode );
