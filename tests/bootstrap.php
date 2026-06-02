@@ -8,4 +8,6 @@ if ( !is_readable( $autoloaderClassPath = __DIR__ . '/../../SemanticMediaWiki/te
 	die( 'The SemanticMediaWiki test autoloader is not available' );
 }
 
-print sprintf( "\n%-20s%s\n", "Semantic Compound Queries: ", SCQ_VERSION );
+$extensionInfo = json_decode( file_get_contents( __DIR__ . '/../extension.json' ), true );
+
+print sprintf( "\n%-20s%s\n", "Semantic Compound Queries: ", $extensionInfo['version'] );
