@@ -2,36 +2,38 @@
 
 namespace SCQ\Tests;
 
+use PHPUnit\Framework\TestCase;
 use SCQ\CompoundQueryResult;
+use SMW\Query\Query;
+use SMW\Store;
 
 /**
  * @covers \SCQ\CompoundQueryResult
  * @group semantic-compound-queries
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @since 1.0
  *
  * @author Peter Grassberger < petertheone@gmail.com >
  */
-class CompoundQueryResultTest extends \PHPUnit\Framework\TestCase {
+class CompoundQueryResultTest extends TestCase {
 
 	private $store;
 	private $query;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 
-		$this->store = $this->getMockBuilder( '\SMW\Store' )
+		$this->store = $this->getMockBuilder( Store::class )
 			->disableOriginalConstructor()
 			->getMockForAbstractClass();
 
-		$this->query = $this->getMockBuilder( '\SMWQuery' )
+		$this->query = $this->getMockBuilder( Query::class )
 			->disableOriginalConstructor()
 			->getMock();
 	}
 
 	public function testCanConstruct() {
-
 		$this->assertInstanceOf(
 			CompoundQueryResult::class,
 			new CompoundQueryResult( [], $this->query, [], $this->store )

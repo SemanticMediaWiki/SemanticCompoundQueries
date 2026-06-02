@@ -11,13 +11,13 @@ endif
 EXTENSION=SemanticCompoundQueries
 
 # docker images
-MW_VERSION?=1.39
+MW_VERSION?=1.43
 PHP_VERSION?=8.1
 DB_TYPE?=mysql
-DB_IMAGE?="mariadb:10"
+DB_IMAGE?="mariadb:11.8"
 
 # extensions
-SMW_VERSION?=4.2.0
+SMW_VERSION?=dev-master
 
 # composer
 # Enables "composer update" inside of extension
@@ -29,4 +29,3 @@ COMPOSER_EXT?=true
 
 # check for build dir and git submodule init if it does not exist
 include build/Makefile
-
