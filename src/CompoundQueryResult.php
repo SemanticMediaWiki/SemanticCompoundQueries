@@ -34,9 +34,6 @@ class CompoundQueryResult extends QueryResult {
 		}
 
 		while ( ( $row = $newResult->getNext() ) !== false ) {
-			if ( property_exists( $newResult, 'display_options' ) ) {
-				$row[0]->display_options = $newResult->display_options;
-			}
 			$content = $row[0]->getContent();
 			$pageName = $content[0]->getLongText( SMW_OUTPUT_WIKI );
 
