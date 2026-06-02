@@ -2,15 +2,16 @@
 
 namespace SCQ\Api;
 
-use SMW\MediaWiki\Api\Query;
-use SMW\MediaWiki\Api\ApiRequestParameterFormatter;
+use MediaWiki\Api\ApiBase;
+use MediaWiki\Api\ApiFormatXml;
 use SCQ\CompoundQueryProcessor;
-use ApiBase;
+use SMW\MediaWiki\Api\ApiRequestParameterFormatter;
+use SMW\MediaWiki\Api\Query;
 
 /**
  * API module to query SMW by providing multiple queries in the ask language.
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @since 1.0
  *
  * @author Peter Grassberger < petertheone@gmail.com >
@@ -24,11 +25,11 @@ class CompoundQuery extends Query {
 		$parameterFormatter = new ApiRequestParameterFormatter( $this->extractRequestParams() );
 		$parameters = $parameterFormatter->getAskApiParameters();
 
-		list( $queryParams, $otherParams ) = CompoundQueryProcessor::separateParams( $parameters );
-		list( $queryResult ) = CompoundQueryProcessor::queryAndMergeResults( $queryParams, $otherParams );
+		[ $queryParams, $otherParams ] = CompoundQueryProcessor::separateParams( $parameters );
+		[ $queryResult ] = CompoundQueryProcessor::queryAndMergeResults( $queryParams, $otherParams );
 
 		$outputFormat = 'json';
-		if ( $this->getMain()->getPrinter() instanceof \ApiFormatXml ) {
+		if ( $this->getMain()->getPrinter() instanceof ApiFormatXml ) {
 			$outputFormat = 'xml';
 		}
 

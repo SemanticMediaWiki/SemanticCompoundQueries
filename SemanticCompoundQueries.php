@@ -1,6 +1,9 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Parser\Parser;
+use SCQ\Api\CompoundQuery;
+use SCQ\CompoundQueryProcessor;
 
 /**
  * @see https://github.com/SemanticMediaWiki/SemanticCompoundQueries/
@@ -23,7 +26,6 @@ class SemanticCompoundQueries {
 	 * the extension is activated.
 	 */
 	public static function load() {
-
 		if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
 			include_once __DIR__ . '/vendor/autoload.php';
 		}
@@ -33,21 +35,18 @@ class SemanticCompoundQueries {
 	 * @since 1.1
 	 */
 	public static function initExtension( $credits = [] ) {
-
 		// See https://phabricator.wikimedia.org/T151136
 		define( 'SCQ_VERSION', isset( $credits['version'] ) ? $credits['version'] : 'UNKNOWN' );
 
 		// Register message files
 		$GLOBALS['wgMessagesDirs']['SemanticCompoundQueries'] = __DIR__ . '/i18n';
 		$GLOBALS['wgExtensionMessagesFiles']['SemanticCompoundQueriesMagic'] = __DIR__ . '/i18n/SemanticCompoundQueries.i18n.magic.php';
-
 	}
 
 	/**
 	 * @since 1.1
 	 */
 	public static function onExtensionFunction() {
-
 		if ( !defined( 'SMW_VERSION' ) ) {
 
 			if ( PHP_SAPI === 'cli' || PHP_SAPI === 'phpdbg' ) {
@@ -62,12 +61,17 @@ class SemanticCompoundQueries {
 		}
 
 		// wgAPIModules
-		$GLOBALS['wgAPIModules']['compoundquery'] = 'SCQ\Api\CompoundQuery';
+		$GLOBALS['wgAPIModules']['compoundquery'] = [
+			'class' => CompoundQuery::class,
+			'services' => [
+				'SMW.QuerySourceFactory'
+			]
+		];
 
 		// wgHooks
 		$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
-		$hookContainer->register( 'ParserFirstCallInit', function( Parser &$parser  ) {
-			$parser->setFunctionHook( 'compound_query', [ '\SCQ\CompoundQueryProcessor', 'doCompoundQuery' ] );
+		$hookContainer->register( 'ParserFirstCallInit', static function ( Parser $parser ) {
+			$parser->setFunctionHook( 'compound_query', [ CompoundQueryProcessor::class, 'doCompoundQuery' ] );
 
 			// always return true, in order not to stop MW's hook processing!
 			return true;

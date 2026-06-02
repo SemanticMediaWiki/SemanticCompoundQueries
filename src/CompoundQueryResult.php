@@ -10,7 +10,7 @@ use SMW\Query\Result\ResultArray;
  * get around an inconvenient print-request-compatibility check in
  * SMWQueryResult::addRow
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @since 1.0
  *
  * @author Yaron Koren

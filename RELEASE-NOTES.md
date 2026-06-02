@@ -1,5 +1,19 @@
 These are the RELEASE NOTES for the **Semantic Compound Queries** (a.k.a. SCQ) extension.
 
+## 7.0.0
+
+Not yet released.
+
+Starting with this release, Semantic Compound Queries' major version tracks
+Semantic MediaWiki's major version. Subsequent releases follow the same
+convention. Versions 4.x through 6.x were never released and are intentionally
+skipped to align with SMW.
+
+* Minimum requirement for PHP raised to 8.1.
+* Minimum requirement for MediaWiki raised to 1.43.
+* Minimum requirement for Semantic MediaWiki raised to 7.0.
+* Localization updates from https://translatewiki.net
+
 ## 3.0.0
 
 Released on September 14, 2024.

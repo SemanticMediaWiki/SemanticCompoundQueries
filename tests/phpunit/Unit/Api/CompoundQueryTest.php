@@ -2,35 +2,37 @@
 
 namespace SCQ\Tests\Api;
 
-use SMW\Tests\Utils\MwApiFactory;
+use PHPUnit\Framework\TestCase;
 use SCQ\Api\CompoundQuery;
+use SMW\Query\QuerySourceFactory;
+use SMW\Tests\Utils\MwApiFactory;
 
 /**
  * @covers \SCQ\Api\CompoundQuery
  * @group semantic-compound-queries
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @since 1.0
  *
  * @author Peter Grassberger < petertheone@gmail.com >
  */
-class CompoundQueryTest extends \PHPUnit\Framework\TestCase {
+class CompoundQueryTest extends TestCase {
 
 	/**
 	 * @var MwApiFactory
 	 */
 	private $apiFactory;
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->apiFactory = new MwApiFactory();
 	}
 
 	public function testCanConstruct() {
-
 		$instance = new CompoundQuery(
 			$this->apiFactory->newApiMain( [ 'query' => 'Foo' ] ),
-			'compoundquery'
+			'compoundquery',
+			$this->createMock( QuerySourceFactory::class )
 		);
 
 		$this->assertInstanceOf(
@@ -43,7 +45,6 @@ class CompoundQueryTest extends \PHPUnit\Framework\TestCase {
 	 * @dataProvider sampleQueryProvider
 	 */
 	public function testExecute( array $query, array $expected ) {
-
 		$results = $this->apiFactory->doApiRequest( [
 			'action' => 'compoundquery',
 			'query' => implode( '|', $query )
@@ -62,14 +63,13 @@ class CompoundQueryTest extends \PHPUnit\Framework\TestCase {
 	}
 
 	public function sampleQueryProvider() {
-
 		$provider['Standard query'] = [
 			[
 				'[[Modification date::+]];?Modification date;limit=10',
 			],
 			[
 				[
-					'label'=> '',
+					'label' => '',
 					'typeid' => '_wpg',
 					'mode' => 2,
 					'format' => false,
@@ -77,7 +77,7 @@ class CompoundQueryTest extends \PHPUnit\Framework\TestCase {
 					'redi' => ''
 				],
 				[
-					'label'=> 'Modification date',
+					'label' => 'Modification date',
 					'typeid' => '_dat',
 					'mode' => 1,
 					'format' => '',
@@ -94,7 +94,7 @@ class CompoundQueryTest extends \PHPUnit\Framework\TestCase {
 			],
 			[
 				[
-					'label'=> '',
+					'label' => '',
 					'typeid' => '_wpg',
 					'mode' => 2,
 					'format' => false,
@@ -102,7 +102,7 @@ class CompoundQueryTest extends \PHPUnit\Framework\TestCase {
 					'redi' => ''
 				],
 				[
-					'label'=> 'Modification date',
+					'label' => 'Modification date',
 					'typeid' => '_dat',
 					'mode' => 1,
 					'format' => '',

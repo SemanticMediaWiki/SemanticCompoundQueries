@@ -2,31 +2,26 @@
 
 namespace SCQ\Tests;
 
+use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 use SCQ\CompoundQueryProcessor;
 
 /**
  * @covers \SCQ\CompoundQueryProcessor
  * @group semantic-compound-queries
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @since 1.0
  *
  * @author Peter Grassberger < petertheone@gmail.com >
  */
-class CompoundQueryProcessorTest extends \PHPUnit\Framework\TestCase {
+class CompoundQueryProcessorTest extends TestCase {
 
 	/**
 	 * Call protected/private method of a class.
-	 *
-	 * @param object &$object    Instantiated object that we will run method on.
-	 * @param string $methodName Method name to call
-	 * @param array  $parameters Array of parameters to pass into method.
-	 *
-	 * @return mixed Method return.
 	 */
-	public function invokeMethod( &$object, $methodName, array $parameters = [] ) {
-
-		$reflection = new \ReflectionClass( get_class( $object ) );
+	public function invokeMethod( object $object, string $methodName, array $parameters = [] ) {
+		$reflection = new ReflectionClass( get_class( $object ) );
 		$method = $reflection->getMethod( $methodName );
 		$method->setAccessible( true );
 
@@ -51,7 +46,7 @@ class CompoundQueryProcessorTest extends \PHPUnit\Framework\TestCase {
 			],
 			[
 				'not in' => 'square brackets',
-				'trim'=> 'this',
+				'trim' => 'this',
 				'don\'t trim' => '   this   ',
 				'tolowercase' => 'this',
 			]

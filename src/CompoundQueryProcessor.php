@@ -2,16 +2,16 @@
 
 namespace SCQ;
 
+use MediaWiki\Parser\Parser;
+use SMW\Query\Query;
+use SMW\Query\QueryProcessor;
 use SMW\Query\QueryResult;
-use SMWQueryProcessor as QueryProcessor;
-use SMWQuery as Query;
-use Parser;
 
 /**
  * Class that holds static functions for handling compound queries.
  * This class inherits from Semantic MediaWiki's QueryProcessor.
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @since 1.0
  *
  * @author Yaron Koren
@@ -23,7 +23,6 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * Comparison helper function, used in sorting results.
 	 */
 	public static function compareQueryResults( $a, $b ) {
-
 		if ( $a->getSerialization() == $b->getSerialization() ) {
 			return 0;
 		}
@@ -34,7 +33,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 	/**
 	 * Handler for the #compound_query parser function.
 	 *
-	 * @param Parser $parser
+	 * @param Parser &$parser
 	 *
 	 * @return string
 	 */
@@ -50,8 +49,8 @@ class CompoundQueryProcessor extends QueryProcessor {
 		$params = func_get_args();
 		array_shift( $params ); // We already know the $parser.
 
-		list( $queryParams, $otherParams ) = self::separateParams( $params );
-		list( $queryResult, $otherParams ) = self::queryAndMergeResults( $queryParams, $otherParams );
+		[ $queryParams, $otherParams ] = self::separateParams( $params );
+		[ $queryResult, $otherParams ] = self::queryAndMergeResults( $queryParams, $otherParams );
 
 		return self::getResultFromQueryResult(
 			$queryResult,
@@ -105,14 +104,14 @@ class CompoundQueryProcessor extends QueryProcessor {
 				$subQueryParams['format'] = $otherParams['format'];
 			}
 
-			$nextResult = self::getQueryResultFromFunctionParams($subQueryParams);
+			$nextResult = self::getQueryResultFromFunctionParams( $subQueryParams );
 
 			$results = self::mergeSMWQueryResults( $results, $nextResult->getResults() );
 			$printRequests = self::mergeSMWPrintRequests( $printRequests, $nextResult->getPrintRequests() );
 		}
 
 		// Sort results so that they'll show up by page name
-		if( !isset($otherParams['unsorted']) || !strcmp( $otherParams['unsorted'], 'on' ) ) {
+		if ( !isset( $otherParams['unsorted'] ) || !strcmp( $otherParams['unsorted'], 'on' ) ) {
 			uasort( $results, [ '\SCQ\CompoundQueryProcessor', 'compareQueryResults' ] );
 		}
 
@@ -151,9 +150,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 
 				if ( $c == '[' ) {
 					$uncompleted_square_brackets++;
-				}
-
-				elseif ( $c == ']' ) {
+				} elseif ( $c == ']' ) {
 					$uncompleted_square_brackets--;
 				}
 			}
@@ -165,14 +162,10 @@ class CompoundQueryProcessor extends QueryProcessor {
 	}
 
 	/**
-	 * @param $rawparams
-	 * @param $context
-	 * @param $showmode
-	 *
 	 * @return QueryResult
 	 */
 	protected static function getQueryResultFromFunctionParams( $rawParams, $context = QueryProcessor::INLINE_QUERY, $showMode = false ) {
-		list( $querystring, $params, $printouts ) = self::getComponentsFromFunctionParams( $rawParams, $showMode );
+		[ $querystring, $params, $printouts ] = self::getComponentsFromFunctionParams( $rawParams, $showMode );
 
 		return self::getQueryResultFromQueryString( $querystring, $params, $printouts, $context );
 	}
@@ -197,7 +190,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 
 		foreach ( $result2 as $r2 ) {
 			$page_name = $r2->getSerialization();
-			if ( ! in_array( $page_name, $existing_page_names ) ) {
+			if ( !in_array( $page_name, $existing_page_names ) ) {
 				$result1[] = $r2;
 			}
 		}
@@ -213,7 +206,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 
 		foreach ( $printRequests2 as $p2 ) {
 			$label = $p2->getLabel();
-			if ( ! in_array( $label, $existingPrintoutLabels ) ) {
+			if ( !in_array( $label, $existingPrintoutLabels ) ) {
 				$printRequests1[] = $p2;
 			}
 		}
@@ -221,16 +214,9 @@ class CompoundQueryProcessor extends QueryProcessor {
 	}
 
 	/**
-	 * @param $querystring
-	 * @param array $params
-	 * @param $extraPrintouts
-	 * @param $outputMode
-	 * @param $context
-	 *
 	 * @return QueryResult
 	 */
 	protected static function getQueryResultFromQueryString( $querystring, array $params, $extraPrintouts, $context = QueryProcessor::INLINE_QUERY ) {
-
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
 			QueryProcessor::addThisPrintout( $extraPrintouts, $params );
 			$params = self::getProcessedParams( $params, $extraPrintouts, false );
@@ -245,8 +231,7 @@ class CompoundQueryProcessor extends QueryProcessor {
 			foreach ( $params as $param ) {
 				$parameters[$param->getName()] = $param->getValue();
 			}
-		}
-		else {
+		} else {
 			$parameters = $params;
 		}
 
@@ -270,7 +255,6 @@ class CompoundQueryProcessor extends QueryProcessor {
 	 * @return string
 	 */
 	protected static function getResultFromQueryResult( CompoundQueryResult $res, array $params, $outputmode, $context = QueryProcessor::INLINE_QUERY, $format = '' ) {
-
 		if ( version_compare( SMW_VERSION, '1.6.1', '>' ) ) {
 			$format = $params['format'];
 
