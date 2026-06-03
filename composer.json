@@ -46,14 +46,6 @@
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	},
-	"autoload": {
-		"files": [
-			"SemanticCompoundQueries.php"
-		],
-		"psr-4": {
-			"SCQ\\": "src/"
-		}
-	},
 	"scripts": {
 		"test": [
 			"@analyze",

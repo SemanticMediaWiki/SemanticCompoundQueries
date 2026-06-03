@@ -88,14 +88,4 @@ class CompoundQuery extends Query {
 		];
 	}
 
-	/**
-	 * @codeCoverageIgnore
-	 * @see ApiBase::getVersion
-	 *
-	 * @return string
-	 */
-	public function getVersion() {
-		return __CLASS__ . '-' . SCQ_VERSION;
-	}
-
 }

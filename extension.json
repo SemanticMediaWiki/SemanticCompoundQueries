@@ -1,5 +1,5 @@
 {
-  "name": "SemanticCompoundQueries",
+	"name": "SemanticCompoundQueries",
 	"version": "7.0.0-alpha",
 	"author": [
 		"James Hong Kong",
@@ -22,10 +22,9 @@
 			"i18n"
 		]
 	},
-	"callback": "SemanticCompoundQueries::initExtension",
-	"ExtensionFunctions": [
-		"SemanticCompoundQueries::onExtensionFunction"
-	],
+	"ExtensionMessagesFiles": {
+		"SemanticCompoundQueriesMagic": "i18n/SemanticCompoundQueries.i18n.magic.php"
+	},
 	"AutoloadNamespaces": {
 		"SCQ\\": "src/"
 	},
@@ -33,9 +32,21 @@
 		"SCQ\\Tests\\": "tests/phpunit/Unit/",
 		"SCQ\\Tests\\Integration\\": "tests/phpunit/Integration/"
 	},
-	"AutoloadClasses": {
-		"SemanticCompoundQueries": "SemanticCompoundQueries.php"
+	"APIModules": {
+		"compoundquery": {
+			"class": "SCQ\\Api\\CompoundQuery",
+			"services": [
+				"SMW.QuerySourceFactory"
+			]
+		}
 	},
-	"load_composer_autoloader": true,
+	"HookHandlers": {
+		"SemanticCompoundQueries": {
+			"class": "SCQ\\Hooks"
+		}
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "SemanticCompoundQueries"
+	},
 	"manifest_version": 2
 }
