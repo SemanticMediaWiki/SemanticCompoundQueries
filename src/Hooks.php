@@ -13,7 +13,7 @@ class Hooks implements ParserFirstCallInitHook {
 	/**
 	 * Registers the #compound_query parser function.
 	 *
-	 * @since 7.0.0
+	 * @since 4.0.0
 	 *
 	 * @param Parser $parser
 	 */
