@@ -2,7 +2,7 @@ These are the RELEASE NOTES for the **Semantic Compound Queries** (a.k.a. SCQ) e
 
 ## 4.0.0
 
-Not yet released.
+Released on June 8, 2026.
 
 * Minimum requirement for PHP raised to 8.1.
 * Minimum requirement for MediaWiki raised to 1.43.
