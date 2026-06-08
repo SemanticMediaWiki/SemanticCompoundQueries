@@ -1,6 +1,6 @@
 # Semantic Compound Queries
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/SemanticMediaWiki/SemanticCompoundQueries/ci.yml?branch=master)](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/actions?query=workflow%3ACI)
+[![CI](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/actions/workflows/ci.yml/badge.svg)](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/actions/workflows/ci.yml)
 [![Code Coverage](https://codecov.io/gh/SemanticMediaWiki/SemanticCompoundQueries/branch/master/graph/badge.svg)](https://codecov.io/gh/SemanticMediaWiki/SemanticCompoundQueries)
 [![Latest Stable Version](https://poser.pugx.org/mediawiki/semantic-compound-queries/v/stable)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
 [![Download count](https://poser.pugx.org/mediawiki/semantic-compound-queries/downloads)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
