@@ -1,6 +1,6 @@
 # Semantic Compound Queries
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/SemanticMediaWiki/SemanticCompoundQueries/ci.yml?branch=master)](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/actions?query=workflow%3ACI)
+[![CI](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/actions/workflows/ci.yml/badge.svg)](https://github.com/SemanticMediaWiki/SemanticCompoundQueries/actions/workflows/ci.yml)
 [![Code Coverage](https://codecov.io/gh/SemanticMediaWiki/SemanticCompoundQueries/branch/master/graph/badge.svg)](https://codecov.io/gh/SemanticMediaWiki/SemanticCompoundQueries)
 [![Latest Stable Version](https://poser.pugx.org/mediawiki/semantic-compound-queries/v/stable)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
 [![Download count](https://poser.pugx.org/mediawiki/semantic-compound-queries/downloads)](https://packagist.org/packages/mediawiki/semantic-compound-queries)
@@ -12,9 +12,9 @@ Semantic Compound Queries (a.k.a. SCQ) is a [Semantic Mediawiki][smw] extension 
 
 ## Requirements
 
-- PHP 7.4 or later
-- MediaWiki 1.39 or later
-- [Semantic MediaWiki][smw] 4.0 or later
+- PHP 8.1 or later
+- MediaWiki 1.43 or later
+- [Semantic MediaWiki][smw] 7.0 or later
 
 ## Installation
 
@@ -32,7 +32,7 @@ create one and add the following content to it:
 ```
 {
 	"require": {
-		"mediawiki/semantic-compound-queries": "~3"
+		"mediawiki/semantic-compound-queries": "~4"
 	}
 }
 ```
@@ -40,7 +40,7 @@ create one and add the following content to it:
 If you already have a "composer.local.json" file, add the following line to the end of the "require"
 section in your file:
 
-    "mediawiki/semantic-compound-queries": "~3"
+    "mediawiki/semantic-compound-queries": "~4"
 
 Remember to add a comma to the end of the preceding line in this section.
 
