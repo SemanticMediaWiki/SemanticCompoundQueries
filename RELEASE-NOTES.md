@@ -1,5 +1,11 @@
 These are the RELEASE NOTES for the **Semantic Compound Queries** (a.k.a. SCQ) extension.
 
+## 4.0.1
+
+* Restored per-sub-query map markers: the `icon` and `legend label` set on an
+  individual sub-query are shown again on Maps result formats. They had stopped
+  rendering in 4.0.0 (#98).
+
 ## 4.0.0
 
 Released on June 8, 2026.

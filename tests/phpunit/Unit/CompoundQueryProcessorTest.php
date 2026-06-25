@@ -5,6 +5,8 @@ namespace SCQ\Tests;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use SCQ\CompoundQueryProcessor;
+use SMW\DataItems\WikiPage;
+use SMW\Query\QueryResult;
 
 /**
  * @covers \SCQ\CompoundQueryProcessor
@@ -71,6 +73,56 @@ class CompoundQueryProcessorTest extends TestCase {
 		$processor = new CompoundQueryProcessor();
 		$actual = $this->invokeMethod( $processor, 'getSubParams', [ $param ] );
 		$this->assertEquals( $expected, $actual );
+	}
+
+	public function testAttachDisplayOptionsAddsOptionsToEveryResult() {
+		$alpha = new WikiPage( 'Alpha', NS_MAIN );
+		$beta = new WikiPage( 'Beta', NS_MAIN );
+
+		$queryResult = $this->getMockBuilder( QueryResult::class )
+			->disableOriginalConstructor()
+			->getMock();
+		$queryResult->method( 'getResults' )
+			->willReturn( [ $alpha, $beta ] );
+
+		$params = [
+			'icon' => $this->newProcessedParam( 'icon', 'Marker_Chartreuse.svg' ),
+			'format' => $this->newProcessedParam( 'format', 'leaflet' ),
+		];
+
+		$processor = new CompoundQueryProcessor();
+		$this->invokeMethod( $processor, 'attachDisplayOptions', [ $queryResult, $params ] );
+
+		$expected = [
+			'icon' => 'Marker_Chartreuse.svg',
+			'format' => 'leaflet',
+		];
+
+		$this->assertEquals( $expected, $alpha->display_options );
+		$this->assertEquals( $expected, $beta->display_options );
+	}
+
+	/**
+	 * Minimal stand-in for a ParamProcessor\ProcessedParam, exposing only the
+	 * getName()/getValue() accessors that attachDisplayOptions() relies on.
+	 */
+	private function newProcessedParam( string $name, string $value ): object {
+		return new class( $name, $value ) {
+
+			public function __construct(
+				private string $name,
+				private string $value
+			) {
+			}
+
+			public function getName(): string {
+				return $this->name;
+			}
+
+			public function getValue(): string {
+				return $this->value;
+			}
+		};
 	}
 
 }

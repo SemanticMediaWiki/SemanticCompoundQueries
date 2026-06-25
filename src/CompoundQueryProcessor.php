@@ -219,8 +219,39 @@ class CompoundQueryProcessor extends QueryProcessor {
 		$params = self::getProcessedParams( $params, $extraPrintouts, false );
 
 		$query = self::createQuery( $querystring, $params, $context, null, $extraPrintouts );
+		$queryResult = smwfGetStore()->getQueryResult( $query );
 
-		return smwfGetStore()->getQueryResult( $query );
+		self::attachDisplayOptions( $queryResult, $params );
+
+		return $queryResult;
+	}
+
+	/**
+	 * Attaches this sub-query's processed parameters to every result data item
+	 * as a `display_options` field, so result printers can apply options on a
+	 * per-sub-query basis. Semantic Maps reads this field to render the custom
+	 * marker (`icon`) and `legend label` configured for an individual
+	 * #compound_query sub-query.
+	 *
+	 * SMW's data items allow dynamic properties (since SMW 7.0, which is the
+	 * minimum requirement), so this assignment does not raise the PHP 8.2
+	 * dynamic-property deprecation that #87 addressed.
+	 *
+	 * @since 4.0.1
+	 *
+	 * @param QueryResult $queryResult
+	 * @param array $params Processed parameters; each entry exposes getName() and getValue()
+	 */
+	protected static function attachDisplayOptions( QueryResult $queryResult, array $params ): void {
+		$displayOptions = [];
+
+		foreach ( $params as $param ) {
+			$displayOptions[$param->getName()] = $param->getValue();
+		}
+
+		foreach ( $queryResult->getResults() as $dataItem ) {
+			$dataItem->display_options = $displayOptions;
+		}
 	}
 
 	/**
